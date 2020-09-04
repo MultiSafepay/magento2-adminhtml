@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Added dependencies in module.xml and composer.json
+- Removed setup_version from module
 
 ## [1.0.0] - 2020-09-02
 ### Added
