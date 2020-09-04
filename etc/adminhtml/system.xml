@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system><!-- Payment method configuration -->
+        <section id="payment">
+            <group id="multisafepay_payment_gateways" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[MultiSafepay&nbsp;<i>Smarter Online Payments</i>]]></label>
+                <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
+                <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Expanded</frontend_model>
+                <include path="MultiSafepay_ConnectAdminhtml::system/support.xml"/>
+                <include path="MultiSafepay_ConnectAdminhtml::system/general.xml"/>
+                <include path="MultiSafepay_ConnectAdminhtml::system/gateways.xml"/>
+                <include path="MultiSafepay_ConnectAdminhtml::system/giftcards.xml"/>
+            </group>
+        </section>
+    </system>
+</config>

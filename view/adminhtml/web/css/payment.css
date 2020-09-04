@@ -1,0 +1,23 @@
+.multisafepay-section > .entry-edit-head {
+    background: url("../images/MultiSafepay.png") no-repeat scroll 0 50% / 18rem auto;
+    padding-left: 18rem;
+}
+
+.multisafepay-payment .button-container {
+    float: right;
+    margin: 2.5rem 0 0 !important;
+}
+
+.multisafepay-payment > .entry-edit-head > a::before {
+    left: auto !important;
+    right: 1.3rem !important;
+}
+
+.multisafepay-heading {
+    width: 80%;
+}
+
+.multisafepay-heading-intro {
+    height: 55px;
+    display: block;
+}

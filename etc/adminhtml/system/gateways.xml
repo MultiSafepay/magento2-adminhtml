@@ -1,0 +1,36 @@
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="gateways" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label><![CDATA[Payment Gateways]]></label>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_ideal.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_payafter.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_klarna.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_afterpay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_bancontact.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_belfius.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_amex.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_applepay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_creditcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_dotpay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_eps.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_giropay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_idealqr.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_maestro.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mastercard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_paysafecard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_sofort.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_trustpay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_visa.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_alipay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_directbanktransfer.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_banktransfer.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_santander.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_cbc.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_directdebit.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_einvoicing.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_inghomepay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_kbc.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_paypal.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_trustly.xml"/>
+    </group>
+</include>

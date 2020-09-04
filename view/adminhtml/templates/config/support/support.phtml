@@ -1,0 +1,121 @@
+<?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is provided with Magento in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * Copyright © 2020 MultiSafepay, Inc. All rights reserved.
+ * See DISCLAIMER.md for disclaimer details.
+ *
+ */
+
+declare(strict_types=1);
+
+use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support;
+
+/** @var Magento\Framework\View\TemplateEngine\Php $this */
+/** @var Support $block */
+?>
+<div id="multisafepay-support" class="multisafepay-support-information">
+    <table id="version-table">
+        <tr class="no-padding-top">
+            <td class="version-table-row">
+                <?= $block->escapeHtml(__('MultiSafepay version: '))?>
+            </td>
+            <td class="version-table-row multisafepay-bold">
+                <?= $block->escapeHtml($block->getVersion()) ?>
+            </td>
+        </tr>
+        <tr>
+            <td class="version-table-row">
+                <?= $block->escapeHtml(__('Supported Magento 2 versions: '))?>
+            </td>
+            <td class="version-table-row multisafepay-bold">
+                <?= $block->escapeHtml('Open Source: 2.2.x, 2.3.x, 2.4.x')?>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <h2 id="multisafepay-title"><?= $block->escapeHtml(__('Documentation')) ?></h2>
+    <?php $msg = 'Read our documentation for more information about MultiSafepay and how to get started:' ?>
+    <p><?= $block->escapeHtml(__($msg)) ?></p>
+    <ul class="multisafepay-ul multisafepay-lh">
+        <li>
+            <a href="https://docs.multisafepay.com/integrations/plugins/magento2/beta/" target="_blank">
+                <?= $block->escapeHtml(__('Manual')) ?>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/MultiSafepay/magento2/blob/master/CHANGELOG.md" target="_blank">
+                <?= $block->escapeHtml(__('Changelog')) ?>
+            </a>
+        </li>
+        <li>
+            <a href="https://docs.multisafepay.com/support-tab/magento2/faq" target="_blank">
+                <?= $block->escapeHtml(__('FAQ')) ?>
+            </a>
+        </li>
+    </ul>
+    <p><?= $block->escapeHtml(__('For developers:')) ?></p>
+    <ul class="multisafepay-ul multisafepay-lh">
+        <li>
+            <a href="https://docs.multisafepay.com/support-tab/api" target="_blank">
+                <?= $block->escapeHtml(__('API Documentation')) ?>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/MultiSafepay/magento2" target="_blank">
+                <?= $block->escapeHtml('MultiSafepay Github') ?>
+            </a>
+        </li>
+    </ul>
+    <h2 id="multisafepay-title"><?= $block->escapeHtml(__('Account')) ?></h2>
+    <p class="multisafepay-lh">
+        <?= $block->escapeHtml(__('To use this plugin you need a MultiSafepay account.')) ?>
+        <br />
+        <?php $link = $block->escapeUrl('https://testmerchant.multisafepay.com/signup'); ?>
+        <?php $msg = 'If you would like to have a clear overview of what MultiSafepay has to offer, '; ?>
+        <?php $msg .= 'feel free to create a %1test account%2'; ?>
+        <?= /** @escapeNotVerified */ __($msg, '<a href="' . $link . '">', '</a>') ?>
+    </p>
+    <p class="multisafepay-lh" style="padding-top:20px;">
+        <?php $msg = 'If you would like to set up a live account, please contact the MultiSafepay sales department:'; ?>
+        <?= $block->escapeHtml(__($msg)) ?>
+    </p>
+    <ul class="multisafepay-ul multisafepay-lh">
+        <li>
+            <?= $block->escapeHtml(__('Telephone: ')) ?>
+            <a href="tel:+31208500501">
+                <?= $block->escapeHtml('+31 (0)20 - 8500501') ?>
+            </a>
+        </li>
+        <li>
+            <?= $block->escapeHtml(__('E-mail: ')) ?>
+            <a href="mailto:sales@multisafepay.com">
+                <?= $block->escapeHtml('sales@multisafepay.com') ?>
+            </a>
+        </li>
+    </ul>
+    <h2 id="multisafepay-title"><?= $block->escapeHtml(__('Contact')) ?></h2>
+    <p class="multisafepay-lh">
+        <?= $block->escapeHtml(__('Need assistance? Feel free to contact our integration team:')) ?>
+    </p>
+    <ul class="multisafepay-ul multisafepay-lh">
+        <li>
+            <?= $block->escapeHtml(__('Telephone: ')) ?>
+            <a href="tel:+31208500500">
+                <?= $block->escapeHtml('+31 (0)20 - 8500500') ?>
+            </a>
+        </li>
+        <li>
+            <?= $block->escapeHtml(__('E-mail: ')) ?>
+            <a href="mailto:integration@multisafepay.com">
+                <?= $block->escapeHtml('integration@multisafepay.com') ?>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+#version-table {
+    width:50%;
+}
+
+.version-table-row {
+    padding: 2px !important;
+}
+
+.multisafepay-bold {
+    font-weight: 600;
+}
+
+.no-padding-top {
+    padding-top: 0;
+}
+
+#multisafepay-title {
+    color: #0a0a0a;
+    font-weight: 600;
+    padding-top:20px;
+    font-size: 16px;
+}
+.multisafepay-ul {
+    list-style-type:none;
+}
+
+.multisafepay-lh {
+    line-height: 2.5rem;
+}
+
+#multisafepay-support {
+    margin-left:30px;
+}
