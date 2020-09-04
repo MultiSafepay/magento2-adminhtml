@@ -5,7 +5,9 @@
     "require": {
         "multisafepay/magento2-core": "^1.0",
         "magento/framework": "^101.0.1|^101.1|^102.0|^103.0",
-        "magento/module-backend": "^101.0|^102.0"
+        "magento/module-backend": "^101.0|^102.0",
+        "magento/module-config": "^101.0",
+        "magento/module-customer": "^101.0|^102.0|^103.0"
     },
     "type": "magento2-module",
     "license": [

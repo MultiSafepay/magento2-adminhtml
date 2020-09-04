@@ -4,6 +4,8 @@
         <sequence>
             <module name="MultiSafepay_ConnectCore"/>
             <module name="Magento_Backend"/>
+            <module name="Magento_Config"/>
+            <module name="Magento_Customer"/>
         </sequence>
     </module>
 </config>
