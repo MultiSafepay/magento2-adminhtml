@@ -1,6 +1,6 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_klarna" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/billing-suite/klarna/" target="blank">Klarna</a>]]></label>
+        <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/billing-suite/klarna/" target="blank">Klarna - buy now, pay later</a>]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <comment><![CDATA[With Klarna, the consumer receives the products and pays within 14 days.]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
