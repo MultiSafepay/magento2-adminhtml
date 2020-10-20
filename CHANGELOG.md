@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Rebrand Direct Bank Transfer to Request To Pay
+- Rebrand Klarna to their latest standards
 
 ## [1.0.0] - 2020-09-02
 ### Added
