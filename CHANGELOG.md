@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Added dependencies in module.xml and composer.json
 - Removed setup_version from module
+- Enabled all configuration fields to be configured for seperate store views
 
 ### Changed
 - Rebrand Direct Bank Transfer to Request To Pay
