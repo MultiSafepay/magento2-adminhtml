@@ -17,10 +17,17 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support;
 
+use Magento\Framework\App\Filesystem\DirectoryList;
+use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Data\Form\Element\Renderer\RendererInterface;
+use Magento\Framework\Exception\FileSystemException;
+use Magento\Framework\Filesystem\DriverInterface as FileDriverInterface;
+use Magento\Framework\Module\ModuleListInterface;
+use Magento\Framework\Serialize\SerializerInterface;
 use Magento\Framework\View\Element\Template;
 use MultiSafepay\ConnectCore\Model\Api\Builder\OrderRequestBuilder\PluginDataBuilder;
+use MultiSafepay\ConnectCore\Util\VersionUtil;
 
 class Support extends Template implements RendererInterface
 {
@@ -29,6 +36,34 @@ class Support extends Template implements RendererInterface
      * @codingStandardsIgnoreLine
      */
     protected $_template = 'MultiSafepay_ConnectAdminhtml::config/support/support.phtml';
+
+    /**
+     * @var ComponentRegistrar
+     */
+    private $componentRegistrar;
+
+    /**
+     * @var VersionUtil
+     */
+    private $versionUtil;
+
+    /**
+     * Support constructor.
+     * @param ComponentRegistrar $componentRegistrar
+     * @param VersionUtil $versionUtil
+     * @param Template\Context $context
+     * @param array $data
+     */
+    public function __construct(
+        ComponentRegistrar $componentRegistrar,
+        VersionUtil $versionUtil,
+        Template\Context $context,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+        $this->componentRegistrar = $componentRegistrar;
+        $this->versionUtil = $versionUtil;
+    }
 
     /**
      * @inheritDoc
@@ -44,10 +79,30 @@ class Support extends Template implements RendererInterface
     }
 
     /**
-     * @return string
+     * @return array
+     * @throws FileSystemException
      */
-    public function getVersion(): string
+    public function getModuleVersions(): array
     {
-        return PluginDataBuilder::VERSION;
+        $moduleVersions = [];
+
+        $composerVersion = $this->versionUtil->getPluginVersion();
+        $moduleVersions[] = [
+            'module' => 'MultiSafepay module suite',
+            'version' => $composerVersion
+        ];
+
+        $moduleNames = $this->versionUtil->getModuleNames();
+        foreach ($moduleNames as $moduleName) {
+            $modulePath = $this->componentRegistrar->getPath('module', $moduleName);
+            $composerFile = $modulePath . '/composer.json';
+            $composerVersion = $this->versionUtil->getVersionFromComposerFile($composerFile);
+            $moduleVersions[] = [
+                'module' => $moduleName,
+                'version' => $composerVersion
+            ];
+        }
+
+        return $moduleVersions;
     }
 }

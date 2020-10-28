@@ -22,14 +22,16 @@ use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support;
 ?>
 <div id="multisafepay-support" class="multisafepay-support-information">
     <table id="version-table">
+        <?php foreach ($block->getModuleVersions() as $moduleVersion): ?>
         <tr class="no-padding-top">
             <td class="version-table-row">
-                <?= $block->escapeHtml(__('MultiSafepay version: '))?>
+                <?= $block->escapeHtml($moduleVersion['module'])?>
             </td>
             <td class="version-table-row multisafepay-bold">
-                <?= $block->escapeHtml($block->getVersion()) ?>
+                <?= $block->escapeHtml($moduleVersion['version']) ?>
             </td>
         </tr>
+        <?php endforeach; ?>
         <tr>
             <td class="version-table-row">
                 <?= $block->escapeHtml(__('Supported Magento 2 versions: '))?>
