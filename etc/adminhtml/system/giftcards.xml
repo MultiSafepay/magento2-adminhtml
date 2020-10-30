@@ -9,6 +9,7 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fietsenbon.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_gezondheidsbon.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_givacard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_good4fun.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_goodcard.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_nationaletuinbon.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_parfumcadeaukaart.xml"/>
