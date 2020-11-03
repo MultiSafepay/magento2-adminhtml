@@ -17,16 +17,11 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support;
 
-use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Data\Form\Element\Renderer\RendererInterface;
 use Magento\Framework\Exception\FileSystemException;
-use Magento\Framework\Filesystem\DriverInterface as FileDriverInterface;
-use Magento\Framework\Module\ModuleListInterface;
-use Magento\Framework\Serialize\SerializerInterface;
 use Magento\Framework\View\Element\Template;
-use MultiSafepay\ConnectCore\Model\Api\Builder\OrderRequestBuilder\PluginDataBuilder;
 use MultiSafepay\ConnectCore\Util\VersionUtil;
 
 class Support extends Template implements RendererInterface

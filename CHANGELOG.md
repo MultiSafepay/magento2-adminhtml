@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enabled all configuration fields to be configured for seperate store views
 
 ### Changed
+- Changed the config settings to Stores > Settings > Configuration > MultiSafepay due to exceptionally large POST data 
+on the 'Payment Methods' page
 - Rebrand Direct Bank Transfer to Request To Pay
 - Rebrand Klarna to their latest standards
 

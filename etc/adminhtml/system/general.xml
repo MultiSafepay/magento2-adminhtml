@@ -1,48 +1,54 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
-    <group id="general" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="2">
+    <section id="multisafepay_general" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="2">
+        <class>separator-top</class>
         <label><![CDATA[General Settings]]></label>
-        <field id="mode" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label><![CDATA[Live mode]]></label>
-            <config_path>multisafepay/general/mode</config_path>
-            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-        </field>
-        <field id="live_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Live Api Key</label>
-            <config_path>multisafepay/general/live_api_key</config_path>
-            <depends>
-                <field id="mode">1</field>
-            </depends>
-        </field>
-        <field id="test_api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Test Api Key</label>
-            <config_path>multisafepay/general/test_api_key</config_path>
-            <depends>
-                <field id="mode">0</field>
-            </depends>
-        </field>
-        <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label><![CDATA[New Order Status]]></label>
-            <config_path>multisafepay/general/order_status</config_path>
-            <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
-            <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
-        </field>
-        <field id="processing_order_status" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label><![CDATA[Processing Order Status]]></label>
-            <config_path>multisafepay/general/processing_order_status</config_path>
-            <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
-            <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
-        </field>
-        <field id="order_confirmation_email" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label><![CDATA[Send the order confirmation email]]></label>
-            <config_path>multisafepay/general/order_confirmation_email</config_path>
-            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
-            <comment><![CDATA[The moment the order confirmation email is sent to the customer.]]></comment>
-        </field>
-        <field id="debug" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label><![CDATA[Enable Debug mode]]></label>
-            <config_path>multisafepay/general/debug</config_path>
-            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[Write detailed information to]]> var/log/multisafepay-debug.log</comment>
-        </field>
-    </group>
+        <tab>multisafepay</tab>
+        <resource>MultiSafepay_ConnectAdminhtml::configuration</resource>
+        <group id="multisafepay_general" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1">
+            <label><![CDATA[General Settings]]></label>
+            <field id="mode" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Live mode]]></label>
+                <config_path>multisafepay/general/mode</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="live_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Live Api Key</label>
+                <config_path>multisafepay/general/live_api_key</config_path>
+                <depends>
+                    <field id="mode">1</field>
+                </depends>
+            </field>
+            <field id="test_api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Test Api Key</label>
+                <config_path>multisafepay/general/test_api_key</config_path>
+                <depends>
+                    <field id="mode">0</field>
+                </depends>
+            </field>
+            <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[New Order Status]]></label>
+                <config_path>multisafepay/general/order_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="processing_order_status" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Processing Order Status]]></label>
+                <config_path>multisafepay/general/processing_order_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="order_confirmation_email" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Send the order confirmation email]]></label>
+                <config_path>multisafepay/general/order_confirmation_email</config_path>
+                <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
+                <comment><![CDATA[The moment the order confirmation email is sent to the customer.]]></comment>
+            </field>
+            <field id="debug" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Enable Debug mode]]></label>
+                <config_path>multisafepay/general/debug</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Write detailed information to]]> var/log/multisafepay-debug.log</comment>
+            </field>
+        </group>
+    </section>
 </include>

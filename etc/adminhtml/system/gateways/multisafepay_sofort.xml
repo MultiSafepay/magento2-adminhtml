@@ -2,6 +2,7 @@
     <group id="multisafepay_sofort" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
         <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/banks/sofort-banking/" target="blank">Sofort Banking</a>]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
+        <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
         <comment><![CDATA[Do you want to expand your business across the border? Paying with your trusted banking environment wherever you are. Over 20 million consumers in European countries prefer SOFORT as their trusted payment method.]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enabled]]></label>
@@ -11,11 +12,17 @@
         <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Title]]></label>
             <config_path>payment/multisafepay_sofort/title</config_path>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_sofort/allowspecific</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="specificcountry" translate="label" type="multiselect" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Specific Countries]]></label>
@@ -30,6 +37,9 @@
             <label><![CDATA[Applicable Currencies]]></label>
             <config_path>payment/multisafepay_sofort/allow_specific_currency</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="allowed_currency" translate="label" type="multiselect" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Specific Currencies]]></label>
@@ -44,6 +54,9 @@
             <label><![CDATA[Applicable Shipping Methods]]></label>
             <config_path>payment/multisafepay_sofort/allow_specific_shipping_method</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="allowed_shipping_method" translate="label" type="multiselect" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Specific Shipping Methods]]></label>
@@ -58,6 +71,9 @@
             <label><![CDATA[Applicable Customer Groups]]></label>
             <config_path>payment/multisafepay_sofort/allow_specific_customer_group</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="allowed_customer_group" translate="label" type="multiselect" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Specific Customer Groups]]></label>
@@ -72,6 +88,9 @@
             <label><![CDATA[Applicable Order Total Amount]]></label>
             <config_path>payment/multisafepay_sofort/allow_amount</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="min_amount" translate="label" type="text" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Minimum Order Total]]></label>
@@ -92,6 +111,9 @@
             <config_path>payment/multisafepay_sofort/custom_payment_link_lifetime</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
             <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
         <field id="custom_payment_link_lifetime_unit" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Payment Link Lifetime Unit]]></label>
@@ -113,6 +135,9 @@
             <label><![CDATA[Sort Order]]></label>
             <config_path>payment/multisafepay_sofort/sort_order</config_path>
             <frontend_class>validate-number</frontend_class>
+            <depends>
+                <field id="active">1</field>
+            </depends>
         </field>
     </group>
 </include>

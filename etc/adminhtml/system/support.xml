@@ -1,8 +1,11 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
-    <group id="support" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+    <section id="multisafepay_support" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+        <class>separator-top</class>
         <label><![CDATA[General Information]]></label>
-        <group id="information" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+        <tab>multisafepay</tab>
+        <resource>MultiSafepay_ConnectAdminhtml::configuration</resource>
+        <group id="information" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
             <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support</frontend_model>
         </group>
-    </group>
+    </section>
 </include>

@@ -21,6 +21,7 @@ use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support;
 /** @var Support $block */
 ?>
 <div id="multisafepay-support" class="multisafepay-support-information">
+    <h2 id="multisafepay-title"><?= $block->escapeHtml(__('Installed Modules')) ?></h2>
     <table id="version-table">
         <?php foreach ($block->getModuleVersions() as $moduleVersion): ?>
         <tr class="no-padding-top">
@@ -32,10 +33,10 @@ use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support;
             </td>
         </tr>
         <?php endforeach; ?>
+    </table>
+    <h2 id="multisafepay-title"><?= $block->escapeHtml(__('Version support')) ?></h2>
+    <table>
         <tr>
-            <td class="version-table-row">
-                <?= $block->escapeHtml(__('Supported Magento 2 versions: '))?>
-            </td>
             <td class="version-table-row multisafepay-bold">
                 <?= $block->escapeHtml('Open Source: 2.2.x, 2.3.x, 2.4.x')?>
             </td>

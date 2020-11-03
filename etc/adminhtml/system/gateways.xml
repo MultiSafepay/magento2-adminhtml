@@ -1,6 +1,9 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
-    <group id="gateways" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+    <section id="multisafepay_gateways" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="3">
+        <class>separator-top</class>
         <label><![CDATA[Payment Gateways]]></label>
+        <tab>multisafepay</tab>
+        <resource>MultiSafepay_ConnectAdminhtml::configuration</resource>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_ideal.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_payafter.xml"/>
@@ -32,5 +35,5 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_kbc.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_paypal.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_trustly.xml"/>
-    </group>
+    </section>
 </include>

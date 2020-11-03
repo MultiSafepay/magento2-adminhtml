@@ -4,8 +4,8 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
-                        <resource id="Magento_Config::config" title="Configuration" sortOrder="20">
-                            <resource id="MultiSafepayAdminhtml_Connect::configuration" title="MultiSafepay" sortOrder="1" />
+                        <resource id="Magento_Config::config">
+                            <resource id="MultiSafepay_ConnectAdminhtml::configuration" title="MultiSafepay Settings" />
                         </resource>
                     </resource>
                 </resource>
