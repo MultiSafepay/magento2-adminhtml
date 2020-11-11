@@ -53,7 +53,13 @@
                 <config_path>multisafepay/general/refund_custom_description</config_path>
                 <comment><![CDATA[Use {{order.increment_id}} variable for displaying the Order ID. Default description will be used if left empty.]]></comment>
             </field>
-            <field id="debug" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="use_base_currency" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Use base currency?]]></label>
+                <config_path>multisafepay/general/use_base_currency</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Choose whether to send the pricing in base currency or order currency.]]></comment>
+            </field>
+            <field id="debug" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Enable Debug mode]]></label>
                 <config_path>multisafepay/general/debug</config_path>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
