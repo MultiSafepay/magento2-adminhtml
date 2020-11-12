@@ -5,19 +5,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.0] - 2020-11-11
 ### Added
-- Added support for custom transaction and custom refund description
+- Added Good4Fun gift card to the gift cards configuration
+- Added custom description configuration fields
+- Added a section in the 'General Information' tab where all the MultiSafepay module versions can be found
+- Added a configuration option for using either the base currency or order currency
 
 ### Fixed
 - Added dependencies in module.xml and composer.json
 - Removed setup_version from module
 - Enabled all configuration fields to be configured for seperate store views
+- Fixed the link to the Github CHANGELOG.md in the 'General Information' tab
 
 ### Changed
-- Changed the config settings to Stores > Settings > Configuration > MultiSafepay due to exceptionally large POST data 
+- Changed the config settings to 'Stores > Settings > Configuration > MultiSafepay' due to exceptionally large POST data 
 on the 'Payment Methods' page
 - Rebrand Direct Bank Transfer to Request To Pay
-- Rebrand Klarna to their latest standards
+- Rebrand Klarna to the latest standards
 
 ## [1.0.0] - 2020-09-02
 ### Added
