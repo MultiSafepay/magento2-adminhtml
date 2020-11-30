@@ -17,10 +17,8 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support;
 
-use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Data\Form\Element\Renderer\RendererInterface;
-use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\View\Element\Template;
 use MultiSafepay\ConnectCore\Util\VersionUtil;
 
@@ -33,30 +31,22 @@ class Support extends Template implements RendererInterface
     protected $_template = 'MultiSafepay_ConnectAdminhtml::config/support/support.phtml';
 
     /**
-     * @var ComponentRegistrar
-     */
-    private $componentRegistrar;
-
-    /**
      * @var VersionUtil
      */
     private $versionUtil;
 
     /**
      * Support constructor.
-     * @param ComponentRegistrar $componentRegistrar
      * @param VersionUtil $versionUtil
      * @param Template\Context $context
      * @param array $data
      */
     public function __construct(
-        ComponentRegistrar $componentRegistrar,
         VersionUtil $versionUtil,
         Template\Context $context,
         array $data = []
     ) {
         parent::__construct($context, $data);
-        $this->componentRegistrar = $componentRegistrar;
         $this->versionUtil = $versionUtil;
     }
 
@@ -74,30 +64,10 @@ class Support extends Template implements RendererInterface
     }
 
     /**
-     * @return array
-     * @throws FileSystemException
+     * @return string
      */
-    public function getModuleVersions(): array
+    public function getModuleVersion(): string
     {
-        $moduleVersions = [];
-
-        $composerVersion = $this->versionUtil->getPluginVersion();
-        $moduleVersions[] = [
-            'module' => 'MultiSafepay module suite',
-            'version' => $composerVersion
-        ];
-
-        $moduleNames = $this->versionUtil->getModuleNames();
-        foreach ($moduleNames as $moduleName) {
-            $modulePath = $this->componentRegistrar->getPath('module', $moduleName);
-            $composerFile = $modulePath . '/composer.json';
-            $composerVersion = $this->versionUtil->getVersionFromComposerFile($composerFile);
-            $moduleVersions[] = [
-                'module' => $moduleName,
-                'version' => $composerVersion
-            ];
-        }
-
-        return $moduleVersions;
+        return $this->versionUtil->getPluginVersion();
     }
 }

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2020-11-27
+### Fixed
+- Fixed instantiation error of fileDriver interface in backend and after placing a transaction
+
 ## [1.1.0] - 2020-11-11
 ### Added
 - Added Good4Fun gift card to the gift cards configuration
