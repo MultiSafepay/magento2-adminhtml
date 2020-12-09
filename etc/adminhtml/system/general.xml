@@ -59,7 +59,13 @@
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <comment><![CDATA[Choose whether to send the pricing in base currency or order currency.]]></comment>
             </field>
-            <field id="debug" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="preselected_method" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Default selected method]]></label>
+                <config_path>multisafepay/general/preselected_method</config_path>
+                <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Methods</source_model>
+                <comment><![CDATA[Choose which payment method will be automatically selected in the checkout.]]></comment>
+            </field>
+            <field id="debug" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Enable Debug mode]]></label>
                 <config_path>multisafepay/general/debug</config_path>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
