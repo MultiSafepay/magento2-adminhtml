@@ -35,5 +35,6 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_kbc.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_paypal.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_trustly.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_in3.xml"/>
     </section>
 </include>
