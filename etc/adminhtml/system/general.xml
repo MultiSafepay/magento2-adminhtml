@@ -72,5 +72,15 @@
                 <comment><![CDATA[Write detailed information to]]> var/log/multisafepay-debug.log</comment>
             </field>
         </group>
+        <group id="multisafepay_advanced" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Advanced Settings</label>
+            <field id="custom_totals" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Exclude custom totals</label>
+                <config_path>multisafepay/advanced/custom_totals</config_path>
+                <comment>
+                    Fill in the custom total code(s) that shouldn't be visible on the MultiSafepay payment page. Semicolon (;) separated values.
+                </comment>
+            </field>
+        </group>
     </section>
 </include>

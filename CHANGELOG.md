@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.0] - 2020-12-10
 ### Added
 - Added configuration for in3 payment method
-- Add configuration option for choosing default preselected payment method in the checkout
+- Added configuration option for choosing default preselected payment method in the checkout
+- Added configuration field for excluding custom totals
 
 ## [1.1.1] - 2020-11-27
 ### Fixed
