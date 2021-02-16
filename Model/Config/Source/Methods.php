@@ -64,6 +64,10 @@ class Methods implements OptionSourceInterface
             }
         }
 
+        usort($methods, function ($method1, $method2) {
+            return $method1['label'] <=> $method2['label'];
+        });
+
         return $methods;
     }
 }

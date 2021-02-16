@@ -1,5 +1,5 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
-    <group id="multisafepay_creditcard" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+    <group id="multisafepay_creditcard" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
         <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/credit-and-debit-cards/" target="blank">Credit Card</a>]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
