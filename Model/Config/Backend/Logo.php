@@ -20,6 +20,7 @@ namespace MultiSafepay\ConnectAdminhtml\Model\Config\Backend;
 use Magento\Config\Model\Config\Backend\File;
 use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\File\Uploader;
 use MultiSafepay\ConnectCore\Model\Ui\Gateway\GenericGatewayConfigProvider;
 
 class Logo extends File
@@ -80,7 +81,7 @@ class Logo extends File
                 $uploader->setAllowedExtensions($this->_getAllowedExtensions());
                 $uploader->setAllowRenameFiles(true);
                 $uploader->addValidateCallback('size', $this, 'validateMaxSize');
-                $result = $uploader->save($uploadDir, 'generic_image.' . $uploader->getFileExtension());
+                $result = $uploader->save($uploadDir, $this->getNewFilenameByGroupId($uploader));
             } catch (\Exception $e) {
                 throw new LocalizedException(__('%1', $e->getMessage()));
             }
@@ -96,6 +97,17 @@ class Logo extends File
         }
 
         return $this;
+    }
+
+    /**
+     * @param Uploader $uploader
+     * @return string
+     */
+    private function getNewFilenameByGroupId(Uploader $uploader): string
+    {
+        $groupId = $this->getData('group_id') ?? 'generic';
+
+        return $groupId . '_image.' . $uploader->getFileExtension();
     }
 
     /**

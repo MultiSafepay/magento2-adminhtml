@@ -14,4 +14,8 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Config\Model\Config\Structure\Element\Field">
+        <plugin name="change_genericgateway_config_path" type="MultiSafepay\ConnectAdminhtml\Plugin\Model\Config\Element\FieldPlugin"/>
+    </type>
 </config>
