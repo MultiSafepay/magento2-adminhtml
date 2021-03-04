@@ -56,7 +56,7 @@ class Methods implements OptionSourceInterface
         $methods = [];
 
         foreach ($methodList as $code => $method) {
-            if (isset($method['is_multisafepay'])) {
+            if (isset($method['is_multisafepay']) && (strpos($code, '_recurring') === false)) {
                 $methods[] = [
                     'value' => $code,
                     'label' => $method['title']
