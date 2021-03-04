@@ -87,6 +87,46 @@
                     Fill in the custom total code(s) that shouldn't be visible on the MultiSafepay payment page. Semicolon (;) separated values.
                 </comment>
             </field>
+            <field id="use_custom_return_url" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+                showInStore="1">
+                <label>Use custom return urls for PWA storefront integration</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <config_path>multisafepay/advanced/use_custom_return_url</config_path>
+                <comment><![CDATA[Use custom urls for <strong>"Cancel"</strong> button on payment page and for redirect to a <strong>"Success page"</strong> after successful payment.
+                 <br>
+                 <br>Available url variables:<br>
+                         {{order.increment_id}}, {{order.order_id}} - the entity or increment order id;<br>
+                         {{payment.code}}, {{payment.transaction_id}}  - the payment method code and actual transaction id;<br>
+                         {{store.unsecure_base_url}}, {{store.secure_base_url}} - the store unsecure or secure base url;<br>
+                         {{store.code}}, {{store.store_id}} - the payment store code or entity store id;<br>
+                         {{secure_token}} - the automatically generated secure token.<br>
+                <br>
+                 For the integration with PWA or third-party storefront please use our <a href="https://github.com/MultiSafepay/magento2-graphql" target="blank">separate extension for GraphQL support.</a>]]>
+                </comment>
+                <tooltip><![CDATA[Use this setting for a PWA storefront or third-party storefront integration.]]></tooltip>
+            </field>
+            <field id="custom_cancel_return_url" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                showInStore="1">
+                <label>Custom redirect url after cancelling the payment</label>
+                <config_path>multisafepay/advanced/custom_cancel_return_url</config_path>
+                <comment><![CDATA[
+                        <strong>Example:</strong> https://customdomain.com/checkout/cancel?orderId={{order.order_id}} ]]></comment>
+                <validate>validate-url</validate>
+                <depends>
+                    <field id="use_custom_return_url">1</field>
+                </depends>
+            </field>
+            <field id="custom_success_return_url" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                showInStore="1">
+                <label>Custom "Success page" url</label>
+                <config_path>multisafepay/advanced/custom_success_return_url</config_path>
+                <comment><![CDATA[
+                        <strong>Example:</strong> https://customdomain.com/checkout/success?secureToken={{secure_token}}&incrementId={{order.increment_id}}]]></comment>
+                <validate>validate-url</validate>
+                <depends>
+                    <field id="use_custom_return_url">1</field>
+                </depends>
+            </field>
         </group>
     </section>
 </include>
