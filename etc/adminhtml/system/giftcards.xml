@@ -4,25 +4,26 @@
         <label><![CDATA[Gift cards]]></label>
         <tab>multisafepay</tab>
         <resource>MultiSafepay_ConnectAdminhtml::configuration</resource>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_babygiftcard.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_beautyandwellness.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_boekenbon.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fashioncheque.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fashiongiftcard.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fietsenbon.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_gezondheidsbon.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_givacard.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_good4fun.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_goodcard.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_nationaletuinbon.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_parfumcadeaukaart.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_podiumcadeaukaart.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_sportenfit.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_vvvcadeaukaart.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_webshopgiftcard.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_wellnessgiftcard.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_wijncadeau.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_winkelcheque.xml"/>
-            <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_yourgift.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_babygiftcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_beautyandwellness.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_boekenbon.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fashioncheque.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fashiongiftcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_fietsenbon.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_gezondheidsbon.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_givacard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_good4fun.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_goodcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_nationaletuinbon.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_parfumcadeaukaart.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_podiumcadeaukaart.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_sportenfit.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_vvvcadeaukaart.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_webshopgiftcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_wellnessgiftcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_wijncadeau.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_winkelcheque.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_yourgift.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_genericgateway.xml"/>
     </section>
 </include>
