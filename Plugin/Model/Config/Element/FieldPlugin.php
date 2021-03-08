@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace MultiSafepay\ConnectAdminhtml\Plugin\Model\Config\Element;
 
 use Magento\Config\Model\Config\Structure\Element\Field;
