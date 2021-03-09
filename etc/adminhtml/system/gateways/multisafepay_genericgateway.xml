@@ -1,14 +1,14 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_genericgateway_1" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
         <label>Generic Gateway 1</label>
-        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/genericgateways/genericgateway.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/generic/genericbase.xml"/>
     </group>
     <group id="multisafepay_genericgateway_2" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
         <label>Generic Gateway 2</label>
-        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/genericgateways/genericgateway.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/generic/genericbase.xml"/>
     </group>
     <group id="multisafepay_genericgateway_3" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
         <label>Generic Gateway 3</label>
-        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/genericgateways/genericgateway.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/generic/genericbase.xml"/>
     </group>
 </include>

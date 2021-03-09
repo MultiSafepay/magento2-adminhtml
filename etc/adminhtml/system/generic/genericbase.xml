@@ -1,7 +1,7 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
-        <comment><![CDATA[Add a custom MultiSafepay gift card by adding a custom code and image.]]></comment>
+        <comment><![CDATA[Add a custom MultiSafepay payment gateway by adding a custom code and image.]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enabled]]></label>
             <config_path>payment/multisafepay_genericgateway/active</config_path>
