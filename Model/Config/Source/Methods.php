@@ -19,6 +19,7 @@ namespace MultiSafepay\ConnectAdminhtml\Model\Config\Source;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Data\OptionSourceInterface;
+use MultiSafepay\ConnectCore\Model\Ui\Gateway\GenericGatewayConfigProvider;
 
 class Methods implements OptionSourceInterface
 {
@@ -28,14 +29,22 @@ class Methods implements OptionSourceInterface
     private $scopeConfig;
 
     /**
+     * @var GenericGatewayConfigProvider
+     */
+    private $genericGatewayConfigProvider;
+
+    /**
      * Methods constructor.
      *
      * @param ScopeConfigInterface $scopeConfig
+     * @param GenericGatewayConfigProvider $genericGatewayConfigProvider
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig
+        ScopeConfigInterface $scopeConfig,
+        GenericGatewayConfigProvider $genericGatewayConfigProvider
     ) {
         $this->scopeConfig = $scopeConfig;
+        $this->genericGatewayConfigProvider = $genericGatewayConfigProvider;
     }
 
     /**
@@ -53,13 +62,17 @@ class Methods implements OptionSourceInterface
     {
         $methodList = $this->scopeConfig->getValue('payment');
 
+        if (isset($methodList[GenericGatewayConfigProvider::CODE])) {
+            unset($methodList[GenericGatewayConfigProvider::CODE]);
+        }
+
         $methods = [];
 
         foreach ($methodList as $code => $method) {
-            if (isset($method['is_multisafepay']) && (strpos($code, '_recurring') === false)) {
+            if ($this->isMethodPreselectAllowed($method, $code)) {
                 $methods[] = [
                     'value' => $code,
-                    'label' => $method['title']
+                    'label' => $method['title'],
                 ];
             }
         }
@@ -69,5 +82,27 @@ class Methods implements OptionSourceInterface
         });
 
         return $methods;
+    }
+                
+    /**
+     * @param array $methodData
+     * @param string $methodCode
+     * @return bool
+     */
+    private function isMethodPreselectAllowed(array $methodData, string $methodCode): bool
+    {
+        if (!isset($methodData['title'])) {
+            return false;
+        }
+
+        if ($this->genericGatewayConfigProvider->isMultisafepayGenericMethod($methodCode)) {
+            return true;
+        }
+
+        if (isset($methodData['is_multisafepay']) && (strpos($methodCode, '_recurring') === false)) {
+            return true;
+        }
+
+        return false;
     }
 }
