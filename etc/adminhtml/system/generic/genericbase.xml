@@ -1,0 +1,167 @@
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+        <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
+        <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
+        <comment><![CDATA[Add a custom MultiSafepay payment gateway by adding a custom code and image.]]></comment>
+        <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Enabled]]></label>
+            <config_path>payment/multisafepay_genericgateway/active</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Title]]></label>
+            <config_path>payment/multisafepay_genericgateway/title</config_path>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="gateway_code" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Gateway Code]]></label>
+            <config_path>payment/multisafepay_genericgateway/gateway_code</config_path>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="gateway_image" translate="label" type="image" sortOrder="27" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Gateway Image</label>
+            <!-- Backend model which saves uploaded files on a defined directory path -->
+            <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\Logo</backend_model>
+            <base_url type="media" scope_info="1">multisafepay/genericgateway</base_url>
+            <upload_dir config="system" scope_info="1">multisafepay/genericgateway</upload_dir>
+            <!-- Comment about allowed extensions of uploaded files which are defined in the backend model -->
+            <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="require_shopping_cart" translate="label" type="select" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Require shopping cart]]></label>
+            <config_path>payment/multisafepay_genericgateway/require_shopping_cart</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Countries]]></label>
+            <config_path>payment/multisafepay_genericgateway/allowspecific</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="specificcountry" translate="label" type="multiselect" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Countries]]></label>
+            <config_path>payment/multisafepay_genericgateway/specificcountry</config_path>
+            <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="allowspecific">1</field>
+            </depends>
+        </field>
+        <field id="allow_specific_currency" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Currencies]]></label>
+            <config_path>payment/multisafepay_genericgateway/allow_specific_currency</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowed_currency" translate="label" type="multiselect" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Currencies]]></label>
+            <config_path>payment/multisafepay_genericgateway/allowed_currency</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="allow_specific_currency">1</field>
+            </depends>
+        </field>
+        <field id="allow_specific_shipping_method" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Shipping Methods]]></label>
+            <config_path>payment/multisafepay_genericgateway/allow_specific_shipping_method</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowed_shipping_method" translate="label" type="multiselect" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Shipping Methods]]></label>
+            <config_path>payment/multisafepay_genericgateway/allowed_shipping_method</config_path>
+            <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="allow_specific_shipping_method">1</field>
+            </depends>
+        </field>
+        <field id="allow_specific_customer_group" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Customer Groups]]></label>
+            <config_path>payment/multisafepay_genericgateway/allow_specific_customer_group</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowed_customer_group" translate="label" type="multiselect" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Customer Groups]]></label>
+            <config_path>payment/multisafepay_genericgateway/allowed_customer_group</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CustomerGroups</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="allow_specific_customer_group">1</field>
+            </depends>
+        </field>
+        <field id="allow_amount" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Order Total Amount]]></label>
+            <config_path>payment/multisafepay_genericgateway/allow_amount</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="min_amount" translate="label" type="text" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Minimum Order Total]]></label>
+            <config_path>payment/multisafepay_genericgateway/min_amount</config_path>
+            <depends>
+                <field id="allow_amount">1</field>
+            </depends>
+        </field>
+        <field id="max_amount" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Maximum Order Total]]></label>
+            <config_path>payment/multisafepay_genericgateway/max_amount</config_path>
+            <depends>
+                <field id="allow_amount">1</field>
+            </depends>
+        </field>
+        <field id="custom_payment_link_lifetime" translate="label" type="select" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Custom Payment Link Lifetime]]></label>
+            <config_path>payment/multisafepay_genericgateway/custom_payment_link_lifetime</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="custom_payment_link_lifetime_unit" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Payment Link Lifetime Unit]]></label>
+            <config_path>payment/multisafepay_genericgateway/custom_payment_link_lifetime_unit</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TimeUnits</source_model>
+            <depends>
+                <field id="custom_payment_link_lifetime">1</field>
+            </depends>
+        </field>
+        <field id="custom_payment_link_lifetime_value" translate="label" type="text" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Payment Link Lifetime Value]]></label>
+            <config_path>payment/multisafepay_genericgateway/custom_payment_link_lifetime_value</config_path>
+            <depends>
+                <field id="custom_payment_link_lifetime">1</field>
+            </depends>
+        </field>
+        <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+            showInStore="1">
+            <label><![CDATA[Sort Order]]></label>
+            <config_path>payment/multisafepay_genericgateway/sort_order</config_path>
+            <frontend_class>validate-number</frontend_class>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+</include>

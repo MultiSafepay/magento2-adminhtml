@@ -1,0 +1,14 @@
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="multisafepay_genericgateway_4" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Generic Giftcard 1</label>
+        <include path="MultiSafepay_ConnectAdminhtml::system/generic/genericbase.xml"/>
+    </group>
+    <group id="multisafepay_genericgateway_5" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Generic Giftcard 2</label>
+        <include path="MultiSafepay_ConnectAdminhtml::system/generic/genericbase.xml"/>
+    </group>
+    <group id="multisafepay_genericgateway_6" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Generic Giftcard 3</label>
+        <include path="MultiSafepay_ConnectAdminhtml::system/generic/genericbase.xml"/>
+    </group>
+</include>
