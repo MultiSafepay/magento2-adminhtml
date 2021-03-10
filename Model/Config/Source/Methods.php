@@ -69,15 +69,11 @@ class Methods implements OptionSourceInterface
         $methods = [];
 
         foreach ($methodList as $code => $method) {
-            if (isset($method['is_multisafepay'])
-                || $this->genericGatewayConfigProvider->isMultisafepayGenericMethod($code)
-            ) {
-                if (isset($method['title'])) {
-                    $methods[] = [
-                        'value' => $code,
-                        'label' => $method['title'],
-                    ];
-                }
+            if ($this->isMethodPreselectAllowed($method, $code)) {
+                $methods[] = [
+                    'value' => $code,
+                    'label' => $method['title'],
+                ];
             }
         }
 
@@ -86,5 +82,27 @@ class Methods implements OptionSourceInterface
         });
 
         return $methods;
+    }
+                
+    /**
+     * @param array $methodData
+     * @param string $methodCode
+     * @return bool
+     */
+    private function isMethodPreselectAllowed(array $methodData, string $methodCode): bool
+    {
+        if (!isset($methodData['title'])) {
+            return false;
+        }
+
+        if ($this->genericGatewayConfigProvider->isMultisafepayGenericMethod($methodCode)) {
+            return true;
+        }
+
+        if (isset($methodData['is_multisafepay']) && (strpos($methodCode, '_recurring') === false)) {
+            return true;
+        }
+
+        return false;
     }
 }
