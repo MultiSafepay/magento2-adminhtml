@@ -65,11 +65,13 @@ class Vault extends Value
      */
     public function afterSave(): Vault
     {
-        foreach (array_keys(VaultModel::VAULT_GATEWAYS) as $method) {
-            $path = 'payment/' . $method . '_vault/active';
+        foreach (VaultModel::VAULT_GATEWAYS as $method => $recurringMethod) {
+            $vaultPath = 'payment/' . $method . '_vault/active';
+            $recurringPath = 'payment/' . $recurringMethod . '/active';
 
-            if ($this->_config->getValue($path) !== $this->getValue()) {
-                $this->writer->save($path, $this->getValue(), $this->getScope(), $this->getScopeId());
+            if ($this->_config->getValue($vaultPath) !== $this->getValue()) {
+                $this->writer->save($vaultPath, $this->getValue(), $this->getScope(), $this->getScopeId());
+                $this->writer->save($recurringPath, $this->getValue(), $this->getScope(), $this->getScopeId());
             }
         }
 
