@@ -2,23 +2,11 @@
 
 namespace MultiSafepay\ConnectAdminhtml\Plugin\Model\Config\Element;
 
-use Magento\Config\Model\Config\ScopeDefiner;
 use Magento\Config\Model\Config\Structure\Element\Field;
 use MultiSafepay\ConnectCore\Model\Ui\Gateway\GenericGatewayConfigProvider;
 
 class FieldPlugin
 {
-    /**
-     * @var ScopeDefiner
-     */
-    private $scopeDefiner;
-
-    public function __construct(
-        ScopeDefiner $scopeDefiner
-    ) {
-        $this->scopeDefiner = $scopeDefiner;
-    }
-
     /**
      * @param Field $subject
      * @param string|null $result

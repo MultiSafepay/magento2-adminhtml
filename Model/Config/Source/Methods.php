@@ -72,10 +72,12 @@ class Methods implements OptionSourceInterface
             if (isset($method['is_multisafepay'])
                 || $this->genericGatewayConfigProvider->isMultisafepayGenericMethod($code)
             ) {
-                $methods[] = [
-                    'value' => $code,
-                    'label' => $method['title'],
-                ];
+                if (isset($method['title'])) {
+                    $methods[] = [
+                        'value' => $code,
+                        'label' => $method['title'],
+                    ];
+                }
             }
         }
 
