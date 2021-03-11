@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the recurring methods from the default preselected payment method list.
 
 ### Fixed
+- Fixed a bug where recurring methods that are used for Magento Vault were always active
 
 ## [1.4.0] - 2021-02-22
 ### Added
