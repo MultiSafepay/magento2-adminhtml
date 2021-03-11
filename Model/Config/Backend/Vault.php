@@ -26,9 +26,15 @@ use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
 use MultiSafepay\ConnectCore\Model\Vault as VaultModel;
+use MultiSafepay\ConnectCore\Util\VaultUtil;
 
 class Vault extends Value
 {
+    /**
+     * @var VaultUtil
+     */
+    protected $vaultUtil;
+
     /**
      * @var WriterInterface
      */
@@ -41,6 +47,7 @@ class Vault extends Value
      * @param Registry $registry
      * @param ScopeConfigInterface $config
      * @param TypeListInterface $cacheTypeList
+     * @param VaultUtil $vaultUtil
      * @param WriterInterface $writer
      * @param AbstractResource|null $resource
      * @param AbstractDb|null $resourceCollection
@@ -51,6 +58,7 @@ class Vault extends Value
         Registry $registry,
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
+        VaultUtil $vaultUtil,
         WriterInterface $writer,
         AbstractResource $resource = null,
         AbstractDb $resourceCollection = null,
@@ -58,6 +66,7 @@ class Vault extends Value
     ) {
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
         $this->writer = $writer;
+        $this->vaultUtil = $vaultUtil;
     }
 
     /**
@@ -66,13 +75,10 @@ class Vault extends Value
     public function afterSave(): Vault
     {
         foreach (VaultModel::VAULT_GATEWAYS as $method => $recurringMethod) {
-            $vaultPath = 'payment/' . $method . '_vault/active';
+            $vaultPath = $this->vaultUtil->getActiveConfigPath($method);
             $recurringPath = 'payment/' . $recurringMethod . '/active';
-
-            if ($this->_config->getValue($vaultPath) !== $this->getValue()) {
-                $this->writer->save($vaultPath, $this->getValue(), $this->getScope(), $this->getScopeId());
-                $this->writer->save($recurringPath, $this->getValue(), $this->getScope(), $this->getScopeId());
-            }
+            $this->writer->save($vaultPath, $this->getValue(), $this->getScope(), $this->getScopeId());
+            $this->writer->save($recurringPath, $this->getValue(), $this->getScope(), $this->getScopeId());
         }
 
         return parent::afterSave();
