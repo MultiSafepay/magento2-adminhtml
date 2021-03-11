@@ -63,7 +63,7 @@ class Logo extends File
      * @throws FileSystemException
      * @throws LocalizedException
      */
-    public function beforeSave(): self
+    public function beforeSave(): Logo
     {
         $value = $this->getValue();
         $deleteFlag = is_array($value) && isset($value['delete']);
@@ -116,6 +116,6 @@ class Logo extends File
      */
     private function deleteImageByFilename(string $filename): void
     {
-        $this->_mediaDirectory->delete(GenericGatewayConfigProvider::UPLOAD_DIR . DS . $filename);
+        $this->_mediaDirectory->delete(GenericGatewayConfigProvider::UPLOAD_DIR . DIRECTORY_SEPARATOR . $filename);
     }
 }
