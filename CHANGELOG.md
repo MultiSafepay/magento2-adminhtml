@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.5.0] - 2021-03-11
+### Added
+- Added configuration for 3 generic gateways and 3 generic giftcards.
+- Added setup_version to the module.xml to prevent errors on Magento 2.2.
+- Added configuration for a custom pending_payment status.
+- Added configuration for custom return and cancel urls for PWA users.
+
+### Changed
+- Changed composer dependencies to support Magento 2.2.
+- Removed the recurring methods from the default preselected payment method list.
+
+### Fixed
+- Fixed a bug where recurring methods that are used for Magento Vault were always active
 
 ## [1.4.0] - 2021-02-22
 ### Added
