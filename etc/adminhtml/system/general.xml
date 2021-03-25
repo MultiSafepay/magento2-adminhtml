@@ -93,7 +93,14 @@
                     Fill in the custom total code(s) that shouldn't be visible on the MultiSafepay payment page. Semicolon (;) separated values.
                 </comment>
             </field>
-            <field id="use_custom_return_url" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+            <field id="disable_shopping_cart" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Disable Shopping Cart]]></label>
+                <config_path>multisafepay/advanced/disable_shopping_cart</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Select "Yes" to hide all totals on the MultiSafepay payment page, except "Grand total".
+                 <br><br><strong>Note:</strong> won't work for payment methods which require shopping cart data: Afterpay, E-invoicing, in3, Klarna, Pay After Delivery.]]></comment>
+            </field>
+            <field id="use_custom_return_url" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1"
                 showInStore="1">
                 <label>Use custom return urls for PWA storefront integration</label>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -111,7 +118,7 @@
                 </comment>
                 <tooltip><![CDATA[Use this setting for a PWA storefront or third-party storefront integration.]]></tooltip>
             </field>
-            <field id="custom_cancel_return_url" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+            <field id="custom_cancel_return_url" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
                 showInStore="1">
                 <label>Custom redirect url after cancelling the payment</label>
                 <config_path>multisafepay/advanced/custom_cancel_return_url</config_path>
@@ -122,7 +129,7 @@
                     <field id="use_custom_return_url">1</field>
                 </depends>
             </field>
-            <field id="custom_success_return_url" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+            <field id="custom_success_return_url" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
                 showInStore="1">
                 <label>Custom "Success page" url</label>
                 <config_path>multisafepay/advanced/custom_success_return_url</config_path>
