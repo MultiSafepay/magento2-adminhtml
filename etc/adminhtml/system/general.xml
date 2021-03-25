@@ -109,6 +109,7 @@
                  <br>
                  <br>Available url variables:<br>
                          {{order.increment_id}}, {{order.order_id}} - the entity or increment order id;<br>
+                         {{quote.masked_id}}, {{quote.quote_id}} - the entity or masked quote id;<br>
                          {{payment.code}}, {{payment.transaction_id}}  - the payment method code and actual transaction id;<br>
                          {{store.unsecure_base_url}}, {{store.secure_base_url}} - the store unsecure or secure base url;<br>
                          {{store.code}}, {{store.store_id}} - the payment store code or entity store id;<br>
@@ -124,7 +125,6 @@
                 <config_path>multisafepay/advanced/custom_cancel_return_url</config_path>
                 <comment><![CDATA[
                         <strong>Example:</strong> https://customdomain.com/checkout/cancel?orderId={{order.order_id}} ]]></comment>
-                <validate>validate-url</validate>
                 <depends>
                     <field id="use_custom_return_url">1</field>
                 </depends>
@@ -135,7 +135,6 @@
                 <config_path>multisafepay/advanced/custom_success_return_url</config_path>
                 <comment><![CDATA[
                         <strong>Example:</strong> https://customdomain.com/checkout/success?secureToken={{secure_token}}&incrementId={{order.increment_id}}]]></comment>
-                <validate>validate-url</validate>
                 <depends>
                     <field id="use_custom_return_url">1</field>
                 </depends>
