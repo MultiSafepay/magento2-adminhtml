@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.6.0] - 2021-03-26
+### Added
+- Added configuration field for disabling the shopping cart on the MultiSafepay payment page
+- Added additional quote masked_id and entity_id parameters to the cancel and success payment urls
+
 ## [1.5.0] - 2021-03-11
 ### Added
 - Added configuration for 3 generic gateways and 3 generic giftcards.
