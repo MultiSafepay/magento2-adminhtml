@@ -109,7 +109,7 @@
                  <br>
                  <br>Available url variables:<br>
                          {{order.increment_id}}, {{order.order_id}} - the entity or increment order id;<br>
-                         {{quote.masked_id}}, {{quote.quote_id}} - the entity or masked quote id;<br>
+                         {{quote.masked_id}}, {{quote.quote_id}} - the entity or masked quote id; {{quote.masked_id}} param is only available for Magento 2.3 and higher.<br>
                          {{payment.code}}, {{payment.transaction_id}}  - the payment method code and actual transaction id;<br>
                          {{store.unsecure_base_url}}, {{store.secure_base_url}} - the store unsecure or secure base url;<br>
                          {{store.code}}, {{store.store_id}} - the payment store code or entity store id;<br>
