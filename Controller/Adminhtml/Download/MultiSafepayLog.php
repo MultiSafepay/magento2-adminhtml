@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MultiSafepay\ConnectAdminhtml\Controller\Download;
+namespace MultiSafepay\ConnectAdminhtml\Controller\Adminhtml\Download;
 
 use Exception;
 use Magento\Backend\App\Action;
@@ -11,12 +11,8 @@ use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\App\Response\Http\FileFactory;
 use Magento\Framework\App\ResponseInterface;
 
-class MultiSafepayLogs extends Action
+class MultiSafepayLog extends Action
 {
-    /**
-     * @var DirectoryList
-     */
-    protected $directoryList;
 
     /**
      * @var FileFactory
@@ -26,17 +22,14 @@ class MultiSafepayLogs extends Action
     /**
      * MultiSafepayLogs constructor.
      *
-     * @param DirectoryList $directoryList
      * @param FileFactory $fileFactory
      * @param Context $context
      */
     public function __construct(
-        DirectoryList $directoryList,
         FileFactory $fileFactory,
         Context $context
     ) {
         $this->fileFactory = $fileFactory;
-        $this->directoryList = $directoryList;
         parent::__construct($context);
     }
 

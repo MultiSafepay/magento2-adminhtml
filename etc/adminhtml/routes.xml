@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="standard">
-        <route frontName="multisafepay_logs" id="multisafepay_logs">
-            <module name="MultiSafepay_ConnectAdminhtml"/>
+    <router id="admin">
+        <route frontName="multisafepay" id="multisafepay">
+            <module name="MultiSafepay_ConnectAdminhtml" before="Magento_Backend"/>
         </route>
     </router>
 </config>
