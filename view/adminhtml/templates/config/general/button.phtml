@@ -1,0 +1,28 @@
+<?= $block->getButtonHtml()?>
+<script>
+    require([
+        'jquery',
+        'prototype'
+    ], function(jQuery){
+        jQuery('#download_multisafepay_logs').click(function () {
+            new Ajax.Request('<?= $block->getLogsUrl() ?>', {
+                loaderArea: false,
+                asynchronous: true,
+                onCreate: function() {
+                    jQuery('#collect_message_span').text('');
+                },
+                onSuccess: function(response) {
+                    let resultText = '';
+                    if (response.status > 200) {
+                        resultText = response.statusText;
+                    } else {
+                        resultText = 'Success';
+                    }
+                    jQuery('#collect_message_span').text(resultText);
+                }
+            });
+        });
+
+    });
+</script>
+<span id="collect_message_span"></span>
