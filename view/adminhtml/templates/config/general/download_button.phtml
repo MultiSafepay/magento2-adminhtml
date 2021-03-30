@@ -1,0 +1,11 @@
+<script>
+    require([
+        'jquery',
+        'prototype'
+    ], function(jQuery){
+        jQuery('#download_multisafepay_log').click(function () {
+            window.open('<?= $block->getLogUrl()?>');
+        });
+    });
+</script>
+<?= $block->getLogButtonHtml()?>

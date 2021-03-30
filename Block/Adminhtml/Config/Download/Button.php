@@ -25,7 +25,7 @@ use Magento\Framework\Exception\LocalizedException;
 
 class Button extends Field
 {
-    protected $_template = 'MultiSafepay_ConnectAdminhtml::config/general/download_buttons.phtml';
+    protected $_template = 'MultiSafepay_ConnectAdminhtml::config/general/download_button.phtml';
 
     /**
      * Button constructor.
@@ -75,18 +75,6 @@ class Button extends Field
     {
         $button = $this->getLayout()->createBlock(ButtonTemplate::class)->setData(
             ['id' => 'download_multisafepay_log', 'label' => __('multisafepay.log')]
-        );
-        return $button->toHtml();
-    }
-
-    /**
-     * @return mixed
-     * @throws LocalizedException
-     */
-    public function getDebugLogButtonHtml()
-    {
-        $button = $this->getLayout()->createBlock(ButtonTemplate::class)->setData(
-            ['id' => 'download_multisafepay_debug_log', 'label' => __('multisafepay-debug.log')]
         );
         return $button->toHtml();
     }
