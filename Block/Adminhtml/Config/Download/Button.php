@@ -17,7 +17,6 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Download;
 
-use Magento\Backend\Block\Template\Context;
 use Magento\Backend\Block\Widget\Button as ButtonTemplate;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
@@ -26,19 +25,6 @@ use Magento\Framework\Exception\LocalizedException;
 class Button extends Field
 {
     protected $_template = 'MultiSafepay_ConnectAdminhtml::config/general/download_button.phtml';
-
-    /**
-     * Button constructor.
-     *
-     * @param Context $context
-     * @param array $data
-     */
-    public function __construct(
-        Context $context,
-        array $data = []
-    ) {
-        parent::__construct($context, $data);
-    }
 
     /**
      * @param AbstractElement $element
@@ -74,7 +60,7 @@ class Button extends Field
     public function getLogButtonHtml()
     {
         $button = $this->getLayout()->createBlock(ButtonTemplate::class)->setData(
-            ['id' => 'download_multisafepay_log', 'label' => __('multisafepay.log')]
+            ['id' => 'download_multisafepay_log', 'label' => __('Download')]
         );
         return $button->toHtml();
     }

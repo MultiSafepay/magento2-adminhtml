@@ -18,6 +18,8 @@ use ZipArchive;
 
 class MultiSafepayLog extends Action
 {
+    public const ZIP_ARCHIVE_NAME = 'MultiSafepayLogs.zip';
+
     /**
      * @var Logger
      */
@@ -35,6 +37,10 @@ class MultiSafepayLog extends Action
      * @var Zip
      */
     protected $zip;
+    /**
+     * @var \Magento\Framework\Filesystem\Io\File
+     */
+    protected $file;
 
     /**
      * @var FileFactory
@@ -46,6 +52,7 @@ class MultiSafepayLog extends Action
      *
      * @param DirectoryList $directoryList
      * @param FileFactory $fileFactory
+     * @param \Magento\Framework\Filesystem\Io\File $file
      * @param File $driverFile
      * @param Logger $logger
      * @param Zip $zip
@@ -54,6 +61,7 @@ class MultiSafepayLog extends Action
     public function __construct(
         DirectoryList $directoryList,
         FileFactory $fileFactory,
+        \Magento\Framework\Filesystem\Io\File $file,
         File $driverFile,
         Logger $logger,
         Zip $zip,
@@ -65,6 +73,7 @@ class MultiSafepayLog extends Action
         $this->directoryList = $directoryList;
         $this->driverFile = $driverFile;
         $this->zip = $zip;
+        $this->file = $file;
     }
 
     /**
@@ -107,7 +116,7 @@ class MultiSafepayLog extends Action
 
         $zipFile = new ZipArchive();
         $zipFile->open(
-            'MultiSafepayLogs.zip',
+            self::ZIP_ARCHIVE_NAME,
             ZipArchive::CREATE | ZipArchive::OVERWRITE
         );
 
@@ -115,16 +124,16 @@ class MultiSafepayLog extends Action
 
         foreach ($files as $filePath) {
             if (strpos($filePath, 'multisafepay') !== false) {
-                $zipFile->addFile($filePath, basename($filePath));
+                $zipFile->addFile($filePath, $this->file->getPathInfo($filePath)['basename']);
             }
         }
         $zipFile->close();
 
         return $this->fileFactory->create(
-            'MultiSafepayLogs.zip',
+            self::ZIP_ARCHIVE_NAME,
             [
                 'type' => 'filename',
-                'value' => 'MultiSafepayLogs.zip',
+                'value' => self::ZIP_ARCHIVE_NAME,
                 'rm' => true
             ],
             DirectoryList::ROOT,

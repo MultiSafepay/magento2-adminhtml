@@ -1,10 +1,16 @@
+<?php
+use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Download\Button;
+
+/** @var Magento\Framework\View\TemplateEngine\Php $this */
+/** @var Button $block */
+?>
 <script>
     require([
         'jquery',
         'prototype'
     ], function(jQuery){
         jQuery('#download_multisafepay_log').click(function () {
-            window.open('<?= $block->getLogUrl()?>');
+            window.open('<?= $block->escapeUrl($block->getLogUrl())?>');
         });
     });
 </script>
