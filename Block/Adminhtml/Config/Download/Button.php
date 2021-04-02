@@ -33,6 +33,7 @@ class Button extends Field
     public function render(AbstractElement $element): string
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
+
         return parent::render($element);
     }
 
@@ -54,14 +55,18 @@ class Button extends Field
     }
 
     /**
-     * @return mixed
+     * @return string
      * @throws LocalizedException
      */
-    public function getLogButtonHtml()
+    public function getLogButtonHtml(): string
     {
         $button = $this->getLayout()->createBlock(ButtonTemplate::class)->setData(
-            ['id' => 'download_multisafepay_log', 'label' => __('Download')]
+            [
+                'id' => 'download_multisafepay_log',
+                'label' => __('Download'),
+            ]
         );
+
         return $button->toHtml();
     }
 }

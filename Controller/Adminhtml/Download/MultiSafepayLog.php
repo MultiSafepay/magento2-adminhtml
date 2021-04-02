@@ -1,4 +1,17 @@
 <?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is provided with Magento in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * Copyright © 2021 MultiSafepay, Inc. All rights reserved.
+ * See DISCLAIMER.md for disclaimer details.
+ *
+ */
 
 declare(strict_types=1);
 
@@ -7,73 +20,28 @@ namespace MultiSafepay\ConnectAdminhtml\Controller\Adminhtml\Download;
 use Exception;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\App\Filesystem\DirectoryList;
-use Magento\Framework\App\Response\Http\FileFactory;
 use Magento\Framework\App\ResponseInterface;
-use Magento\Framework\Archive\Zip;
-use Magento\Framework\Exception\FileSystemException;
-use Magento\Framework\Filesystem\Driver\File;
-use MultiSafepay\ConnectCore\Logger\Logger;
-use ZipArchive;
+use MultiSafepay\ConnectCore\Util\ZipUtil;
 
 class MultiSafepayLog extends Action
 {
-    public const ZIP_ARCHIVE_NAME = 'MultiSafepayLogs.zip';
-
     /**
-     * @var Logger
+     * @var ZipUtil
      */
-    protected $logger;
-
-    /**
-     * @var DirectoryList
-     */
-    protected $directoryList;
-    /**
-     * @var File
-     */
-    protected $driverFile;
-    /**
-     * @var Zip
-     */
-    protected $zip;
-    /**
-     * @var \Magento\Framework\Filesystem\Io\File
-     */
-    protected $file;
-
-    /**
-     * @var FileFactory
-     */
-    private $fileFactory;
+    private $zipUtil;
 
     /**
      * MultiSafepayLog constructor.
      *
-     * @param DirectoryList $directoryList
-     * @param FileFactory $fileFactory
-     * @param \Magento\Framework\Filesystem\Io\File $file
-     * @param File $driverFile
-     * @param Logger $logger
-     * @param Zip $zip
      * @param Context $context
+     * @param ZipUtil $zipUtil
      */
     public function __construct(
-        DirectoryList $directoryList,
-        FileFactory $fileFactory,
-        \Magento\Framework\Filesystem\Io\File $file,
-        File $driverFile,
-        Logger $logger,
-        Zip $zip,
-        Context $context
+        Context $context,
+        ZipUtil $zipUtil
     ) {
         parent::__construct($context);
-        $this->fileFactory = $fileFactory;
-        $this->logger = $logger;
-        $this->directoryList = $directoryList;
-        $this->driverFile = $driverFile;
-        $this->zip = $zip;
-        $this->file = $file;
+        $this->zipUtil = $zipUtil;
     }
 
     /**
@@ -82,62 +50,6 @@ class MultiSafepayLog extends Action
      */
     public function execute(): ResponseInterface
     {
-        /*
-        $fileName = 'multisafepay.log';
-        return $this->fileFactory->create(
-            $fileName,
-            [
-                'type'  => "filename", //type has to be "filename"
-                'value' =>  $fileName,
-            ],
-            DirectoryList::LOG
-        );
-        */
-
-        /*
-        $directory = $this->directoryList->getPath(DirectoryList::LOG) . '/multisafepay.log';
-        $this->zip->pack($directory, 'test.zip');
-        */
-
-        return $this->zipLogFiles();
-    }
-
-    /**
-     * @throws FileSystemException
-     * @throws Exception
-     */
-    public function zipLogFiles(): ResponseInterface
-    {
-        if (!class_exists(ZipArchive::class)) {
-            $this->logger->error('\ZipArchive class not found, zip file could not be created.');
-        }
-
-        $directory = $this->directoryList->getPath(DirectoryList::LOG);
-
-        $zipFile = new ZipArchive();
-        $zipFile->open(
-            self::ZIP_ARCHIVE_NAME,
-            ZipArchive::CREATE | ZipArchive::OVERWRITE
-        );
-
-        $files = $this->driverFile->readDirectory($directory);
-
-        foreach ($files as $filePath) {
-            if (strpos($filePath, 'multisafepay') !== false) {
-                $zipFile->addFile($filePath, $this->file->getPathInfo($filePath)['basename']);
-            }
-        }
-        $zipFile->close();
-
-        return $this->fileFactory->create(
-            self::ZIP_ARCHIVE_NAME,
-            [
-                'type' => 'filename',
-                'value' => self::ZIP_ARCHIVE_NAME,
-                'rm' => true
-            ],
-            DirectoryList::ROOT,
-            'application/zip'
-        );
+        return $this->zipUtil->zipLogFiles();
     }
 }

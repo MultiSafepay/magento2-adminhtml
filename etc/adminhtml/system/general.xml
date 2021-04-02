@@ -83,8 +83,8 @@
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <comment><![CDATA[Write detailed information to]]> var/log/multisafepay-debug.log</comment>
             </field>
-            <field id="multisafepay_logs" translate="label" type="button" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>MultiSafepay logs</label>
+            <field id="multisafepay_payment_logs" translate="label" type="button" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>MultiSafepay payment logs</label>
                 <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Download\Button</frontend_model>
             </field>
         </group>
