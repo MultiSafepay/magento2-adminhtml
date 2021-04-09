@@ -67,6 +67,10 @@ class Methods implements OptionSourceInterface
         }
 
         $methods = [];
+        $methods[] = [
+            'value' => '',
+            'label' => '-- No Default --',
+        ];
 
         foreach ($methodList as $code => $method) {
             if ($this->isMethodPreselectAllowed($method, $code)) {
@@ -83,7 +87,7 @@ class Methods implements OptionSourceInterface
 
         return $methods;
     }
-                
+
     /**
      * @param array $methodData
      * @param string $methodCode
