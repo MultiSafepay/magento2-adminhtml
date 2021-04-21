@@ -30,7 +30,7 @@ $newVersionData = $block->isNewVersionAvailable()
                 <?= $block->getEscaper()->escapeHtml('Current MultiSafepay version:')?>
             </td>
             <td class="version-table-row">
-                    <span class="<?php if($newVersionData):?> multisafepay-version-update <?php endif;?>
+                    <span class="<?php if ($newVersionData):?> multisafepay-version-update <?php endif;?>
                 multisafepay-version-last-version multisafepay-bold version-value">
                         <?= $block->getEscaper()->escapeHtml($block->getModuleVersion()) ?>
                     </span>
@@ -45,13 +45,8 @@ $newVersionData = $block->isNewVersionAvailable()
                 <td class="version-table-row">
                     <div class="new-version">
                         <span class="multisafepay-bold download version-value">
-                            <?=
-                            __(
-                                '<a href="%1" target="_blank">%2</a>',
-                                $block->getEscaper()->escapeUrl($newVersionData['url']),
-                                $block->getEscaper()->escapeHtml($newVersionData['version'])
-                            );
-                            ?>
+                            <a href="<?= $block->getEscaper()->escapeUrl($newVersionData['url']); ?>"
+                               target="_blank"><?= $block->getEscaper()->escapeHtml($newVersionData['version']); ?></a>
                         </span>
                         <p>
                             <a href="<?= $block->getEscaper()->escapeUrl($block->getUpdateDocsLink()); ?>"
