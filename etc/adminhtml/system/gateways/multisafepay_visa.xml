@@ -16,6 +16,14 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="payment_action" translate="label" type="select" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Payment Action</label>
+            <config_path>payment/multisafepay_visa/payment_action</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\PaymentAction</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="vault_enabled" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enable Vault]]></label>
             <config_path>payment/multisafepay_visa_vault/active</config_path>
