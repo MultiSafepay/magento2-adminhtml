@@ -13,7 +13,6 @@
  *
  */
 
-
 namespace MultiSafepay\ConnectAdminhtml\Observer;
 
 use Exception;

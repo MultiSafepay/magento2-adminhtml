@@ -47,9 +47,7 @@ class NoticePlugin
      */
     public function aroundRender(Notice $subject, Closure $proceed, DataObject $row): string
     {
-        $notificationTitle = $row->getData("title");
-
-        if (strpos($notificationTitle, 'MultiSafepay') !== false) {
+        if (strpos($row->getData("title"), 'MultiSafepay') !== false) {
             return '<div class="' . self::MULTISAFEPAY_NOTIFICATION_GRID_ITEM_CLASS . '">' . $this->parentRender($row)
                    . '</div>';
         }
