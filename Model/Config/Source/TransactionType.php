@@ -29,7 +29,7 @@ class TransactionType implements OptionSourceInterface
     {
         return [
             ['value' => 'direct', 'label' => __('Yes')],
-            ['value' => 'redirect', 'label' => __('No, redirect to the payment page')],
+            ['value' => 'redirect', 'label' => __('No, redirect to the MultiSafepay payment page')],
         ];
     }
 }

@@ -16,6 +16,15 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="transaction_type" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Additional checkout fields]]></label>
+            <config_path>payment/multisafepay_in3/transaction_type</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TransactionType</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+            <comment><![CDATA[If this is turned on, the customer fills in additional information needed for the payment method directly in the checkout, instead of on the MultiSafepay payment page.]]></comment>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_in3/allowspecific</config_path>
