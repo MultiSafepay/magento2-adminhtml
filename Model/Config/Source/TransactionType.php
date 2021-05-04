@@ -21,6 +21,8 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class TransactionType implements OptionSourceInterface
 {
+    public const DIRECT_VALUE = 'direct';
+    public const REDIRECT_VALUE = 'redirect';
 
     /**
      * @inheritdoc
@@ -28,8 +30,8 @@ class TransactionType implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => 'direct', 'label' => __('Yes')],
-            ['value' => 'redirect', 'label' => __('No, redirect to the MultiSafepay payment page')],
+            ['value' => self::DIRECT_VALUE, 'label' => __('Yes')],
+            ['value' => self::REDIRECT_VALUE, 'label' => __('No, redirect to the MultiSafepay payment page')],
         ];
     }
 }
