@@ -4,4 +4,8 @@
         <plugin name="multisafepay_add_new_class"
             type="MultiSafepay\ConnectAdminhtml\Plugin\AdminNotification\Block\Grid\Renderer\NoticePlugin" sortOrder="-10"/>
     </type>
+
+    <type name="Magento\Payment\Block\Info">
+        <plugin name="add_multisafepay_giftcard_payment_info" type="MultiSafepay\ConnectAdminhtml\Plugin\Payment\Block\InfoPlugin"/>
+    </type>
 </config>
