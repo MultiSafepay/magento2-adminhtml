@@ -39,11 +39,9 @@ $escaper = $block->getEscaper();
             <?php foreach ($giftcardData as $giftcard): ?>
                 <p>
                     <strong>
-                        <?= $escaper->escapeHtml(__('%1 (%2):', $giftcard['description'],
-                            $giftcard['coupon_brand'])); ?>
+                        <?= $escaper->escapeHtml(__('%1 (%2):', $giftcard['description'], $giftcard['coupon_brand'])); ?>
                     </strong>
-                    <?= $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null,
-                        $giftcard['currency']); ?>
+                    <?= $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null, $giftcard['currency']); ?>
                 </p>
             <?php endforeach; ?>
         </div>
