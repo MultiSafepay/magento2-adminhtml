@@ -12,6 +12,9 @@
  * See DISCLAIMER.md for disclaimer details.
  *
  */
+
+// phpcs:ignore Generic.Files.LineLength.TooLong
+
 declare(strict_types=1);
 
 use Magento\Framework\Escaper;
@@ -41,7 +44,7 @@ $escaper = $block->getEscaper();
                     <strong>
                         <?= $escaper->escapeHtml(__('%1 (%2):', $giftcard['description'], $giftcard['coupon_brand'])); ?>
                     </strong>
-                    <?= $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null, $giftcard['currency']); ?>
+                    <?= /* @noEscape */ $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null, $giftcard['currency']); ?>
                 </p>
             <?php endforeach; ?>
         </div>
