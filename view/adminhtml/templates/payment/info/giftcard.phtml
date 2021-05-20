@@ -36,15 +36,15 @@ $escaper = $block->getEscaper();
 <?php if ($giftcardData): ?>
     <div class="multisafepay-giftcard-payment-additional-info">
         <div class="admin__page-section-item-title">
-            <span class="title"><?= $escaper->escapeHtml(__('Used Giftcards:')); ?></span>
+            <span class="title"><?= $escaper->escapeHtml(__('Used Giftcards:')) ?></span>
         </div>
         <div class="admin__page-section-item-content">
             <?php foreach ($giftcardData as $giftcard): ?>
                 <p>
                     <strong>
-                        <?= $escaper->escapeHtml(__('%1 (%2):', $giftcard['description'], $giftcard['coupon_brand'])); ?>
+                        <?= $escaper->escapeHtml(__('%1 (%2):', $giftcard['description'], $giftcard['coupon_brand'])) ?>
                     </strong>
-                    <?= /* @noEscape */ $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null, $giftcard['currency']); ?>
+                    <?= /* @noEscape */ $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null, $giftcard['currency']) ?>
                 </p>
             <?php endforeach; ?>
         </div>

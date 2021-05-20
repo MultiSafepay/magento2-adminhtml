@@ -40,11 +40,6 @@ class InfoPlugin
     private $paymentMethodUtil;
 
     /**
-     * @var GiftcardUtil
-     */
-    private $giftcardUtil;
-
-    /**
      * @var AmountUtil
      */
     private $amountUtil;
@@ -59,20 +54,17 @@ class InfoPlugin
      *
      * @param LayoutInterface $layout
      * @param PaymentMethodUtil $paymentMethodUtil
-     * @param GiftcardUtil $giftcardUtil
      * @param AmountUtil $amountUtil
      * @param Escaper $escaper
      */
     public function __construct(
         LayoutInterface $layout,
         PaymentMethodUtil $paymentMethodUtil,
-        GiftcardUtil $giftcardUtil,
         AmountUtil $amountUtil,
         Escaper $escaper
     ) {
         $this->layout = $layout;
         $this->paymentMethodUtil = $paymentMethodUtil;
-        $this->giftcardUtil = $giftcardUtil;
         $this->amountUtil = $amountUtil;
         $this->escaper = $escaper;
     }
@@ -92,7 +84,7 @@ class InfoPlugin
                 GiftcardUtil::MULTISAFEPAY_GIFTCARD_PAYMENT_ADDITIONAL_DATA_PARAM_NAME
             );
 
-            if (($container = $parentBlock->getParentBlock()) && $giftcardData) {
+            if ($giftcardData && ($container = $parentBlock->getParentBlock())) {
                 $block = $this->layout->createBlock(
                     Template::class,
                     '',
