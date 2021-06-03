@@ -18,20 +18,24 @@ declare(strict_types=1);
 namespace MultiSafepay\ConnectAdminhtml\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
+use MultiSafepay\ConnectCore\Model\Api\Builder\OrderRequestBuilder\TransactionTypeBuilder;
 
 class TransactionType implements OptionSourceInterface
 {
-    public const DIRECT_VALUE = 'direct';
-    public const REDIRECT_VALUE = 'redirect';
-
     /**
      * @inheritdoc
      */
     public function toOptionArray(): array
     {
         return [
-            ['value' => self::DIRECT_VALUE, 'label' => __('Yes')],
-            ['value' => self::REDIRECT_VALUE, 'label' => __('No, redirect to the MultiSafepay payment page')],
+            [
+                'value' => TransactionTypeBuilder::TRANSACTION_TYPE_DIRECT_VALUE,
+                'label' => __('Yes'),
+            ],
+            [
+                'value' => TransactionTypeBuilder::TRANSACTION_TYPE_REDIRECT_VALUE,
+                'label' => __('No, redirect to the MultiSafepay payment page'),
+            ],
         ];
     }
 }
