@@ -1,0 +1,52 @@
+<?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is provided with Magento in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * Copyright © 2021 MultiSafepay, Inc. All rights reserved.
+ * See DISCLAIMER.md for disclaimer details.
+ *
+ */
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Payment\Block\Info;
+use MultiSafepay\ConnectCore\Util\AmountUtil;
+
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/**
+ * @var Magento\Framework\View\TemplateEngine\Php $this
+ * @var Info $block
+ * @var AmountUtil $amountUtil
+ * @var Escaper $escaper
+ */
+
+$giftcardData = $block->getGiftcardData();
+$amountUtil = $block->getAmountUtil();
+$escaper = $block->getEscaper();
+?>
+
+<?php if ($giftcardData): ?>
+    <div class="multisafepay-giftcard-payment-additional-info">
+        <div class="admin__page-section-item-title">
+            <span class="title"><?= $escaper->escapeHtml(__('Used Giftcards:')) ?></span>
+        </div>
+        <div class="admin__page-section-item-content">
+            <?php foreach ($giftcardData as $giftcard): ?>
+                <p>
+                    <strong>
+                        <?= $escaper->escapeHtml(__('%1 (%2):', $giftcard['description'], $giftcard['coupon_brand'])) ?>
+                    </strong>
+                    <?= /* @noEscape */ $amountUtil->getFormattedPriceFromAmount((float)$giftcard['amount'], null, $giftcard['currency']) ?>
+                </p>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>
