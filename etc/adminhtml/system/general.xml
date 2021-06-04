@@ -49,6 +49,12 @@
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
                 <comment><![CDATA[The moment the order confirmation email is sent to the customer.]]></comment>
             </field>
+            <field id="use_credit_card_component" translate="label" type="select" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Enable Credit Card Component]]></label>
+                <config_path>multisafepay/general/use_credit_card_component</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Choose whether to use MultiSafepay Credit Card component for credit card payment methods.]]></comment>
+            </field>
             <field id="transaction_custom_description" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Custom Transaction Description]]></label>
                 <config_path>multisafepay/general/transaction_custom_description</config_path>
