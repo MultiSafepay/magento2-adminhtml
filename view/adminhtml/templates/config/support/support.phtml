@@ -23,7 +23,7 @@ use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support;
 $newVersionData = $block->isNewVersionAvailable()
 ?>
 <div id="multisafepay-support" class="multisafepay-support-information">
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Installed Version')) ?></h2>
+    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Installed version')) ?></h2>
     <table id="version-table">
         <tr class="no-padding-top">
             <td class="version-table-row version-table-row-text">
@@ -45,11 +45,11 @@ $newVersionData = $block->isNewVersionAvailable()
                 <td class="version-table-row">
                     <div class="new-version">
                         <span class="multisafepay-bold download version-value">
-                            <a href="<?= $block->getEscaper()->escapeUrl($newVersionData['url']); ?>"
-                               target="_blank"><?= $block->getEscaper()->escapeHtml($newVersionData['version']); ?></a>
+                            <a href="<?= $block->getEscaper()->escapeUrl($newVersionData['url']) ?>"
+                               target="_blank"><?= $block->getEscaper()->escapeHtml($newVersionData['version']) ?></a>
                         </span>
                         <p>
-                            <a href="<?= $block->getEscaper()->escapeUrl($block->getUpdateDocsLink()); ?>"
+                            <a href="<?= $block->getEscaper()->escapeUrl($block->getUpdateDocsLink()) ?>"
                                target="_blank" class="btn multisafepay-btn-primary multisafepay-btn-primary-link">
                                 <?= $block->getEscaper()->escapeHtml(__('How to update?')) ?>
                             </a>
@@ -105,9 +105,9 @@ $newVersionData = $block->isNewVersionAvailable()
     <p class="multisafepay-lh">
         <?= $block->getEscaper()->escapeHtml(__('To use this plugin you need a MultiSafepay account.')) ?>
         <br />
-        <?php $link = $block->getEscaper()->escapeUrl('https://testmerchant.multisafepay.com/signup'); ?>
-        <?php $msg = 'If you would like to have a clear overview of what MultiSafepay has to offer, '; ?>
-        <?php $msg .= 'feel free to create a %1test account%2'; ?>
+        <?php $link = $block->getEscaper()->escapeUrl('https://testmerchant.multisafepay.com/signup');
+        $msg = 'If you would like to have a clear overview of what MultiSafepay has to offer, ';
+        $msg .= 'feel free to create a %1test account%2'; ?>
         <?= /** @escapeNotVerified */ __($msg, '<a href="' . $link . '">', '</a>') ?>
     </p>
     <p class="multisafepay-lh" style="padding-top:20px;">
