@@ -33,7 +33,7 @@ class CardPaymentTypes implements OptionSourceInterface
         return [
             ['value' => self::REDIRECT_PAYMENT_TYPE, 'label' => __('Redirect')],
             ['value' => self::CREDIT_CARD_COMPONENT_PAYMENT_TYPE, 'label' => __('Credit Card Component')],
-            ['value' => self::PAYMENT_REQUEST_PAYMENT_TYPE, 'label' => __('Payment Request API')]
+            //['value' => self::PAYMENT_REQUEST_PAYMENT_TYPE, 'label' => __('Payment Request API')]
         ];
     }
 }
