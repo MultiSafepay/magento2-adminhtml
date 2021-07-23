@@ -26,10 +26,12 @@ use Magento\Framework\View\Helper\Js;
 
 class Payment extends Fieldset
 {
+    public const ACTIVITY_CONFIG_PATH = 'payment/%s/active';
+
     /**
      * @var Config
      */
-    protected $backendConfig;
+    private $backendConfig;
 
     /**
      * @param Context $context
@@ -57,7 +59,8 @@ class Payment extends Fieldset
      */
     protected function _getFrontendClass($element): string
     {
-        $enabledString = $this->_isPaymentEnabled($element) ? ' enabled' : '';
+        $enabledString = $this->isPaymentEnabled($element) ? ' enabled' : '';
+
         return parent::_getFrontendClass($element) . ' with-button' . $enabledString;
     }
 
@@ -67,22 +70,13 @@ class Payment extends Fieldset
      * @param AbstractElement $element
      * @return bool
      */
-    protected function _isPaymentEnabled($element): bool
+    private function isPaymentEnabled($element): bool
     {
-        $groupConfig = $element->getGroup();
-        $activityPaths = $groupConfig['activity_path'] ?? [];
-
-        if (!is_array($activityPaths)) {
-            $activityPaths = [$activityPaths];
+        if (!($configId = $element->getGroup()['id'] ?? '')) {
+            return false;
         }
 
-        $isPaymentEnabled = false;
-        foreach ($activityPaths as $activityPath) {
-            $isPaymentEnabled = $isPaymentEnabled
-                || (bool)(string)$this->backendConfig->getConfigDataValue($activityPath);
-        }
-
-        return $isPaymentEnabled;
+        return (bool)$this->backendConfig->getConfigDataValue(sprintf(self::ACTIVITY_CONFIG_PATH, $configId));
     }
 
     /**
@@ -98,19 +92,19 @@ class Payment extends Fieldset
 
         $htmlId = $element->getHtmlId();
         $html .= '<div class="button-container"><button type="button"' .
-            ' class="button action-configure' .
-            '" id="' .
-            $htmlId .
-            '-head" onclick="multisafepayToggle.call(this, \'' .
-            $htmlId .
-            "', '" .
-            $this->getUrl(
-                'adminhtml/*/state'
-            ) . '\'); return false;"><span class="state-closed">' . __(
-                'Configure'
-            ) . '</span><span class="state-opened">' . __(
-                'Close'
-            ) . '</span></button>';
+                 ' class="button action-configure' .
+                 '" id="' .
+                 $htmlId .
+                 '-head" onclick="multisafepayToggle.call(this, \'' .
+                 $htmlId .
+                 "', '" .
+                 $this->getUrl(
+                     'adminhtml/*/state'
+                 ) . '\'); return false;"><span class="state-closed">' . __(
+                     'Configure'
+                 ) . '</span><span class="state-opened">' . __(
+                     'Close'
+                 ) . '</span></button>';
 
         $html .= '</div>';
         $html .= '<div class="heading multisafepay-heading"><strong>' . $element->getLegend() . '</strong>';
