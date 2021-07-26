@@ -14,6 +14,9 @@
             <field id="live_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Live Api Key</label>
                 <config_path>multisafepay/general/live_api_key</config_path>
+                <comment><![CDATA[<div class="multisafepay-note-blue">
+                    Get API key in your <a href="https://merchant.multisafepay.com/" target="_blank" title="MultiSafepay Live Account">MultiSafepay Account</a>
+                </div>]]></comment>
                 <depends>
                     <field id="mode">1</field>
                 </depends>
@@ -21,6 +24,9 @@
             <field id="test_api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Test Api Key</label>
                 <config_path>multisafepay/general/test_api_key</config_path>
+                <comment><![CDATA[<div class="multisafepay-note-blue">
+                    Get API key in your <a href="https://testmerchant.multisafepay.com/" target="_blank" title="Test Account">MultiSafepay Test Account</a>
+                </div>]]></comment>
                 <depends>
                     <field id="mode">0</field>
                 </depends>
