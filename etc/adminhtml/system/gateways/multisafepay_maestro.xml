@@ -9,9 +9,20 @@
             <config_path>payment/multisafepay_maestro/active</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
         </field>
-        <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="title" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Title]]></label>
             <config_path>payment/multisafepay_maestro/title</config_path>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="payment_action" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Payment Action</label>
+            <config_path>payment/multisafepay_maestro/payment_action</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\PaymentAction</source_model>
+            <comment><![CDATA[If selected "Authorize Only" method, then capture amount will be manually after successful shipment.
+                 <br/><a href="https://docs.multisafepay.com/tools/manual-capture/" target="blank">What is the manual capture?</a>]]>
+            </comment>
             <depends>
                 <field id="active">1</field>
             </depends>
