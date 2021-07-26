@@ -10,6 +10,7 @@
 
 .multisafepay-heading {
     width: 80%;
+    margin-left: 10px;
 }
 
 .multisafepay-heading-intro {
@@ -30,4 +31,12 @@
 
 .multisafepay-giftcard-payment-additional-info {
     margin-top: 10%;
+}
+
+.multisafepay-payment.multisafepay-section.enabled .config-heading {
+    border-left: 5px solid #9ee86491;
+}
+
+.multisafepay-payment.multisafepay-section .config-heading {
+    border-left: 5px solid #c4c4c482;
 }
