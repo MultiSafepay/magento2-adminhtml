@@ -5,8 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.10.0] - 2021-06-17
+### Added
+- Added support MultiSafepay Credit Card component support for credit card payment methods.
+
+### Fixed
+- Fixed support page typo's.
+
+## [1.9.0] - 2021-06-03
+### Added
+- Added list of all used coupons in payment information block in admin order, if order was paid with giftcards.
+
+## [1.8.0] - 2021-05-12
 ### Added
 - Added notification about new versions of plugin in admin panel.
+- Added the possibility to change direct gateway methods to redirect.
 
 ## [1.7.0] - 2021-04-09
 ### Added

@@ -16,21 +16,24 @@
                 <field id="active">1</field>
             </depends>
         </field>
-        <field id="payment_action" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Payment Action</label>
-            <config_path>payment/multisafepay_visa/payment_action</config_path>
-            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\PaymentAction</source_model>
-            <comment><![CDATA[If selected "Authorize Only" method, then capture amount will be manually after successful shipment.
-             <br/><a href="https://docs.multisafepay.com/tools/manual-capture/" target="blank">What is the manual capture?</a>]]></comment>
-            <depends>
-                <field id="active">1</field>
-            </depends>
-        </field>
-        <field id="vault_enabled" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="vault_enabled" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enable Vault]]></label>
             <config_path>payment/multisafepay_visa_vault/active</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
             <comment><![CDATA[Please make sure <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="payment_type" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Payment Type]]></label>
+            <config_path>payment/multisafepay_visa/payment_type</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CardPaymentTypes</source_model>
+            <comment><![CDATA[<br>
+                         <strong>Credit Card Component</strong> - MultiSafepay component for credit card payment methods. <a href="https://docs.multisafepay.com/integrations/payment-components/" target="blank">How does it work?</a>
+                ]]></comment>
+            <!--            <br><br><strong>Payment Request API</strong> - if your browser doesn't support the Payment Request API, then "Redirect" type will be used by default.-->
+            <!--            See more details about <strong>the Payment Request API</strong> technology <a href="https://paymentrequest.show/" target="blank">here.</a><br>-->
             <depends>
                 <field id="active">1</field>
             </depends>
