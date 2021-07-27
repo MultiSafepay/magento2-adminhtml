@@ -1,3 +1,32 @@
+.multisafepay-payment-logo {
+    background: url("../images/MultiSafepay.png") no-repeat 0 0 / 19rem auto;
+    height: 43px;
+    width: auto;
+    padding-left: 20rem;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.multisafepay-section .button-container {
+    float: right;
+}
+
+.multisafepay-section .multisafepay-payment-text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    font-weight: 500;
+}
+
+.multisafepay-payment-text ul {
+    padding-left: 30px;
+    margin-top: 10px;
+}
+
+#multisafepay-section-button {
+    min-width: 100px;
+}
+
 .multisafepay-payment .button-container {
     float: right;
     margin: 2.5rem 0 0 !important;
