@@ -13,7 +13,7 @@
             <group id="multisafepay_section" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <comment><![CDATA[<div class="multisafepay-payment-logo"></div><div class="multisafepay-payment-text"><div><b>Smarter online payments</b></div><br/>Accept, manage, and stimulate online sales with MultiSafepay.<br/><ul><li>Innovative and simple solutions</li><li>In-house development and certified tech support</li><li>Dedicated account manager</li></ul><button type="button" class="multisafepay-btn-primary multisafepay-btn-primary-link" id="multisafepay-section-button" onclick="window.open('https://merchant.multisafepay.com/signup', '_blank');">Sign Up</button></div>]]></comment>
                 <fieldset_css>complex multisafepay-section</fieldset_css>
-                <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\PaymentConfig</frontend_model>
             </group>
         </section>
     </system>
