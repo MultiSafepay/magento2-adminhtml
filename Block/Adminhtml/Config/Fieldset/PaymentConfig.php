@@ -17,29 +17,11 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset;
 
-use Magento\Backend\Block\Context;
-use Magento\Backend\Model\Auth\Session;
 use Magento\Config\Block\System\Config\Form\Fieldset;
 use Magento\Framework\Data\Form\Element\AbstractElement;
-use Magento\Framework\View\Helper\Js;
 
 class PaymentConfig extends Fieldset
 {
-    /**
-     * @param Context $context
-     * @param Session $authSession
-     * @param Js $jsHelper
-     * @param array $data
-     */
-    public function __construct(
-        Context $context,
-        Session $authSession,
-        Js $jsHelper,
-        array $data = []
-    ) {
-        parent::__construct($context, $authSession, $jsHelper, $data);
-    }
-
     /**
      * Add custom css class
      *
@@ -65,11 +47,8 @@ class PaymentConfig extends Fieldset
         $html .= '<div class="button-container"><button type="button"' .
                  ' class="button action-configure' . '" id="' . $htmlId . '-head" 
                  onclick="' . "location.href='" . $this->escapeUrl(
-                     $this->getUrl('adminhtml/system_config/edit/section/multisafepay_support')
-                ) . "'" . '"><span 
-                 class="state-closed">' . __(
-                     'Configure'
-                 ) . '</span></button>';
+                $this->getUrl('adminhtml/system_config/edit/section/multisafepay_support')
+            ) . "'" . '"><span class="state-closed">' . __('Configure') . '</span></button>';
 
         $html .= '</div>';
         $html .= '<div class="heading"><strong>' . $element->getLegend() . '</strong>';
