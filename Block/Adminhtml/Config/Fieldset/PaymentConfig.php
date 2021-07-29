@@ -47,7 +47,7 @@ class PaymentConfig extends Fieldset
         $html .= '<div class="button-container"><button type="button"' .
                  ' class="button action-configure' . '" id="' . $htmlId . '-head" 
                  onclick="' . "location.href='" . $this->escapeUrl(
-                     $this->getUrl('adminhtml/system_config/edit/section/multisafepay_support')
+                     $this->getUrl('adminhtml/system_config/edit/section/multisafepay_general')
                  ) . "'" . '"><span class="state-closed">' . __('Configure') . '</span></button>';
 
         $html .= '</div>';
