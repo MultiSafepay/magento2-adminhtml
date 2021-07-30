@@ -23,127 +23,125 @@ use MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Support\Support;
 $newVersionData = $block->isNewVersionAvailable()
 ?>
 <div id="multisafepay-support" class="multisafepay-support-information">
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Installed version')) ?></h2>
-    <table id="version-table">
-        <tr class="no-padding-top">
-            <td class="version-table-row version-table-row-text">
-                <?= $block->getEscaper()->escapeHtml('Current MultiSafepay version:')?>
-            </td>
-            <td class="version-table-row">
+    <div id="multisafepay-support-banner"></div>
+    <div class="multisafepay-support-section">
+        <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Installed version')) ?></h2>
+        <table id="version-table">
+            <tr class="no-padding-top">
+                <td class="version-table-row version-table-row-text">
+                    <?= $block->getEscaper()->escapeHtml('Current MultiSafepay version:')?>
+                </td>
+                <td class="version-table-row">
                     <span class="<?php if ($newVersionData):?> multisafepay-version-update <?php endif;?>
                 multisafepay-version-last-version multisafepay-bold version-value">
                         <?= $block->getEscaper()->escapeHtml($block->getModuleVersion()) ?>
                     </span>
-            </td>
-        </tr>
-
-        <?php if ($newVersionData): ?>
-            <tr class="no-padding-top">
-                <td class="version-table-row">
-                    <?= $block->getEscaper()->escapeHtml('New version is available:')?>
                 </td>
-                <td class="version-table-row">
-                    <div class="new-version">
+            </tr>
+
+            <?php if ($newVersionData): ?>
+                <tr class="no-padding-top">
+                    <td class="version-table-row">
+                        <?= $block->getEscaper()->escapeHtml('New version is available:')?>
+                    </td>
+                    <td class="version-table-row">
+                        <div class="new-version">
                         <span class="multisafepay-bold download version-value">
                             <a href="<?= $block->getEscaper()->escapeUrl($newVersionData['url']) ?>"
                                target="_blank"><?= $block->getEscaper()->escapeHtml($newVersionData['version']) ?></a>
                         </span>
-                        <p>
-                            <a href="<?= $block->getEscaper()->escapeUrl($block->getUpdateDocsLink()) ?>"
-                               target="_blank" class="btn multisafepay-btn-primary multisafepay-btn-primary-link">
-                                <?= $block->getEscaper()->escapeHtml(__('How to update?')) ?>
-                            </a>
-                        </p>
-                    </div>
+                            <p>
+                                <a href="<?= $block->getEscaper()->escapeUrl($block->getUpdateDocsLink()) ?>"
+                                   target="_blank" class="btn multisafepay-btn-primary multisafepay-btn-primary-link">
+                                    <?= $block->getEscaper()->escapeHtml(__('How to update?')) ?>
+                                </a>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            <?php endif; ?>
+        </table>
+        <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Version support')) ?></h2>
+        <table>
+            <tr>
+                <td class="version-table-row multisafepay-bold">
+                    <?= $block->getEscaper()->escapeHtml('Open Source: 2.2.x, 2.3.x, 2.4.x')?>
                 </td>
             </tr>
-        <?php endif; ?>
-    </table>
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Version support')) ?></h2>
-    <table>
-        <tr>
-            <td class="version-table-row multisafepay-bold">
-                <?= $block->getEscaper()->escapeHtml('Open Source: 2.2.x, 2.3.x, 2.4.x')?>
-            </td>
-        </tr>
-    </table>
-    <br />
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Documentation')) ?></h2>
-    <?php $msg = 'Read our documentation for more information about MultiSafepay and how to get started:' ?>
-    <p><?= $block->getEscaper()->escapeHtml(__($msg)) ?></p>
-    <ul class="multisafepay-ul multisafepay-lh">
-        <li>
-            <a href="https://docs.multisafepay.com/integrations/plugins/magento2/beta/" target="_blank">
+        </table>
+    </div>
+
+    <div class="multisafepay-support-section">
+        <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Documentation')) ?></h2>
+        <?php $msg = 'Read our documentation for more information about MultiSafepay and how to get started:' ?>
+        <p><?= $block->getEscaper()->escapeHtml(__($msg)) ?></p>
+            <a class="multisafepay-support-button-docs"
+               href="https://docs.multisafepay.com/integrations/plugins/magento2/beta/"
+               target="_blank">
                 <?= $block->getEscaper()->escapeHtml(__('Manual')) ?>
             </a>
-        </li>
-        <li>
-            <a href="https://github.com/MultiSafepay/magento2/blob/master/CHANGELOG.md" target="_blank">
+            <a class="multisafepay-support-button-docs"
+               href="https://github.com/MultiSafepay/magento2/blob/master/CHANGELOG.md"
+               target="_blank">
                 <?= $block->getEscaper()->escapeHtml(__('Changelog')) ?>
             </a>
-        </li>
-        <li>
-            <a href="https://docs.multisafepay.com/support-tab/magento2/faq" target="_blank">
+            <a  class="multisafepay-support-button-docs"
+                href="https://docs.multisafepay.com/support-tab/magento2/faq"
+                target="_blank">
                 <?= $block->getEscaper()->escapeHtml(__('FAQ')) ?>
             </a>
-        </li>
-    </ul>
-    <p><?= $block->getEscaper()->escapeHtml(__('For developers:')) ?></p>
-    <ul class="multisafepay-ul multisafepay-lh">
-        <li>
-            <a href="https://docs.multisafepay.com/support-tab/api" target="_blank">
+        <p><?= $block->getEscaper()->escapeHtml(__('For developers:')) ?></p>
+            <a class="multisafepay-support-button-docs"
+               href="https://docs.multisafepay.com/support-tab/api"
+               target="_blank">
                 <?= $block->getEscaper()->escapeHtml(__('API Documentation')) ?>
             </a>
-        </li>
-        <li>
-            <a href="https://github.com/MultiSafepay/magento2" target="_blank">
+            <a class="multisafepay-support-button-docs"
+               href="https://github.com/MultiSafepay/magento2"
+               target="_blank">
                 <?= $block->getEscaper()->escapeHtml('MultiSafepay Github') ?>
             </a>
-        </li>
-    </ul>
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Account')) ?></h2>
+
+        <p class="multisafepay-support-contact">
+            <?= $block->getEscaper()->escapeHtml(__('Didn\'t find solution or need assistance? Feel free to contact our integration team:')) ?>
+            <a class="multisafepay-btn-primary multisafepay-support-button-contact"
+               href="mailto:integration@multisafepay.com">
+                <?= $block->getEscaper()->escapeHtml('Contact Us') ?>
+            </a>
+        </p>
+    </div>
+    <div class="multisafepay-support-section">
+        <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Account')) ?></h2>
+        <p class="multisafepay-lh">
+            <?= $block->getEscaper()->escapeHtml(__('To use this plugin you need a MultiSafepay account.')) ?>
+            <a class="multisafepay-btn-primary multisafepay-support-button-signup"
+               href="https://merchant.multisafepay.com/signup"
+               target="_blank">
+                <?= $block->getEscaper()->escapeHtml('Sign Up') ?>
+            </a>
+            <br />
+            <?php $link = $block->getEscaper()->escapeUrl('https://testmerchant.multisafepay.com/signup');
+            $msg = 'If you would like to have a clear overview of what MultiSafepay has to offer, ';
+            $msg .= 'feel free to create a %1test account%2'; ?>
+            <?= /** @escapeNotVerified */ __($msg, '<a href="' . $link . '" target="_blank">', '</a>') ?>
+        </p>
+    </div>
+    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Bring new ideas or make a contribution and become part of the team')) ?></h2>
     <p class="multisafepay-lh">
-        <?= $block->getEscaper()->escapeHtml(__('To use this plugin you need a MultiSafepay account.')) ?>
-        <br />
-        <?php $link = $block->getEscaper()->escapeUrl('https://testmerchant.multisafepay.com/signup');
-        $msg = 'If you would like to have a clear overview of what MultiSafepay has to offer, ';
-        $msg .= 'feel free to create a %1test account%2'; ?>
-        <?= /** @escapeNotVerified */ __($msg, '<a href="' . $link . '">', '</a>') ?>
+        <?= $block->getEscaper()->escapeHtml(__('We look forward to receiving your input. Have you seen an opportunity to change things for better?')) ?>
+        <a class="multisafepay-second-primary multisafepay-support-feature-request"
+           href="https://github.com/MultiSafepay/magento2/issues/new?assignees=&labels=&template=feature_request.md&title="
+           target="_blank">
+            <?= $block->getEscaper()->escapeHtml('Feature Request') ?>
+        </a>
     </p>
-    <p class="multisafepay-lh" style="padding-top:20px;">
-        <?php $msg = 'If you would like to set up a live account, please contact the MultiSafepay sales department:'; ?>
-        <?= $block->getEscaper()->escapeHtml(__($msg)) ?>
-    </p>
-    <ul class="multisafepay-ul multisafepay-lh">
-        <li>
-            <?= $block->getEscaper()->escapeHtml(__('Telephone: ')) ?>
-            <a href="tel:+31208500501">
-                <?= $block->getEscaper()->escapeHtml('+31 (0)20 - 8500501') ?>
-            </a>
-        </li>
-        <li>
-            <?= $block->getEscaper()->escapeHtml(__('E-mail: ')) ?>
-            <a href="mailto:sales@multisafepay.com">
-                <?= $block->getEscaper()->escapeHtml('sales@multisafepay.com') ?>
-            </a>
-        </li>
-    </ul>
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Contact')) ?></h2>
     <p class="multisafepay-lh">
-        <?= $block->getEscaper()->escapeHtml(__('Need assistance? Feel free to contact our integration team:')) ?>
+        <?= $block->getEscaper()->escapeHtml(__('For developers: we would like to invite you to create a pull request on plugin GitHub. Are we missing something and would like us to fix it? Welcome to plugin GitHub repo')) ?>
+        <a class="multisafepay-support-bug-report"
+           href="https://github.com/MultiSafepay/magento2"
+           target="_blank"></a>
     </p>
-    <ul class="multisafepay-ul multisafepay-lh">
-        <li>
-            <?= $block->getEscaper()->escapeHtml(__('Telephone: ')) ?>
-            <a href="tel:+31208500500">
-                <?= $block->getEscaper()->escapeHtml('+31 (0)20 - 8500500') ?>
-            </a>
-        </li>
-        <li>
-            <?= $block->getEscaper()->escapeHtml(__('E-mail: ')) ?>
-            <a href="mailto:integration@multisafepay.com">
-                <?= $block->getEscaper()->escapeHtml('integration@multisafepay.com') ?>
-            </a>
-        </li>
-    </ul>
+    <p class="multisafepay-lh">
+        <?= $block->getEscaper()->escapeHtml(__('What will you get in return? A brand new designed MultiSafepay t-shirt which will make you part of the team!')) ?>
+    </p>
 </div>
