@@ -14,6 +14,9 @@
             <field id="live_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Live Api Key</label>
                 <config_path>multisafepay/general/live_api_key</config_path>
+                <comment><![CDATA[<div class="multisafepay-note-blue">
+                    Get the api key from your <a href="https://merchant.multisafepay.com/" target="_blank" title="MultiSafepay Live Account">MultiSafepay Account</a>
+                </div>]]></comment>
                 <depends>
                     <field id="mode">1</field>
                 </depends>
@@ -21,6 +24,9 @@
             <field id="test_api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Test Api Key</label>
                 <config_path>multisafepay/general/test_api_key</config_path>
+                <comment><![CDATA[<div class="multisafepay-note-blue">
+                    Get the api key from your <a href="https://testmerchant.multisafepay.com/" target="_blank" title="Test Account">MultiSafepay Test Account</a>
+                </div>]]></comment>
                 <depends>
                     <field id="mode">0</field>
                 </depends>
@@ -43,47 +49,55 @@
                 <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
                 <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
             </field>
-            <field id="order_confirmation_email" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="create_invoice" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Create Invoice for Order After MultiSafepay Payment]]></label>
+                <config_path>multisafepay/general/create_invoice</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Choose whether to create an order invoice after MultiSafepay payment notification automatically or manually.
+                 <br>For example, some ERP systems create and synchronize invoices in Magento themselves.
+                <br><br><strong>Note:</strong> 'Processing Order Status' will be used for captured orders by MultiSafepay without invoice.]]></comment>
+            </field>
+            <field id="order_confirmation_email" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Send the order confirmation email]]></label>
                 <config_path>multisafepay/general/order_confirmation_email</config_path>
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
                 <comment><![CDATA[The moment the order confirmation email is sent to the customer.]]></comment>
             </field>
-            <field id="transaction_custom_description" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="transaction_custom_description" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Custom Transaction Description]]></label>
                 <config_path>multisafepay/general/transaction_custom_description</config_path>
                 <comment><![CDATA[Use {{order.increment_id}} variable for displaying the Order ID. Default description will be used if left empty.]]></comment>
             </field>
-            <field id="refund_custom_description" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="refund_custom_description" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Custom Refund Description]]></label>
                 <config_path>multisafepay/general/refund_custom_description</config_path>
                 <comment><![CDATA[Use {{order.increment_id}} variable for displaying the Order ID. Default description will be used if left empty.]]></comment>
             </field>
-            <field id="use_base_currency" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="use_base_currency" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Use base currency?]]></label>
                 <config_path>multisafepay/general/use_base_currency</config_path>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <comment><![CDATA[Choose whether to send the pricing in base currency or order currency.]]></comment>
             </field>
-            <field id="preselected_method" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="preselected_method" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Default selected method]]></label>
                 <config_path>multisafepay/general/preselected_method</config_path>
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Methods</source_model>
                 <comment><![CDATA[Choose which payment method will be automatically selected in the checkout.]]></comment>
             </field>
-            <field id="enable_vault" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="enable_vault" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Enable Vault]]></label>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\Vault</backend_model>
                 <comment><![CDATA[Enables Vault for all supported gateways. Please make sure <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
             </field>
-            <field id="debug" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="debug" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Enable Debug mode]]></label>
                 <config_path>multisafepay/general/debug</config_path>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <comment><![CDATA[Write detailed information to]]> var/log/multisafepay-debug.log</comment>
             </field>
-            <field id="multisafepay_payment_logs" translate="label" type="button" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="multisafepay_payment_logs" translate="label" type="button" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>MultiSafepay payment logs</label>
                 <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Download\Button</frontend_model>
             </field>

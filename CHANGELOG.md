@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.11.0] - 2021-07-30
+### Added
+- Added setting for possibility to skip automatic invoice creation after MultiSafepay payment.
+
+### Changed
+* Improved several UI and UX elements:
+  - Added a notice with a link to the MultiSafepay Merchant Control Panel under the API key field
+  - Added enabled/disabled indicators next to the gateways and giftcards
+  - Added a MultiSafepay mention to the Payment configuration page at *Stores > Configuration > Sales > Payment Methods* with a link to sign up. Clicking on configuration will redirect to the MultiSafepay General Settings page
+
 ## [1.10.0] - 2021-06-17
 ### Added
 - Added support MultiSafepay Credit Card component support for credit card payment methods.
