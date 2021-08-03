@@ -40,6 +40,8 @@ class Button extends Field
     /**
      * @param AbstractElement $element
      * @return string
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     protected function _getElementHtml(AbstractElement $element): string
     {

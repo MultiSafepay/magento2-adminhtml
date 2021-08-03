@@ -58,6 +58,8 @@ class PreDispatchAdminActionController implements ObserverInterface
 
     /**
      * @param Observer $observer
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function execute(Observer $observer)
     {
