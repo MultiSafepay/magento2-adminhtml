@@ -44,6 +44,8 @@ class NoticePlugin
      * @param Closure $proceed
      * @param DataObject $row
      * @return string
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function aroundRender(Notice $subject, Closure $proceed, DataObject $row): string
     {
