@@ -105,7 +105,7 @@ $newVersionData = $block->isNewVersionAvailable()
             </a>
 
         <p class="multisafepay-support-contact">
-            <?= $block->getEscaper()->escapeHtml(__('Didn\'t find solution or need assistance? Feel free to contact our integration team:')) ?>
+            <?= $block->getEscaper()->escapeHtml(__('Didn\'t find a solution or need assistance? Feel free to contact our integration team:')) ?>
             <a class="multisafepay-btn-primary multisafepay-support-button-contact"
                href="mailto:integration@multisafepay.com">
                 <?= $block->getEscaper()->escapeHtml('Contact Us') ?>
@@ -128,9 +128,9 @@ $newVersionData = $block->isNewVersionAvailable()
             <?= /** @escapeNotVerified */ __($msg, '<a href="' . $link . '" target="_blank">', '</a>') ?>
         </p>
     </div>
-    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Bring new ideas or make a contribution and become part of the team')) ?></h2>
+    <h2 id="multisafepay-title"><?= $block->getEscaper()->escapeHtml(__('Bring new ideas or make a contribution')) ?></h2>
     <p class="multisafepay-lh">
-        <?= $block->getEscaper()->escapeHtml(__('We look forward to receiving your input. Have you seen an opportunity to change things for better?')) ?>
+        <?= $block->getEscaper()->escapeHtml(__('We look forward to receiving your input. Have you seen an opportunity to change things for the better?')) ?>
         <a class="multisafepay-second-primary multisafepay-support-feature-request"
            href="https://github.com/MultiSafepay/magento2/issues/new?assignees=&labels=&template=feature_request.md&title="
            target="_blank">
@@ -138,12 +138,12 @@ $newVersionData = $block->isNewVersionAvailable()
         </a>
     </p>
     <p class="multisafepay-lh">
-        <?= $block->getEscaper()->escapeHtml(__('For developers: we would like to invite you to create a pull request on plugin GitHub. Are we missing something and would like us to fix it? Welcome to plugin GitHub repo')) ?>
+        <?= $block->getEscaper()->escapeHtml(__('For developers: Are we missing something and do you know how to fix it? You are welcome to create a pull request on our Github repository')) ?>
         <a class="multisafepay-support-bug-report"
            href="https://github.com/MultiSafepay/magento2"
            target="_blank"></a>
     </p>
     <p class="multisafepay-lh">
-        <?= $block->getEscaper()->escapeHtml(__('What will you get in return? A brand new designed MultiSafepay t-shirt which will make you part of the team!')) ?>
+        <?= $block->getEscaper()->escapeHtml(__('What will you get in return? An awesome t-shirt with a special and unique theme, that is designed specifically by MultiSafepay for contributors!')) ?>
     </p>
 </div>
