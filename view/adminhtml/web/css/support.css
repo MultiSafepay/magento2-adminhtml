@@ -185,3 +185,115 @@
     height: 24px;
     float: left;
 }
+
+#multisafepay-support-banner {
+    width: auto;
+    background: url(../images/msp-banner.svg) no-repeat;
+    height: 160px;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.multisafepay-support-section {
+    padding-top: 10px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 15px;
+}
+
+.multisafepay-support-button-docs {
+    margin: 5px 5px 15px 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #10abe6fa;
+    backface-visibility: hidden;
+    border: 0.2rem solid rgba(4, 140, 220, 0.71);
+    border-radius: 10px;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+    background-color: #10abe61a;
+}
+
+.admin__scope-old a.multisafepay-support-button-docs {
+    display: inline-flex;
+}
+
+.multisafepay-support-button-docs:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+    text-decoration: none;
+    color: #10abe6fa;
+}
+
+.multisafepay-support-button-contact {
+    padding: 5px 20px 5px 40px;
+    font-weight: 600;
+}
+
+.multisafepay-support-button-contact::before {
+    position: absolute;
+    width: 23px;
+    height: 16px;
+    margin-left: -26px;
+    margin-top: 2px;
+    content: '';
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAQCAYAAAD9L+QYAAAAAXNSR0IArs4c6QAAAO9JREFUOE/tkjEOgkAQRfevkVBgYkGrsabzGvS03s2WC3ANG2KtLZVaEWTHLGHIqsiySinNhlnm/T9/QF3XeynlTkz8ENERmklE+lQT8iUAAhEpALIVoV8FALDhBt4AjWIhhAi/ECkB+KbJDq6LcRz7WZaVrlOwsSRJgjRNb2zsCd4WLwCWYwUYrJQ6AVibE/fB9b3ew8wmYObbF+MnePMtNxdFsQjD8MqAqqq2nucdrOK80IEFzgHcGcSCeZ4HURR1+To7Nxp0nht+J6KzEGJl+6MGY3lpbvYwYtKuzQVuM/p2/4f3RqZjqZ3DHNnwAGeSkqeFyNF6AAAAAElFTkSuQmCC");
+}
+
+.multisafepay-support-contact {
+    margin-top: 10px;
+}
+
+.multisafepay-support-button-signup {
+    padding: 5px 20px 5px 15px;
+    font-weight: 600;
+}
+
+.multisafepay-support-button-signup::after {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+    content: '';
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFpJREFUOE+908ESABAIBFD7/x+d6eAStWsa3Bi9EjDCMDMDgLiezY8bb5A0k4qUpSoIPStDKODNqxAJqBAZyJB/QNYHqYJWE1vXyIK9sW+espJ5/c6tgptgRyYtNkAR4Rp79gAAAABJRU5ErkJggg==");
+}
+
+.multisafepay-support-feature-request {
+    border-radius: 8px;
+    border: 2px solid #10abe6fa;
+    color: #000000b3;
+    font-weight: 600;
+    padding: 8px 10px 8px 25px;
+}
+
+.multisafepay-support-feature-request:hover {
+    background-color: #0ca7e399;
+}
+
+.multisafepay-support-feature-request::before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin-left: -17px;
+    margin-top: 4px;
+    content: '';
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAG5JREFUOE9jZKAQMBKhfzMeNb7oBuBTjM0cFANwafZF0omuBm4AsgSyBmRbsVmAYQAxmkFqYIYRZQA21xFtAC6vkWwAtoAEi8GiEW4iCelikBoA8gGuqATJYQQqclImJRnDLSEnL6C4kJjciDdiAO03HBGPwP5ZAAAAAElFTkSuQmCC);
+}
+
+.multisafepay-support-feature-request:hover::before {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAbUlEQVQ4T82TQQ4AMQRFx/0PrdFE86sM0k0t63so6Ls0yuKZmSMNiaHzT+xBNkAUjEmsZgHQYavSzF6CA1AJFo3CSgCvujIgaq0N8D5S3+YYkVjdi0cBUn40SmwVdWuVO2uMSdq3YCtMrzGbygDN33ARA8VzTQAAAABJRU5ErkJggg==);
+}
+
+.multisafepay-support-bug-report {
+    width: 26px;
+    background: url(../images/github-icon.png) no-repeat;
+    height: 26px;
+    background-size: cover;
+}
+
+.admin__scope-old a.multisafepay-support-bug-report {
+    display: inline-block;
+}
