@@ -21,7 +21,7 @@ use Magento\Framework\Event\ObserverInterface;
 use MultiSafepay\ConnectCore\Logger\Logger;
 use MultiSafepay\ConnectCore\Util\NotificationUtil;
 
-class PreDispatchAdminActionController implements ObserverInterface
+class BackendAuthUserLoginSuccess implements ObserverInterface
 {
     /**
      * @var NotificationUtil
