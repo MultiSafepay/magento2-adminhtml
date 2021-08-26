@@ -18,12 +18,10 @@ declare(strict_types=1);
 namespace MultiSafepay\ConnectAdminhtml\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
+use MultiSafepay\ConnectCore\Util\CaptureUtil;
 
 class PaymentAction implements OptionSourceInterface
 {
-    public const PAYMENT_ACTION_AUTHORIZE_ONLY = 'authorize';
-    public const PAYMENT_ACTION_AUTHORIZE_AND_CAPTURE = 'initialize';
-
     /**
      * {@inheritdoc}
      */
@@ -31,11 +29,11 @@ class PaymentAction implements OptionSourceInterface
     {
         return [
             [
-                'value' => self::PAYMENT_ACTION_AUTHORIZE_ONLY,
+                'value' => CaptureUtil::PAYMENT_ACTION_AUTHORIZE_ONLY,
                 'label' => __('Authorize Only'),
             ],
             [
-                'value' => self::PAYMENT_ACTION_AUTHORIZE_AND_CAPTURE,
+                'value' => CaptureUtil::PAYMENT_ACTION_AUTHORIZE_AND_CAPTURE,
                 'label' => __('Authorize and Capture')
             ]
         ];
