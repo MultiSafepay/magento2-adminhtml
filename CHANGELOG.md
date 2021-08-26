@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Dropped support for Magento 2.2.x versions.
+- Changed event listeners from controller_action_predispatch to backend_auth_user_login_success for checking the new released plugin versions. (Thanks to @Tjitse-E)
 
 ## [1.11.0] - 2021-07-30
 ### Added
