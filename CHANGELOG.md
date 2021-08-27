@@ -5,9 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.12.0] - 2021-08-27
 ### Changed
 - Dropped support for Magento 2.2.x versions.
 - Changed event listeners from controller_action_predispatch to backend_auth_user_login_success for checking the new released plugin versions. (Thanks to @Tjitse-E)
+- Improved the UX/UI for General Information page
+
+### Fixed
+- Fixed PHP Mess detector issues.
 
 ## [1.11.0] - 2021-07-30
 ### Added
