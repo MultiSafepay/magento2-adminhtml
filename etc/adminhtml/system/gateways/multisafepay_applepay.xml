@@ -16,6 +16,15 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="direct_button" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Use Apple Pay direct button]]></label>
+            <config_path>payment/multisafepay_applepay/direct_button</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/payments/methods/wallet/applepay/direct-integration/" target="blank">Apple Pay direct</a>]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_applepay/allowspecific</config_path>
