@@ -17,6 +17,7 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_dotpay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_eps.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_giropay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_googlepay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_idealqr.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_maestro.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mastercard.xml"/>
