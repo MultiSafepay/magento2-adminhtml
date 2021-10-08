@@ -20,7 +20,7 @@
             <label><![CDATA[Use Google Pay Direct Button]]></label>
             <config_path>payment/multisafepay_googlepay/direct_button</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/payments/methods/wallet/googlepay/direct-integration/" target="blank">How to activate Apple Pay direct?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/payments/methods/wallet/googlepay/direct-integration/" target="blank">How to activate Google Pay Direct?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
