@@ -25,6 +25,52 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="direct_button_mode" translate="label" type="select" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Production Mode]]></label>
+            <config_path>payment/multisafepay_googlepay/direct_button_mode</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment><![CDATA[<div class="multisafepay-note-blue">
+                    If you want to test Google Pay button before going to live, please, set to "No"
+                </div>]]></comment>
+            <depends>
+                <field id="active">1</field>
+                <field id="direct_button">1</field>
+            </depends>
+        </field>
+        <field id="direct_button_account_id" translate="label" type="text" sortOrder="27" showInDefault="1" showInWebsite="1"
+            showInStore="1">
+            <label><![CDATA[MultiSafepay account ID]]></label>
+            <config_path>payment/multisafepay_googlepay/direct_button_account_id</config_path>
+            <comment><![CDATA[Your account ID appears in the top-right corner of your MultiSafepay account.]]></comment>
+            <depends>
+                <field id="active">1</field>
+                <field id="direct_button">1</field>
+            </depends>
+        </field>
+        <field id="direct_button_merchant_name" translate="label" type="text" sortOrder="28" showInDefault="1" showInWebsite="1"
+            showInStore="1">
+            <label><![CDATA[Merchant Name]]></label>
+            <config_path>payment/multisafepay_googlepay/direct_button_merchant_name</config_path>
+            <comment><![CDATA[Your Google Pay merchant name. For "TEST" mode "Example Merchant" merchant name will be used by default."]]></comment>
+            <depends>
+                <field id="active">1</field>
+                <field id="direct_button">1</field>
+                <field id="direct_button_mode">1</field>
+            </depends>
+        </field>
+        <field id="direct_button_merchant_id" translate="label" type="text" sortOrder="29" showInDefault="1" showInWebsite="1"
+            showInStore="1">
+            <label><![CDATA[Merchant ID]]></label>
+            <config_path>payment/multisafepay_googlepay/direct_button_merchant_id</config_path>
+            <comment><![CDATA[Your Google Pay merchant ID, to see your Google Pay merchant ID, sign
+             into your <a href="https://pay.google.com/business/console/home" target="_blank">Google Business Console.</a>
+             For "TEST" mode "12345678901234567890" merchant ID will be used by default."]]></comment>
+            <depends>
+                <field id="active">1</field>
+                <field id="direct_button">1</field>
+                <field id="direct_button_mode">1</field>
+            </depends>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_googlepay/allowspecific</config_path>
