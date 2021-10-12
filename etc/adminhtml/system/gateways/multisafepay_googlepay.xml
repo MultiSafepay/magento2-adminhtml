@@ -20,7 +20,7 @@
             <label><![CDATA[Use Google Pay Direct Button]]></label>
             <config_path>payment/multisafepay_googlepay/direct_button</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/payments/methods/wallet/googlepay/direct-integration/" target="blank">How to activate Google Pay Direct?</a>]]></comment>
+            <comment><![CDATA[With a direct integration, the Google Pay button appears in your checkout page. Customers complete payment without being redirected to a MultiSafepay payment page.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
@@ -41,7 +41,7 @@
             showInStore="1">
             <label><![CDATA[MultiSafepay account ID]]></label>
             <config_path>payment/multisafepay_googlepay/direct_button_account_id</config_path>
-            <comment><![CDATA[Your account ID appears in the top-right corner of your MultiSafepay account.]]></comment>
+            <comment><![CDATA[Your account ID appears in the top-right corner of your MultiSafepay account. Required for production mode.]]></comment>
             <depends>
                 <field id="active">1</field>
                 <field id="direct_button">1</field>
@@ -51,7 +51,7 @@
             showInStore="1">
             <label><![CDATA[Merchant Name]]></label>
             <config_path>payment/multisafepay_googlepay/direct_button_merchant_name</config_path>
-            <comment><![CDATA[Your Google Pay merchant name. For "TEST" mode "Example Merchant" merchant name will be used by default."]]></comment>
+            <comment><![CDATA[Your Google Pay merchant name. For "TEST" mode "Example Merchant" merchant name will be used by default. Required for production mode."]]></comment>
             <depends>
                 <field id="active">1</field>
                 <field id="direct_button">1</field>
@@ -64,7 +64,7 @@
             <config_path>payment/multisafepay_googlepay/direct_button_merchant_id</config_path>
             <comment><![CDATA[Your Google Pay merchant ID, to see your Google Pay merchant ID, sign
              into your <a href="https://pay.google.com/business/console/home" target="_blank">Google Business Console.</a>
-             For "TEST" mode "12345678901234567890" merchant ID will be used by default."]]></comment>
+             For "TEST" mode "12345678901234567890" merchant ID will be used by default. Required for production mode."]]></comment>
             <depends>
                 <field id="active">1</field>
                 <field id="direct_button">1</field>
