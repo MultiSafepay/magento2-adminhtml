@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.13.0] - 2021-10-15
+### Added
+- Added configuration for Apple Pay Direct
+- Added configuration for Google Pay
+- Added configuration for WeChat Pay
+
 ## [1.12.0] - 2021-08-27
 ### Changed
 - Dropped support for Magento 2.2.x versions.
