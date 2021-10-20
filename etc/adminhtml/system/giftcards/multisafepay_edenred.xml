@@ -12,6 +12,47 @@
         <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Title]]></label>
             <config_path>payment/multisafepay_edenred/title</config_path>
+            <comment><![CDATA[{payment_title} {available_giftcard_codes}]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="edencom_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[EDENCOM Available Categories]]></label>
+            <config_path>payment/multisafepay_edenred/edencom_categories</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
+            <can_be_empty>1</can_be_empty>
+            <comment><![CDATA[Leave empty for disable EDENCOM coupon.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="edeneco_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[EDENECO Available Categories]]></label>
+            <config_path>payment/multisafepay_edenred/edeneco_categories</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
+            <can_be_empty>1</can_be_empty>
+            <comment><![CDATA[Leave empty for disable EDENECO coupon.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="edenres_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[EDENRES Available Categories]]></label>
+            <config_path>payment/multisafepay_edenred/edenres_categories</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
+            <can_be_empty>1</can_be_empty>
+            <comment><![CDATA[Leave empty for disable EDENRES coupon.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="edensports_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[EDENSPORTS Available Categories]]></label>
+            <config_path>payment/multisafepay_edenred/edensports_categories</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
+            <can_be_empty>1</can_be_empty>
+            <comment><![CDATA[Leave empty for disable EDENSPORTS coupon.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
