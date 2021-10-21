@@ -20,10 +20,10 @@ namespace MultiSafepay\ConnectAdminhtml\Model\Config\Source;
 use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\Exception\LocalizedException;
+use MultiSafepay\ConnectCore\Model\Ui\Giftcard\EdenredGiftcardConfigProvider;
 
 class AvailableCategories implements OptionSourceInterface
 {
-    public const ALL_CATEGORIES = 'all_categories';
     public const SYSTEM_CATEGORY_ID = 1;
     public const ROOT_LEVEL = 1;
 
@@ -69,7 +69,7 @@ class AvailableCategories implements OptionSourceInterface
     private function getChildren(int $parentCategoryId, int $level): array
     {
         $options = [
-            ['value' => self::ALL_CATEGORIES, 'label' => __('All Categories')],
+            ['value' => EdenredGiftcardConfigProvider::CONFIG_ALL_CATEGORIES_VALUE, 'label' => __('All Categories')],
         ];
         $collection = $this->collectionFactory->create();
         $collection->addAttributeToSelect('name');
