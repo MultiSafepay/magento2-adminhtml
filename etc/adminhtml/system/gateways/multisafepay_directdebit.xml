@@ -27,7 +27,7 @@
         </field>
         <field id="transaction_type" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Additional checkout fields]]></label>
-            <config_path>payment/multisafepay_einvoicing/transaction_type</config_path>
+            <config_path>payment/multisafepay_directdebit/transaction_type</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TransactionType</source_model>
             <depends>
                 <field id="active">1</field>
