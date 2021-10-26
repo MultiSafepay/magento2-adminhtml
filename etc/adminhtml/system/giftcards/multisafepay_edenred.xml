@@ -22,7 +22,7 @@
             <config_path>payment/multisafepay_edenred/edencom_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
             <can_be_empty>1</can_be_empty>
-            <comment><![CDATA[Leave empty for disable EDENCOM coupon.]]></comment>
+            <comment><![CDATA[Leave empty to disable the EDENCOM coupon.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
@@ -32,7 +32,7 @@
             <config_path>payment/multisafepay_edenred/edeneco_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
             <can_be_empty>1</can_be_empty>
-            <comment><![CDATA[Leave empty for disable EDENECO coupon.]]></comment>
+            <comment><![CDATA[Leave empty to disable the EDENECO coupon.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
@@ -42,7 +42,7 @@
             <config_path>payment/multisafepay_edenred/edenres_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
             <can_be_empty>1</can_be_empty>
-            <comment><![CDATA[Leave empty for disable EDENRES coupon.]]></comment>
+            <comment><![CDATA[Leave empty to disable the EDENRES coupon.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
@@ -52,7 +52,7 @@
             <config_path>payment/multisafepay_edenred/edensports_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
             <can_be_empty>1</can_be_empty>
-            <comment><![CDATA[Leave empty for disable EDENSPORTS coupon.]]></comment>
+            <comment><![CDATA[Leave empty to disable the EDENSPORTS coupon.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>

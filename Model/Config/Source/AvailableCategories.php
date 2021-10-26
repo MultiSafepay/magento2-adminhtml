@@ -49,7 +49,8 @@ class AvailableCategories implements OptionSourceInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @return array|array[]
+     * @throws LocalizedException
      */
     public function toOptionArray(): array
     {
