@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.14.0] - 2021-10-29
+### Added 
+- Added configuration for Edenred
+- Added configuration for iDEAL and Direct Debit Vault
+
 ### Fixed
-- Fixed config path for Direct Debit additional checkout fields
+- Fixed an issue with Vault and Manual capture
+- Fixed an issue where the transaction type for Direct Debit would not be saved
 
 ## [1.13.0] - 2021-10-15
 ### Added
