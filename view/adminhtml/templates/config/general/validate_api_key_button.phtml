@@ -1,4 +1,21 @@
 <?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is provided with Magento in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * Copyright © 2021 MultiSafepay, Inc. All rights reserved.
+ * See DISCLAIMER.md for disclaimer details.
+ *
+ */
+
+declare(strict_types=1);
+
+// @codingStandardsIgnoreFile
 use \MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton;
 
 /** @var ValidateApiKeyButton $block */
@@ -14,7 +31,7 @@ use \MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton;
         'Magento_Ui/js/modal/alert',
         'mage/translate'
     ], function($, _, modalAlert, $t) {
-        var buttonId = '<?= /* @escapeNotVerified */ $block->getData('button_id'); ?>',
+        let buttonId = '<?= /* @escapeNotVerified */ $block->getData('button_id'); ?>',
             configPath = 'multisafepay_general_multisafepay_general_';
 
         $('#' + buttonId).click(function (e) {
@@ -27,8 +44,8 @@ use \MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton;
             var params = prepareSendParams(),
                 isValid = true;
 
-            _.each(params, function(data, key) {
-                if  (data == '' || data === undefined) {
+            _.each(params, function(data) {
+                if  (data === '' || data === undefined) {
                     isValid = false;
                 }
             });
@@ -70,7 +87,7 @@ use \MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton;
 
             return {
                 mode: mode,
-                apiKey: $('#' + configPath + (mode == 0 ? 'test_api_key' : 'live_api_key')).val()
+                apiKey: $('#' + configPath + (mode === '0' ? 'test_api_key' : 'live_api_key')).val()
             };
         }
     })

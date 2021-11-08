@@ -17,11 +17,11 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config;
 
+use Magento\Backend\Block\Template;
+use Magento\Backend\Block\Widget\Button;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Backend\Block\Widget\Button;
-use Magento\Backend\Block\Template;
 
 class ValidateApiKeyButton extends Field
 {

@@ -42,28 +42,20 @@ class Validate extends Action
     private $sdkFactory;
 
     /**
-     * @var Logger
-     */
-    private $logger;
-
-    /**
      * Validate constructor.
      *
      * @param Context $context
      * @param JsonHandler $jsonHandler
      * @param SdkFactory $sdkFactory
-     * @param Logger $logger
      */
     public function __construct(
         Context $context,
         JsonHandler $jsonHandler,
-        SdkFactory $sdkFactory,
-        Logger $logger
+        SdkFactory $sdkFactory
     ) {
         parent::__construct($context);
         $this->jsonHandler = $jsonHandler;
         $this->sdkFactory = $sdkFactory;
-        $this->logger = $logger;
     }
 
     /**
