@@ -22,7 +22,6 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use MultiSafepay\ConnectCore\Factory\SdkFactory;
-use MultiSafepay\ConnectCore\Logger\Logger;
 use MultiSafepay\ConnectCore\Util\JsonHandler;
 use Psr\Http\Client\ClientExceptionInterface;
 
@@ -69,8 +68,8 @@ class Validate extends Action
             ) {
                 $this->sdkFactory->createWithModeAndApiKey(
                     (bool)$data[self::MODE_PARAM_KEY_NAME],
-                    (string)$data[self::API_KEY_PARAM_KEY_NAME],
-                )->getAccountManager()->get()->getData();
+                    (string)$data[self::API_KEY_PARAM_KEY_NAME]
+                )->getGatewayManager()->getGateways();
 
                 $result = [
                     'status' => true,

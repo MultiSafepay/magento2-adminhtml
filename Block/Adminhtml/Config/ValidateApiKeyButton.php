@@ -42,7 +42,7 @@ class ValidateApiKeyButton extends Field
         $button = $this->getLayout()->createBlock(Button::class)
             ->setData([
                 'id' => self::CHECK_BUTTON_ID,
-                'label' => __('Check API Key'),
+                'label' => __('Validate API Key'),
                 'class' => 'primary',
             ]);
         $block->setTemplate(self::TEMPLATE_PATH)
