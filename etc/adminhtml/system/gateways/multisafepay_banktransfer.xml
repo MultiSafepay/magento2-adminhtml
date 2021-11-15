@@ -16,6 +16,12 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="order_confirmation_email" translate="label" type="select" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Send the order confirmation email]]></label>
+            <config_path>payment/multisafepay_banktransfer/order_confirmation_email</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
+            <comment><![CDATA[This overrides the setting in the general settings for this payment method.]]></comment>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_banktransfer/allowspecific</config_path>
