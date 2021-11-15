@@ -37,16 +37,6 @@
                 <field id="direct_button">1</field>
             </depends>
         </field>
-        <field id="direct_button_account_id" translate="label" type="text" sortOrder="27" showInDefault="1" showInWebsite="1"
-            showInStore="1">
-            <label><![CDATA[MultiSafepay account ID]]></label>
-            <config_path>payment/multisafepay_googlepay/direct_button_account_id</config_path>
-            <comment><![CDATA[Your account ID appears in the top-right corner of your MultiSafepay account. Required for production mode.]]></comment>
-            <depends>
-                <field id="active">1</field>
-                <field id="direct_button">1</field>
-            </depends>
-        </field>
         <field id="direct_button_merchant_name" translate="label" type="text" sortOrder="28" showInDefault="1" showInWebsite="1"
             showInStore="1">
             <label><![CDATA[Merchant Name]]></label>
