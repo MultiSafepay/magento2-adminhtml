@@ -31,6 +31,10 @@
                     <field id="mode">0</field>
                 </depends>
             </field>
+            <field id="validate_api_key" translate="label" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label></label>
+                <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton</frontend_model>
+            </field>
             <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[New Order Status]]></label>
                 <config_path>multisafepay/general/order_status</config_path>
