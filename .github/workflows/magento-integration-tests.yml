@@ -3,9 +3,14 @@ on: [pull_request]
 
 jobs:
   integration-tests:
+    strategy:
+      matrix:
+        magento_version: [2.3.6, 2.4.2]
+
     name: Magento 2 Integration Tests
     if: ${{!contains(github.head_ref, 'release/')}}
     runs-on: ubuntu-latest
+
     services:
       mysql:
         image: mysql:5.7
@@ -24,9 +29,12 @@ jobs:
           'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - uses: actions/checkout@v2
-      - name: M2 Integration Tests on 2.3.6
+      
+      - if: matrix.magento_version == '2.3.6'
+        name: M2 Integration Tests on ${{ matrix.magento_version }}
         uses: extdn/github-actions-m2/magento-integration-tests/7.3@master
         env:
             MAGENTO_MARKETPLACE_USERNAME: ${{ secrets.MAGENTO_MARKETPLACE_USERNAME }}
@@ -35,9 +43,11 @@ jobs:
         with:
             module_name: MultiSafepay_ConnectAdminhtml
             composer_name: multisafepay/magento2-adminhtml
-            ce_version: '2.3.6'
+            ce_version: '${{ matrix.magento_version }}'
             magento_pre_install_script: .github/workflows/magento-integration-tests-pre-phpunit.sh
-      - name: M2 Integration Tests on 2.4.2
+
+      - if: matrix.magento_version == '2.4.2'
+        name: M2 Integration Tests on ${{ matrix.magento_version }}
         uses: extdn/github-actions-m2/magento-integration-tests/7.4@master
         env:
             MAGENTO_MARKETPLACE_USERNAME: ${{ secrets.MAGENTO_MARKETPLACE_USERNAME }}
@@ -46,5 +56,5 @@ jobs:
         with:
             module_name: MultiSafepay_ConnectAdminhtml
             composer_name: multisafepay/magento2-adminhtml
-            ce_version: '2.4.2'
+            ce_version: '${{ matrix.magento_version }}'
             magento_pre_install_script: .github/workflows/magento-integration-tests-pre-phpunit.sh
