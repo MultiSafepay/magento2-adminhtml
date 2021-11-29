@@ -11,9 +11,10 @@
                 <config_path>multisafepay/general/mode</config_path>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
             </field>
-            <field id="live_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="live_api_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Live Api Key</label>
                 <config_path>multisafepay/general/live_api_key</config_path>
+                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 <comment><![CDATA[<div class="multisafepay-note-blue">
                     Get the api key from your <a href="https://merchant.multisafepay.com/" target="_blank" title="MultiSafepay Live Account">MultiSafepay Account</a>
                 </div>]]></comment>
@@ -21,9 +22,10 @@
                     <field id="mode">1</field>
                 </depends>
             </field>
-            <field id="test_api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <field id="test_api_key" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Test Api Key</label>
                 <config_path>multisafepay/general/test_api_key</config_path>
+                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 <comment><![CDATA[<div class="multisafepay-note-blue">
                     Get the api key from your <a href="https://testmerchant.multisafepay.com/" target="_blank" title="Test Account">MultiSafepay Test Account</a>
                 </div>]]></comment>

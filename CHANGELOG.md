@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added a separate option for when to send the order confirmation email for the Bank Transfer payment method
 
+### Changed
+- Changed the API Key fields to be obscured for added security, they are now also stored with encryption provided by the Encryptor from the Magento Framework
+
 ## [1.14.0] - 2021-10-29
 ### Added 
 - Added configuration for Edenred
