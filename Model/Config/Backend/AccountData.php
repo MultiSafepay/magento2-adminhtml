@@ -17,6 +17,7 @@ declare(strict_types=1);
 
 namespace MultiSafepay\ConnectAdminhtml\Model\Config\Backend;
 
+use Exception;
 use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\Config\Value;
@@ -107,6 +108,8 @@ class AccountData extends Value
             $this->logger->logInvalidApiKeyException($invalidApiKeyException);
         } catch (ClientExceptionInterface $clientException) {
             $this->logger->logClientException('', $clientException);
+        } catch (Exception $exception) {
+            $this->logger->logException($exception);
         }
 
         $this->setValue($this->jsonHandler->convertToJSON($accountData));

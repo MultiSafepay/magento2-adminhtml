@@ -22,8 +22,10 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use MultiSafepay\ConnectCore\Factory\SdkFactory;
+use MultiSafepay\ConnectCore\Util\EncryptorUtil;
 use MultiSafepay\ConnectCore\Util\JsonHandler;
 use Psr\Http\Client\ClientExceptionInterface;
+use MultiSafepay\ConnectCore\Config\Config;
 
 class Validate extends Action
 {
@@ -41,20 +43,36 @@ class Validate extends Action
     private $sdkFactory;
 
     /**
+     * @var EncryptorUtil
+     */
+    private $encryptorUtil;
+
+    /**
+     * @var Config
+     */
+    private $config;
+
+    /**
      * Validate constructor.
      *
      * @param Context $context
      * @param JsonHandler $jsonHandler
      * @param SdkFactory $sdkFactory
+     * @param EncryptorUtil $encryptorUtil
+     * @param Config $config
      */
     public function __construct(
         Context $context,
         JsonHandler $jsonHandler,
-        SdkFactory $sdkFactory
+        SdkFactory $sdkFactory,
+        EncryptorUtil $encryptorUtil,
+        Config $config
     ) {
         parent::__construct($context);
         $this->jsonHandler = $jsonHandler;
         $this->sdkFactory = $sdkFactory;
+        $this->encryptorUtil = $encryptorUtil;
+        $this->config = $config;
     }
 
     /**
@@ -66,9 +84,16 @@ class Validate extends Action
             if (($data = $this->getRequest()->getParams())
                 && isset($data[self::MODE_PARAM_KEY_NAME], $data[self::API_KEY_PARAM_KEY_NAME])
             ) {
+                $storeId = (int)$this->getRequest()->getParam('store', 0);
+                $key = (string)$data[self::API_KEY_PARAM_KEY_NAME];
+
+                if (strpos($key, '****') !== false) {
+                    $key = $this->config->getApiKey($storeId);
+                }
+
                 $this->sdkFactory->createWithModeAndApiKey(
                     (bool)$data[self::MODE_PARAM_KEY_NAME],
-                    (string)$data[self::API_KEY_PARAM_KEY_NAME]
+                    $key
                 )->getGatewayManager()->getGateways();
 
                 $result = [
