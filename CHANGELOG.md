@@ -5,8 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.15.0] - 2021-11-30
 ### Added
 - Added a separate option for when to send the order confirmation email for the Bank Transfer payment method
+- Added a button to verify the API Key before saving the config.
 
 ### Changed
 - Changed the API Key fields to be obscured for added security, they are now also stored with encryption provided by the Encryptor from the Magento Framework
