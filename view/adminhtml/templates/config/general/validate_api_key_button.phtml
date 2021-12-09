@@ -87,7 +87,8 @@ use \MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton;
 
             return {
                 mode: mode,
-                apiKey: $('#' + configPath + (mode === '0' ? 'test_api_key' : 'live_api_key')).val()
+                apiKey: $('#' + configPath + (mode === '0' ? 'test_api_key' : 'live_api_key')).val(),
+                storeId: "<?= /* @escapeNotVerified */ $block->getData('store_id'); ?>"
             };
         }
     })

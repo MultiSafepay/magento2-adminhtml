@@ -48,6 +48,7 @@ class ValidateApiKeyButton extends Field
         $block->setTemplate(self::TEMPLATE_PATH)
             ->setData('send_button', $button->toHtml())
             ->setData('ajax_url', $this->getAjaxUrl())
+            ->setData('store_id', $this->getStoreId())
             ->setData('button_id', self::CHECK_BUTTON_ID);
 
         return $block->toHtml();
@@ -78,5 +79,23 @@ class ValidateApiKeyButton extends Field
     public function getCheckButtonId(): string
     {
         return self::CHECK_BUTTON_ID;
+    }
+
+    /**
+     * Get store identifier
+     *
+     * @return  int
+     * @throws LocalizedException
+     */
+    public function getStoreId(): int
+    {
+        $storeId = null;
+
+        if ($website = $this->getRequest()->getParam('website')) {
+            $storeIds = $this->_storeManager->getWebsite((int)$website)->getStoreIds();
+            $storeId = array_pop($storeIds);
+        }
+
+        return (int)($storeId ?: $this->getRequest()->getParam('store', 0));
     }
 }
