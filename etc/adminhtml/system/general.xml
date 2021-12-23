@@ -120,6 +120,69 @@
                 <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\AccountData</frontend_model>
             </field>
         </group>
+        <group id="multisafepay_status" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>MultiSafepay Transaction Status</label>
+            <field id="initialized_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: initialized]]></label>
+                <config_path>multisafepay/status/initialized_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="uncleared_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: uncleared]]></label>
+                <config_path>multisafepay/status/uncleared_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="reserved_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: reserved]]></label>
+                <config_path>multisafepay/status/reserved_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="chargeback_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: chargeback]]></label>
+                <config_path>multisafepay/status/chargeback_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="refunded_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: refunded]]></label>
+                <config_path>multisafepay/status/refunded_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="partial_refunded_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: Partial refunded]]></label>
+                <config_path>multisafepay/status/partial_refunded_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="void_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: Void]]></label>
+                <config_path>multisafepay/status/void_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="declined_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: Declined]]></label>
+                <config_path>multisafepay/status/declined_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="expired_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: Expired]]></label>
+                <config_path>multisafepay/status/expired_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+            <field id="cancelled_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Status: Cancelled]]></label>
+                <config_path>multisafepay/status/cancelled_status</config_path>
+                <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                <comment><![CDATA[The default order status will be used if nothing is selected.]]></comment>
+            </field>
+        </group>
         <group id="multisafepay_advanced" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Advanced Settings</label>
             <field id="custom_totals" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
