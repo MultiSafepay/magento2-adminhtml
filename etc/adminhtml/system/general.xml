@@ -192,6 +192,12 @@
                     Fill in the custom total code(s) that shouldn't be visible on the MultiSafepay payment page. Semicolon (;) separated values.
                 </comment>
             </field>
+            <field id="second_chance_paymentlink" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Cancel MultiSafepay Order Payment Link]]></label>
+                <config_path>multisafepay/advanced/second_chance_paymentlink</config_path>
+                <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\SecondChancePaymentLink</source_model>
+                <comment><![CDATA[Choose whether to disable MutliSafepay order payment link in order to disable SecondChance emails.]]></comment>
+            </field>
             <field id="disable_shopping_cart" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Disable Shopping Cart]]></label>
                 <config_path>multisafepay/advanced/disable_shopping_cart</config_path>
@@ -199,8 +205,7 @@
                 <comment><![CDATA[Select "Yes" to hide all totals on the MultiSafepay payment page, except "Grand total".
                  <br><br><strong>Note:</strong> won't work for payment methods which require shopping cart data: Afterpay, E-invoicing, in3, Klarna, Pay After Delivery.]]></comment>
             </field>
-            <field id="use_custom_return_url" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1"
-                showInStore="1">
+            <field id="use_custom_return_url" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Use custom return urls for PWA storefront integration</label>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <config_path>multisafepay/advanced/use_custom_return_url</config_path>
