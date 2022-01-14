@@ -8,7 +8,7 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/osl-3.0.php
  *
- * Copyright © 2021 MultiSafepay, Inc. All rights reserved.
+ * Copyright © 2022 MultiSafepay, Inc. All rights reserved.
  * See DISCLAIMER.md for disclaimer details.
  *
  */
@@ -45,7 +45,7 @@ class PaymentConfig extends Fieldset
         $html = '<div class="config-heading" >';
         $htmlId = $element->getHtmlId();
         $html .= '<div class="button-container"><button type="button"' .
-                 ' class="button action-configure' . '" id="' . $htmlId . '-head" 
+                 ' class="button action-configure' . '" id="' . $htmlId . '-head"
                  onclick="' . "location.href='" . $this->escapeUrl(
                      $this->getUrl('adminhtml/system_config/edit/section/multisafepay_general')
                  ) . "'" . '"><span class="state-closed">' . __('Configure') . '</span></button>';
