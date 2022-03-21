@@ -16,7 +16,16 @@
                 <field id="active">1</field>
             </depends>
         </field>
-        <field id="order_confirmation_email" translate="label" type="select" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="transaction_type" translate="label" type="select" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Redirect to the bank details page]]></label>
+            <config_path>payment/multisafepay_banktransfer/transaction_type</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\BankTransferTransactionType</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+            <comment><![CDATA[If this is turned on, the customer will be redirected to the bank details page first after placing the order]]></comment>
+        </field>
+        <field id="order_confirmation_email" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Send the order confirmation email]]></label>
             <config_path>payment/multisafepay_banktransfer/order_confirmation_email</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
