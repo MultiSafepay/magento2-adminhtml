@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added an option to skip the bank details page after placing an order for the Bank Transfer payment method
 
+### Changed
+- Removed configuration settings for ING Home'Pay
+
 ## [1.16.0] - 2022-01-11
 ### Added
 - Added options for selecting separate order status for different MultiSafepay statuses
