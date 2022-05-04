@@ -5,11 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.17.0] - 2022-04-28
 ### Added
 - Added an option to skip the bank details page after placing an order for the Bank Transfer payment method
 
 ### Changed
 - Removed configuration settings for ING Home'Pay
+- Added changes that are required for PHP 8.1:
+  - Added null coalescing operator for when haystack parameter for the strpos() function is null
 
 ## [1.16.0] - 2022-01-11
 ### Added
