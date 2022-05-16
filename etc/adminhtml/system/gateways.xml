@@ -38,5 +38,6 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_in3.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_genericgateway.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_wechatpay.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_alipayplus.xml"/>
     </section>
 </include>
