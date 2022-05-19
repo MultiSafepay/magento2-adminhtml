@@ -16,6 +16,16 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="vault_enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Enable Vault]]></label>
+            <config_path>payment/multisafepay_maestro_vault/active</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\Vault</backend_model>
+            <comment><![CDATA[Please make sure <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
 <!--        <field id="payment_action" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">-->
 <!--            <label>Payment Action</label>-->
 <!--            <config_path>payment/multisafepay_maestro/payment_action</config_path>-->
@@ -38,6 +48,23 @@
             <!--            See more details about <strong>the Payment Request API</strong> technology <a href="https://paymentrequest.show/" target="blank">here.</a><br>-->
             <depends>
                 <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="tokenization" translate="label" type="select" sortOrder="27" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Enable Tokenization inside the component]]></label>
+            <config_path>payment/multisafepay_maestro/tokenization</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment>
+                <![CDATA[Please make sure
+                        <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/"
+                        target="blank">Recurring payments</a> is enabled in your MultiSafepay account.<br />
+                        This feature is similar to Magento Vault.
+                        To avoid collisions between the two, you can not enable them both at the same time]]>
+            </comment>
+            <depends>
+                <field id="active">1</field>
+                <field id="payment_type">credit_card</field>
+                <field id="vault_enabled">0</field>
             </depends>
         </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">

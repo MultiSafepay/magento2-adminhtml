@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Added Vault & Tokenization for Maestro
+
 ### Fixed
 - Fixed the sorting of the generic gateways to be always at the bottom
 

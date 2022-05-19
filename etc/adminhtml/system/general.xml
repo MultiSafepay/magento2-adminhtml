@@ -91,12 +91,6 @@
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Methods</source_model>
                 <comment><![CDATA[Choose which payment method will be automatically selected in the checkout.]]></comment>
             </field>
-            <field id="enable_vault" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label><![CDATA[Enable Vault]]></label>
-                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\Vault</backend_model>
-                <comment><![CDATA[Enables Vault for all supported gateways. Please make sure <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
-            </field>
 <!--            <field id="use_manual_capture" translate="label" type="select" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">-->
 <!--                <label><![CDATA[Enable Manual Capture]]></label>-->
 <!--                <config_path>multisafepay/general/use_manual_capture</config_path>-->

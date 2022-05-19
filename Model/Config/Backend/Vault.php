@@ -26,14 +26,12 @@ use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
 use MultiSafepay\ConnectCore\Model\Vault as VaultModel;
-use MultiSafepay\ConnectCore\Util\VaultUtil;
 
 class Vault extends Value
 {
-    /**
-     * @var VaultUtil
-     */
-    protected $vaultUtil;
+    private const PAYMENT = 'payment';
+    private const ACTIVE = 'active';
+    private const TOKENIZATION = 'tokenization';
 
     /**
      * @var WriterInterface
@@ -47,7 +45,6 @@ class Vault extends Value
      * @param Registry $registry
      * @param ScopeConfigInterface $config
      * @param TypeListInterface $cacheTypeList
-     * @param VaultUtil $vaultUtil
      * @param WriterInterface $writer
      * @param AbstractResource|null $resource
      * @param AbstractDb|null $resourceCollection
@@ -58,7 +55,6 @@ class Vault extends Value
         Registry $registry,
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
-        VaultUtil $vaultUtil,
         WriterInterface $writer,
         AbstractResource $resource = null,
         AbstractDb $resourceCollection = null,
@@ -66,19 +62,35 @@ class Vault extends Value
     ) {
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
         $this->writer = $writer;
-        $this->vaultUtil = $vaultUtil;
     }
 
     /**
+     * Turn on the recurring method for this specific Vault method and turn off Tokenization if it was turned on
+     *
      * @return Vault
      */
     public function afterSave(): Vault
     {
         foreach (VaultModel::VAULT_GATEWAYS as $method => $recurringMethod) {
-            $vaultPath = $this->vaultUtil->getActiveConfigPath($method);
-            $recurringPath = 'payment/' . $recurringMethod . '/active';
-            $this->writer->save($vaultPath, $this->getValue(), $this->getScope(), $this->getScopeId());
-            $this->writer->save($recurringPath, $this->getValue(), $this->getScope(), $this->getScopeId());
+            if ($this->getGroupId() !== $method) {
+                continue;
+            }
+            
+            // Set the recurring method to active to make sure payments can be made with it
+            $this->writer->save(
+                self::PAYMENT . DIRECTORY_SEPARATOR . $recurringMethod . DIRECTORY_SEPARATOR . self::ACTIVE,
+                $this->getValue(),
+                $this->getScope(),
+                $this->getScopeId()
+            );
+
+            $tokenizationPath = self::PAYMENT . DIRECTORY_SEPARATOR . $this->getGroupId() . DIRECTORY_SEPARATOR .
+                                self::TOKENIZATION;
+
+            // Check to disable Tokenization if it was enabled to make sure that both are not enabled at the same time
+            if ($this->_config->getValue($tokenizationPath) && $this->getValue() === '1') {
+                $this->writer->save($tokenizationPath, 0, $this->getScope(), $this->getScopeId());
+            }
         }
 
         return parent::afterSave();
