@@ -71,6 +71,7 @@
             <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
             <can_be_empty>1</can_be_empty>
             <depends>
+                <field id="active">1</field>
                 <field id="allowspecific">1</field>
             </depends>
         </field>
@@ -88,6 +89,7 @@
             <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
             <can_be_empty>1</can_be_empty>
             <depends>
+                <field id="active">1</field>
                 <field id="allow_specific_currency">1</field>
             </depends>
         </field>
@@ -105,6 +107,7 @@
             <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
             <can_be_empty>1</can_be_empty>
             <depends>
+                <field id="active">1</field>
                 <field id="allow_specific_shipping_method">1</field>
             </depends>
         </field>
@@ -122,6 +125,7 @@
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CustomerGroups</source_model>
             <can_be_empty>1</can_be_empty>
             <depends>
+                <field id="active">1</field>
                 <field id="allow_specific_customer_group">1</field>
             </depends>
         </field>
@@ -137,6 +141,7 @@
             <label><![CDATA[Minimum Order Total]]></label>
             <config_path>payment/multisafepay_edenred/min_amount</config_path>
             <depends>
+                <field id="active">1</field>
                 <field id="allow_amount">1</field>
             </depends>
         </field>
@@ -144,6 +149,7 @@
             <label><![CDATA[Maximum Order Total]]></label>
             <config_path>payment/multisafepay_edenred/max_amount</config_path>
             <depends>
+                <field id="active">1</field>
                 <field id="allow_amount">1</field>
             </depends>
         </field>
@@ -161,6 +167,7 @@
             <config_path>payment/multisafepay_edenred/custom_payment_link_lifetime_unit</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TimeUnits</source_model>
             <depends>
+                <field id="active">1</field>
                 <field id="custom_payment_link_lifetime">1</field>
             </depends>
         </field>
@@ -168,6 +175,7 @@
             <label><![CDATA[Payment Link Lifetime Value]]></label>
             <config_path>payment/multisafepay_edenred/custom_payment_link_lifetime_value</config_path>
             <depends>
+                <field id="active">1</field>
                 <field id="custom_payment_link_lifetime">1</field>
             </depends>
         </field>
