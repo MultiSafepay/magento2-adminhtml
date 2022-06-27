@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed the sorting of the generic gateways to be always at the bottom
 
+### Changed
+- Changed the styles and images according to the new rebranding guidelines
+
 ## [1.17.0] - 2022-04-28
 ### Added
 - Added an option to skip the bank details page after placing an order for the Bank Transfer payment method

@@ -25,6 +25,7 @@
 
 #multisafepay-section-button {
     min-width: 100px;
+    font-weight: bold;
 }
 
 .multisafepay-payment .button-container {
@@ -50,7 +51,7 @@
 .multisafepay-icon .title:before
 {
     background: url('../images/icon-multisafepay.png') no-repeat;
-    width: 15px;
+    width: 16px;
     height: 16px;
     content: '';
     display: inline-block;

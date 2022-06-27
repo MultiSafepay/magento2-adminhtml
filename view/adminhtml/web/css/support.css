@@ -50,36 +50,20 @@
 }
 
 .multisafepay-btn-primary {
-    background: #f94f77;
-    background-image: -webkit-linear-gradient(top, #f94f77, #cd3458);
-    background-image: -moz-linear-gradient(top, #f94f77, #cd3458);
-    background-image: -ms-linear-gradient(top, #f94f77, #cd3458);
-    background-image: -o-linear-gradient(top, #f94f77, #cd3458);
-    background-image: linear-gradient(to bottom, #f94f77, #cd3458);
-    -webkit-border-radius: 5 !important;
-    -moz-border-radius: 5 !important;
-    border-radius: 5px !important;
-    -webkit-box-shadow: 0px 1px 1px #666666;
-    -moz-box-shadow: 0px 1px 1px #666666;
-    box-shadow: 0px 1px 1px #666666;
-    color: #ffffff;
-    font-size: 14.5px;
-    border: 0px;
-    padding: 10px 10px 10px 20px;
+    background-color: #00adeb;
+    color: #fff;
+    border-radius: 5px;
     text-decoration: none;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    min-width: 200px;
+    font-weight: 500;
+    padding: 15px 45px;
+    margin: 1rem 0;
 }
 
 .multisafepay-btn-primary:hover {
-    background: #f94f7c;
-    background-image: -webkit-linear-gradient(top, #f94f7c, #9c1a3b);
-    background-image: -moz-linear-gradient(top, #f94f7c, #9c1a3b);
-    background-image: -ms-linear-gradient(top, #f94f7c, #9c1a3b);
-    background-image: -o-linear-gradient(top, #f94f7c, #9c1a3b);
-    background-image: linear-gradient(to bottom, #f94f7c, #9c1a3b);
+    background-color: #004b6f;
+    transition-property: color,background-color,border-color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
     text-decoration: none;
     color: #fff;
 }
@@ -139,7 +123,7 @@
 }
 
 .mutlisafepay-notification-grid-item {
-    background: url(../images/grid-icon.png) no-repeat;
+    background: url(../images/icon-multisafepay.png) no-repeat;
     padding-left: 60px;
     min-height: 50px;
 }
@@ -189,7 +173,7 @@
 #multisafepay-support-banner {
     width: auto;
     background: url(../images/msp-banner.svg) no-repeat;
-    height: 160px;
+    height: 250px;
     background-size: cover;
     border-radius: 10px;
 }
@@ -201,46 +185,36 @@
 }
 
 .multisafepay-support-button-docs {
-    margin: 5px 5px 15px 5px;
-    align-items: center;
-    justify-content: center;
-    padding: 7px 15px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
+    line-height: 1.9rem;
+    cursor: pointer;
+    background-color: #fff;
+    color: #131e22;
+    border: 1px solid #131e22;
+    border-radius: 8px;
+    padding: 15px 45px;
+    margin: 1rem 0;
+    font-weight: bold;
     text-align: center;
-    text-decoration: none;
-    color: #10abe6fa;
-    backface-visibility: hidden;
-    border: 0.2rem solid rgba(4, 140, 220, 0.71);
-    border-radius: 10px;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-    background-color: #10abe61a;
+    white-space: nowrap;
+    vertical-align: middle;
+    display:inline-block;
 }
 
 .admin__scope-old a.multisafepay-support-button-docs {
-    display: inline-flex;
+    display: inline-block;
 }
 
 .multisafepay-support-button-docs:hover {
-    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+    color: #004a71;
     text-decoration: none;
-    color: #10abe6fa;
+    transition-duration: .2s;
+    transition-property: color,background-color,border-color;
+    transition-timing-function: linear;
 }
 
 .multisafepay-support-button-contact {
-    padding: 5px 20px 5px 40px;
-    font-weight: 600;
-}
-
-.multisafepay-support-button-contact::before {
-    position: absolute;
-    width: 23px;
-    height: 16px;
-    margin-left: -26px;
-    margin-top: 2px;
-    content: '';
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAQCAYAAAD9L+QYAAAAAXNSR0IArs4c6QAAAO9JREFUOE/tkjEOgkAQRfevkVBgYkGrsabzGvS03s2WC3ANG2KtLZVaEWTHLGHIqsiySinNhlnm/T9/QF3XeynlTkz8ENERmklE+lQT8iUAAhEpALIVoV8FALDhBt4AjWIhhAi/ECkB+KbJDq6LcRz7WZaVrlOwsSRJgjRNb2zsCd4WLwCWYwUYrJQ6AVibE/fB9b3ew8wmYObbF+MnePMtNxdFsQjD8MqAqqq2nucdrOK80IEFzgHcGcSCeZ4HURR1+To7Nxp0nht+J6KzEGJl+6MGY3lpbvYwYtKuzQVuM/p2/4f3RqZjqZ3DHNnwAGeSkqeFyNF6AAAAAElFTkSuQmCC");
+    padding: 8px 25px;
+    font-weight: bold;
 }
 
 .multisafepay-support-contact {
@@ -248,17 +222,8 @@
 }
 
 .multisafepay-support-button-signup {
-    padding: 5px 20px 5px 15px;
-    font-weight: 600;
-}
-
-.multisafepay-support-button-signup::after {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    margin-top: 5px;
-    content: '';
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFpJREFUOE+908ESABAIBFD7/x+d6eAStWsa3Bi9EjDCMDMDgLiezY8bb5A0k4qUpSoIPStDKODNqxAJqBAZyJB/QNYHqYJWE1vXyIK9sW+espJ5/c6tgptgRyYtNkAR4Rp79gAAAABJRU5ErkJggg==");
+    padding: 8px 25px;
+    font-weight: bold;
 }
 
 .multisafepay-support-feature-request {
