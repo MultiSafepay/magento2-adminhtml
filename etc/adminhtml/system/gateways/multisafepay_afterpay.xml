@@ -25,6 +25,25 @@
             </depends>
             <comment><![CDATA[If this is turned on, the customer fills in additional information needed for the payment method directly in the checkout, instead of on the MultiSafepay payment page.]]></comment>
         </field>
+        <field id="override_order_confirmation_email" translate="label" type="select" sortOrder="27" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Override when to send the order confirmation email]]></label>
+            <config_path>payment/multisafepay_afterpay/override_order_confirmation_email</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+            <comment><![CDATA[Override the moment when the order confirmation email is sent to the customer.]]></comment>
+        </field>
+        <field id="order_confirmation_email" translate="label" type="select" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Send the order confirmation email]]></label>
+            <config_path>payment/multisafepay_afterpay/order_confirmation_email</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
+            <depends>
+                <field id="override_order_confirmation_email">1</field>
+                <field id="active">1</field>
+            </depends>
+            <comment><![CDATA[The moment the order confirmation email is sent to the customer. Overrides the general setting for this specific payment method.]]></comment>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_afterpay/allowspecific</config_path>
