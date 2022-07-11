@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.19.0] - 2022-07-11
+### Added
+- Added a configuration option for overriding when to send the order confirmation e-mail for pay later methods
+
 ## [1.18.0] - 2022-06-29
 ### Added
 - Added Vault for Maestro
