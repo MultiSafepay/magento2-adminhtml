@@ -1,6 +1,6 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_maestro" translate="label" type="text" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/credit-and-debit-cards/maestro/" target="blank">Maestro</a>]]></label>
+        <label><![CDATA[Maestro]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
         <comment><![CDATA[Maestro is a commonly used debit both in Europe and around the world. Provided by MasterCard, Maestro ensures a secure international payment method.]]></comment>
@@ -21,7 +21,7 @@
             <config_path>payment/multisafepay_maestro_vault/active</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
             <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\Vault</backend_model>
-            <comment><![CDATA[Please make sure <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
+            <comment><![CDATA[Please make sure <a href="https://docs.multisafepay.com/docs/recurring-payments" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
@@ -42,7 +42,7 @@
             <config_path>payment/multisafepay_maestro/payment_type</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CardPaymentTypes</source_model>
             <comment><![CDATA[<br>
-                         <strong>Credit Card Component</strong> - MultiSafepay component for credit card payment methods. <a href="https://docs.multisafepay.com/integrations/payment-components/" target="blank">How does it work?</a>
+                         <strong>Credit Card Component</strong> - MultiSafepay component for credit card payment methods. <a href="https://docs.multisafepay.com/docs/payment-components" target="blank">How does it work?</a>
                 ]]></comment>
             <!--            <br><br><strong>Payment Request API</strong> - if your browser doesn't support the Payment Request API, then "Redirect" type will be used by default.-->
             <!--            See more details about <strong>the Payment Request API</strong> technology <a href="https://paymentrequest.show/" target="blank">here.</a><br>-->
@@ -56,7 +56,7 @@
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
             <comment>
                 <![CDATA[Please make sure
-                        <a href="https://docs.multisafepay.com/tools/recurring-payments/what-is-recurring-payments/"
+                        <a href="https://docs.multisafepay.com/docs/recurring-payments"
                         target="blank">Recurring payments</a> is enabled in your MultiSafepay account.<br />
                         This feature is similar to Magento Vault.
                         To avoid collisions between the two, you can not enable them both at the same time]]>
@@ -167,7 +167,7 @@
             <label><![CDATA[Custom Payment Link Lifetime]]></label>
             <config_path>payment/multisafepay_maestro/custom_payment_link_lifetime</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/payment-links#link-lifetimes" target="blank">What is the lifetime of a payment link?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>

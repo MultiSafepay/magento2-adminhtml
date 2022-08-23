@@ -26,7 +26,7 @@ use MultiSafepay\ConnectCore\Util\VersionUtil;
 class Support extends Template implements RendererInterface
 {
     private const MULTISAFEPAY_DOCS_UPGRADE_LINK
-        = 'https://docs.multisafepay.com/integrations/ecommerce-integrations/magento2/#7-updates';
+        = 'https://docs.multisafepay.com/docs/magento-2#updates';
 
     /**
      * @var string

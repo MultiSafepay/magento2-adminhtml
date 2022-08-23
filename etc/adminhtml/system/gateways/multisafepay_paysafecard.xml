@@ -1,6 +1,6 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_paysafecard" translate="label" type="text" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/prepaid-cards/paysafecard/" target="blank">Paysafecard</a>]]></label>
+        <label><![CDATA[Paysafecard]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
         <comment><![CDATA[Paysafecard is a global market leader in online prepaid payment methods. Paysafecard allows customers to pay online as simply and safely as using cash.]]></comment>
@@ -116,7 +116,7 @@
             <label><![CDATA[Custom Payment Link Lifetime]]></label>
             <config_path>payment/multisafepay_paysafecard/custom_payment_link_lifetime</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/payment-links#link-lifetimes" target="blank">What is the lifetime of a payment link?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>

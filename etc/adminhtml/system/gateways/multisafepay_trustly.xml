@@ -1,6 +1,6 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_trustly" translate="label" type="text" sortOrder="145" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/banks/trustly/" target="blank">Trustly</a>]]></label>
+        <label><![CDATA[Trustly]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
         <comment><![CDATA[Want to add a rapidly growing payment method to your webshop? Trustly is a fast, simple and secure way for online consumers to pay directly from their banking environment.]]></comment>
@@ -116,7 +116,7 @@
             <label><![CDATA[Custom Payment Link Lifetime]]></label>
             <config_path>payment/multisafepay_trustly/custom_payment_link_lifetime</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/payment-links#link-lifetimes" target="blank">What is the lifetime of a payment link?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>

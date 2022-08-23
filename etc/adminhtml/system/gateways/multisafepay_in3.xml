@@ -1,6 +1,6 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_in3" translate="label" type="text" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/billing-suite/in3/" target="blank">in3</a>]]></label>
+        <label><![CDATA[in3]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
         <comment><![CDATA[With in3, you can allow consumers to pay for their purchases ‘in 3’ individual installments at no extra cost.]]></comment>
@@ -144,7 +144,7 @@
             <label><![CDATA[Custom Payment Link Lifetime]]></label>
             <config_path>payment/multisafepay_in3/custom_payment_link_lifetime</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/payment-links#link-lifetimes" target="blank">What is the lifetime of a payment link?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>

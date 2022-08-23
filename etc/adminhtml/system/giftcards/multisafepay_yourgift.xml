@@ -116,7 +116,7 @@
             <label><![CDATA[Custom Payment Link Lifetime]]></label>
             <config_path>payment/multisafepay_yourgift/custom_payment_link_lifetime</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/faq/api/lifetime-of-a-payment-link/" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/payment-links#link-lifetimes" target="blank">What is the lifetime of a payment link?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
