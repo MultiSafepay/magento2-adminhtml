@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.20.0] - 2022-08-23
+### Added
+- Added the MyBank payment method
+
+### Fixed
+- Fixed dead docs links in the configuration and support page
+
+### Removed
+- Removed payment method docs links
+
 ## [1.19.0] - 2022-07-11
 ### Added
 - Added a configuration option for overriding when to send the order confirmation e-mail for pay later methods
