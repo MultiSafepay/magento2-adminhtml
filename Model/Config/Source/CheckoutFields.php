@@ -31,7 +31,7 @@ class CheckoutFields implements OptionSourceInterface
     {
         return [
             ['value' => 'date_of_birth', 'label' => 'Date Of Birth'],
-            ['value' => 'bank_account', 'label' => 'Bank Account'],
+            ['value' => 'account_number', 'label' => 'Bank Account'],
             ['value' => 'email_address', 'label' => 'E-mail Address'],
         ];
     }
