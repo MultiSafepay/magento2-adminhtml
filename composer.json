@@ -1,7 +1,7 @@
 {
     "name": "multisafepay/magento2-adminhtml",
     "description": "MultiSafepay backend module for Magento 2",
-    "version": "1.21.0",
+    "version": "1.21.1",
     "require": {
         "multisafepay/magento2-core": "^2.19",
         "magento/framework": "^102.0|^103.0",
