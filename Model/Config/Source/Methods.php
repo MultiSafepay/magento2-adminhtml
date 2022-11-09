@@ -69,7 +69,7 @@ class Methods implements OptionSourceInterface
         $methods = [];
         $methods[] = [
             'value' => '',
-            'label' => '-- No Default --',
+            'label' => __('-- No Default --'),
         ];
 
         foreach ($methodList as $code => $method) {

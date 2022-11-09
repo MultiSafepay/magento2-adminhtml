@@ -29,16 +29,16 @@ class Email implements OptionSourceInterface
     {
         return [
             [
-                "value" => "before_transaction",
-                "label" => "When placing the order"
+                'value' => 'before_transaction',
+                'label' => __('When placing the order')
             ],
             [
-                "value" => "after_transaction",
-                "label" => "After transaction"
+                'value' => 'after_transaction',
+                'label' => __('After transaction')
             ],
             [
-                "value" => "after_paid_transaction",
-                "label" => "After paid transaction"
+                'value' => 'after_paid_transaction',
+                'label' => __('After paid transaction')
             ],
         ];
     }

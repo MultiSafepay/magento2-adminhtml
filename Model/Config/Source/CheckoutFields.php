@@ -21,7 +21,6 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class CheckoutFields implements OptionSourceInterface
 {
-
     /**
      * Return possible checkout fields which the merchant can use
      *
@@ -30,9 +29,9 @@ class CheckoutFields implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => 'date_of_birth', 'label' => 'Date Of Birth'],
-            ['value' => 'account_number', 'label' => 'Bank Account'],
-            ['value' => 'email_address', 'label' => 'E-mail Address'],
+            ['value' => 'date_of_birth', 'label' => __('Date Of Birth')],
+            ['value' => 'account_number', 'label' => __('Bank Account')],
+            ['value' => 'email_address', 'label' => __('E-mail Address')],
         ];
     }
 }
