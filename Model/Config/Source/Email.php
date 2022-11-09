@@ -30,15 +30,15 @@ class Email implements OptionSourceInterface
         return [
             [
                 'value' => 'before_transaction',
-                'label' => __('When placing the order')
+                'label' => __('Immediately after placing the order')
             ],
             [
                 'value' => 'after_transaction',
-                'label' => __('After transaction')
+                'label' => __('On transaction initialized status')
             ],
             [
                 'value' => 'after_paid_transaction',
-                'label' => __('After paid transaction')
+                'label' => __('On transaction completed status')
             ],
         ];
     }

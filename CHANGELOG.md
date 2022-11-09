@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Made all the config field labels translatable
 
+### Changed
+- Changed labels of when to send the order confirmation email
+
 ## [1.21.1] - 2022-10-24
 ### Fixed
 - Fixed references related to the E-Invoicing configurable 'account_number' field
