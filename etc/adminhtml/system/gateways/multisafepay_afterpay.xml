@@ -1,9 +1,9 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_afterpay" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[AfterPay]]></label>
+        <label><![CDATA[Riverty]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
-        <comment><![CDATA[AfterPay is one of the most known pay after solutions in the Netherlands and in Belgium.]]></comment>
+        <comment><![CDATA[Riverty is one of the most known pay after solutions in the Netherlands and in Belgium.]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enabled]]></label>
             <config_path>payment/multisafepay_afterpay/active</config_path>
