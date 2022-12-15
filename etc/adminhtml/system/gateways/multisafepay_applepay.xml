@@ -20,7 +20,7 @@
             <label><![CDATA[Use Apple Pay Direct Button]]></label>
             <config_path>payment/multisafepay_applepay/direct_button</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[<a href="https://docs.multisafepay.com/payments/methods/wallet/applepay/direct-integration/" target="blank">How to activate Apple Pay direct?</a>]]></comment>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/apple-pay-direct" target="blank">How to activate Apple Pay direct?</a>]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
