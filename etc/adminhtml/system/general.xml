@@ -200,7 +200,7 @@
                  <br><br><strong>Note:</strong> won't work for payment methods which require shopping cart data: Afterpay, E-invoicing, in3, Klarna, Pay After Delivery.]]></comment>
             </field>
             <field id="use_custom_return_url" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Use custom return urls for PWA storefront integration</label>
+                <label>Use custom return urls</label>
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <config_path>multisafepay/advanced/use_custom_return_url</config_path>
                 <comment><![CDATA[Use custom urls for <strong>"Cancel"</strong> button on payment page and for redirect to a <strong>"Success page"</strong> after successful payment.
@@ -215,7 +215,6 @@
                 <br>
                  For the integration with PWA or third-party storefront please use our <a href="https://github.com/MultiSafepay/magento2-graphql" target="blank">separate extension for GraphQL support.</a>]]>
                 </comment>
-                <tooltip><![CDATA[Use this setting for a PWA storefront or third-party storefront integration.]]></tooltip>
             </field>
             <field id="custom_cancel_return_url" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
                 showInStore="1">
