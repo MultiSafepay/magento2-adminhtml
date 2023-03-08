@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.22.0] - 2023-03-07
+### Added
+- Added configuration for the Pay After Delivery installments payment method
+
+### Fixed
+- Fixed missing checkbox in rare cases for placing a transaction with iDEAL and Direct Debit Vault
+- Fixed broken docs links for Apple Pay Direct
+
+### Changed
+- Removed the PWA mention from the custom url labels, since that functionality is not only available when using a PWA
+
+### Removed
+- Copyright mention has been removed from the files and is only mentioned from now on in the disclaimer. Please read it if you haven't already
+
 ## [1.21.2] - 2022-12-07
 ### Fixed
 - Made all the config field labels translatable
