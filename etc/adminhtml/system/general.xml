@@ -218,7 +218,7 @@
             </field>
             <field id="custom_cancel_return_url" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
                 showInStore="1">
-                <label>Custom redirect url after cancelling the payment</label>
+                <label>Custom redirect url after canceling the payment</label>
                 <config_path>multisafepay/advanced/custom_cancel_return_url</config_path>
                 <comment><![CDATA[
                         <strong>Example:</strong> https://customdomain.com/checkout/cancel?orderId={{order.order_id}} ]]></comment>
