@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.22.1] - 2023-04-03
+### Changed
+- Bump core module dependency version
+
 ## [1.22.0] - 2023-03-07
 ### Added
 - Added configuration for the Pay After Delivery installments payment method
