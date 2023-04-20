@@ -1,9 +1,9 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_sofort" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[Sofort Banking]]></label>
+        <label><![CDATA[Sofort]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
-        <comment><![CDATA[Do you want to expand your business across the border? Paying with your trusted banking environment wherever you are. Over 20 million consumers in European countries prefer SOFORT as their trusted payment method.]]></comment>
+        <comment><![CDATA[Do you want to expand your business across the border? Paying with your trusted banking environment wherever you are. Over 20 million consumers in European countries prefer Sofort as their trusted payment method.]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enabled]]></label>
             <config_path>payment/multisafepay_sofort/active</config_path>
