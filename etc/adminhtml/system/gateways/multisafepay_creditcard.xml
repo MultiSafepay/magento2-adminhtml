@@ -68,6 +68,15 @@
                 <field id="vault_enabled">0</field>
             </depends>
         </field>
+        <field id="payment_icon" translate="label" type="MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Form\Field\CreditCardIconRadios" sortOrder="33" showInDefault="1" showInWebsite="1"
+               showInStore="1">
+            <label><![CDATA[Payment Icon]]></label>
+            <config_path>payment/multisafepay_creditcard/payment_icon</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CardIconTypes</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_creditcard/allowspecific</config_path>

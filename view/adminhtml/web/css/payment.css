@@ -70,3 +70,12 @@
 .multisafepay-payment.multisafepay-section .config-heading {
     border-left: 5px solid #c4c4c482;
 }
+
+.admin__field-label.multisafepay-icon-label {
+    margin-top: 14px;
+}
+
+.admin-field-option-multisafepay {
+    flex-wrap: wrap;
+    display: flex;
+}
