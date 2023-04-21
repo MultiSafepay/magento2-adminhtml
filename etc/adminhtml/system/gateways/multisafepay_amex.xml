@@ -29,12 +29,11 @@
         <field id="payment_type" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Payment Type]]></label>
             <config_path>payment/multisafepay_amex/payment_type</config_path>
-            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CardPaymentTypes</source_model>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\PaymentTypes</source_model>
             <comment><![CDATA[<br>
-                         <strong>Credit Card Component</strong> - MultiSafepay component for credit card payment methods. <a href="https://docs.multisafepay.com/docs/payment-components" target="blank">How does it work?</a>
+                         <strong>Redirect</strong> - Redirect the customer to a payment page to finish the payment.
+                         <br /><br /><strong>Payment Component</strong> - <a href="https://docs.multisafepay.com/docs/payment-components" target="blank">Payment components</a> let you embed payment methods directly into your checkout.
                 ]]></comment>
-<!--            <br><br><strong>Payment Request API</strong> - if your browser doesn't support the Payment Request API, then "Redirect" type will be used by default.-->
-<!--            See more details about <strong>the Payment Request API</strong> technology <a href="https://paymentrequest.show/" target="blank">here.</a><br>-->
             <depends>
                 <field id="active">1</field>
             </depends>
@@ -52,7 +51,7 @@
             </comment>
             <depends>
                 <field id="active">1</field>
-                <field id="payment_type">credit_card</field>
+                <field id="payment_type">payment_component</field>
                 <field id="vault_enabled">0</field>
             </depends>
         </field>
