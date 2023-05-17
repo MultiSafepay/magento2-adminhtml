@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.23.0] - 2023-05-17
+### Added
+- Add payment component for Pay After Delivery installments
+- Add a setting field to exclude utm_nooverridefrom the redirect_url.
+
+### Changed
+- Refactor Credit Card Payment Components
+
 ## [1.22.1] - 2023-04-03
 ### Changed
 - Bump core module dependency version
