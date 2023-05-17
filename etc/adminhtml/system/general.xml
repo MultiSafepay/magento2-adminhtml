@@ -192,6 +192,12 @@
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\SecondChancePaymentLink</source_model>
                 <comment><![CDATA[Choose whether to disable MutliSafepay order payment link in order to disable SecondChance emails.]]></comment>
             </field>
+            <field id="disable_utm_nooverride" translate="label" type="select" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Disable utm_nooverride]]></label>
+                <config_path>multisafepay/advanced/disable_utm_nooverride</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Select "Yes" to remove the utm_nooverride query argument on the success redirect URL.]]></comment>
+            </field>
             <field id="disable_shopping_cart" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Disable Shopping Cart]]></label>
                 <config_path>multisafepay/advanced/disable_shopping_cart</config_path>
