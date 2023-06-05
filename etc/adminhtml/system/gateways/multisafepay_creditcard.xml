@@ -1,9 +1,9 @@
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
     <group id="multisafepay_creditcard" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label><![CDATA[Credit Card]]></label>
+        <label><![CDATA[Card payment]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
-        <comment><![CDATA[Let the consumer decide with which credit card to pay. <a href="https://docs.multisafepay.com/docs/cards" target="blank">Supported credit cards</a>]]></comment>
+        <comment><![CDATA[Let the consumer decide with which card to pay. <a href="https://docs.multisafepay.com/docs/cards" target="blank">Supported cards</a>]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enabled]]></label>
             <config_path>payment/multisafepay_creditcard/active</config_path>
