@@ -13,14 +13,12 @@
 // phpcs:ignoreFile
 namespace MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Form\Field;
 
-use Magento\Framework\App\ObjectManager;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Data\Form\Element\CollectionFactory;
 use Magento\Framework\Data\Form\Element\Factory;
 use Magento\Framework\DataObject;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Asset\Repository;
-use Magento\Framework\View\Helper\SecureHtmlRenderer;
 use MultiSafepay\ConnectAdminhtml\Model\Config\Source\CardIconTypes;
 
 /**
@@ -33,11 +31,6 @@ class CreditCardIconRadios extends AbstractElement
     public const CLASSIC_IMG_URL = 'MultiSafepay_ConnectCore::images/multisafepay_creditcard_classic.png';
 
     /**
-     * @var SecureHtmlRenderer
-     */
-    private $secureRenderer;
-
-    /**
      * @var Repository
      */
     private $assetRepository;
@@ -48,20 +41,16 @@ class CreditCardIconRadios extends AbstractElement
      * @param CollectionFactory $factoryCollection
      * @param Escaper $escaper
      * @param array $data
-     * @param SecureHtmlRenderer|null $secureRenderer
      */
     public function __construct(
         Repository $assetRepository,
         Factory $factoryElement,
         CollectionFactory $factoryCollection,
         Escaper $escaper,
-        $data = [],
-        ?SecureHtmlRenderer $secureRenderer = null
+        $data = []
     ) {
         $this->assetRepository = $assetRepository;
-        $this->secureRenderer
-            = $secureRenderer = $secureRenderer ?? ObjectManager::getInstance()->get(SecureHtmlRenderer::class);
-        parent::__construct($factoryElement, $factoryCollection, $escaper, $data, $secureRenderer);
+        parent::__construct($factoryElement, $factoryCollection, $escaper, $data);
         $this->setType('radios');
     }
 
@@ -124,15 +113,6 @@ class CreditCardIconRadios extends AbstractElement
             $option['label'] .
             '</span></label>';
 
-        if ($option->getStyle()) {
-            $html .= $this->secureRenderer->renderStyleAsTag($option->getStyle(), "#$optionId");
-        }
-        if ($option->getOnclick()) {
-            $this->secureRenderer->renderEventListenerAsTag('onclick', $option->getOnclick(), "#$optionId");
-        }
-        if ($option->getOnchange()) {
-            $this->secureRenderer->renderEventListenerAsTag('onchange', $option->getOnchange(), "#$optionId");
-        }
         $html .= '</div>';
 
         return $html;
