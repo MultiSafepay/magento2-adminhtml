@@ -8,22 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.23.1] - 2023-06-13
 ### Changed
-- Changed the 'Credit Card' method default title to 'Card Payment' according to the latest standards
+- DAVAMS-607: Changed the 'Credit Card' method default title to 'Card Payment' according to the latest standards
 
 ### Removed
-- Removed the setup_version from the module.xml
+- PLGMAG2V2-669: Removed the setup_version from the module.xml
 
 ## [1.23.0] - 2023-05-17
 ### Added
-- Add payment component for Pay After Delivery installments
-- Add a setting field to exclude utm_nooverridefrom the redirect_url.
+- PLGMAG2V2-657: Give the option for 3 different credit card icons
+- PLGMAG2V2-661: Add payment component for Pay After Delivery installments
+- PLGMAG2V2-667: Add a setting field to exclude utm_nooverridefrom the redirect_url.
 
 ### Changed
-- Refactor Credit Card Payment Components
+- PLGMAG2V2-653: Rebrand Sofort
+- PLGMAG2V2-632: Refactor Credit Card Payment Components
 
 ## [1.22.1] - 2023-04-03
 ### Changed
-- Bump core module dependency version
+- PLGMAG2V2-656: Bump core module dependency version
 
 ## [1.22.0] - 2023-03-07
 ### Added
