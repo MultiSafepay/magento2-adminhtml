@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.23.2] - 2023-07-17
+### Removed
+- PLGMAG2V2-674: Removed use of SecureHtmlRenderer to be backwards compatible with version 2.3
+
 ## [1.23.1] - 2023-06-13
 ### Changed
 - DAVAMS-607: Changed the 'Credit Card' method default title to 'Card Payment' according to the latest standards
