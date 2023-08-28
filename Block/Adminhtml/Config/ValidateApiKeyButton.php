@@ -71,14 +71,6 @@ class ValidateApiKeyButton extends Field
     }
 
     /**
-     * @return string
-     */
-    public function getCheckButtonId(): string
-    {
-        return self::CHECK_BUTTON_ID;
-    }
-
-    /**
      * Get store identifier
      *
      * @return  int
