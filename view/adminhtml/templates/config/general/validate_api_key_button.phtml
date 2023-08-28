@@ -38,7 +38,7 @@ use \MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\ValidateApiKeyButton;
         });
 
         function validate() {
-            var params = prepareSendParams(),
+            let params = prepareSendParams(),
                 isValid = true;
 
             _.each(params, function(data) {
