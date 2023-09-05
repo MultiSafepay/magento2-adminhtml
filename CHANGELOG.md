@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.23.3] - 2023-09-04
+### Changed
+- PLGMAG2V2-680: Replaced var with let in validate API key button function
+
+### Removed
+- PLGMAG2V2-676: Removed unused getCheckButtonId() function
+
 ## [1.23.2] - 2023-07-17
 ### Removed
 - PLGMAG2V2-674: Removed use of SecureHtmlRenderer to be backwards compatible with version 2.3
