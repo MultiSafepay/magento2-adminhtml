@@ -3,7 +3,7 @@
         <label><![CDATA[<a href="https://docs.multisafepay.com/payment-methods/edenred/" target="blank">Edenred</a>]]></label>
         <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
         <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
-        <comment><![CDATA[Edenred lets employers provide their employees with a prepaid card loaded with Edenred vouchers: Ticket Restaurant, Ticket EcoCheques, Ticket Compliments, Ticket Sport & Culture.]]></comment>
+        <comment><![CDATA[Edenred lets employers provide their employees with a prepaid card loaded with Edenred vouchers: Ticket Restaurant, Ticket EcoCheques, Ticket Compliments, Ticket Sport & Culture, Consumption Voucher.]]></comment>
         <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Enabled]]></label>
             <config_path>payment/multisafepay_edenred/active</config_path>
@@ -17,7 +17,7 @@
                 <field id="active">1</field>
             </depends>
         </field>
-        <field id="edencom_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="edencom_categories" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[EDENCOM Available Categories]]></label>
             <config_path>payment/multisafepay_edenred/edencom_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
@@ -27,7 +27,7 @@
                 <field id="active">1</field>
             </depends>
         </field>
-        <field id="edeneco_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="edeneco_categories" translate="label" type="multiselect" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[EDENECO Available Categories]]></label>
             <config_path>payment/multisafepay_edenred/edeneco_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
@@ -37,7 +37,7 @@
                 <field id="active">1</field>
             </depends>
         </field>
-        <field id="edenres_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="edenres_categories" translate="label" type="multiselect" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[EDENRES Available Categories]]></label>
             <config_path>payment/multisafepay_edenred/edenres_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
@@ -47,12 +47,22 @@
                 <field id="active">1</field>
             </depends>
         </field>
-        <field id="edensports_categories" translate="label" type="multiselect" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="edensports_categories" translate="label" type="multiselect" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[EDENSPORTS Available Categories]]></label>
             <config_path>payment/multisafepay_edenred/edensports_categories</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
             <can_be_empty>1</can_be_empty>
             <comment><![CDATA[Leave empty to disable the EDENSPORTS coupon.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="edenconsum_categories" translate="label" type="multiselect" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[EDENCONSUM Available Categories]]></label>
+            <config_path>payment/multisafepay_edenred/edenconsum_categories</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AvailableCategories</source_model>
+            <can_be_empty>1</can_be_empty>
+            <comment><![CDATA[Leave empty to disable the CVE coupon.]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
