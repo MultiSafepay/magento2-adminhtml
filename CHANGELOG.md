@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.24.0] - 2023-10-11
+### Added
+- PLGMAG2V2-700: Added Edenred Consumption Voucher (EDENCONSUM)
+- DAVAMS-661: Added the Zinia payment method
+
 ## [1.23.3] - 2023-09-04
 ### Changed
 - PLGMAG2V2-680: Replaced var with let in validate API key button function
