@@ -242,6 +242,11 @@
                     <field id="use_custom_return_url">1</field>
                 </depends>
             </field>
+            <field id="payment_component_template_id" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Payment Component Template ID]]></label>
+                <config_path>multisafepay/advanced/payment_component_template_id</config_path>
+                <comment><![CDATA[Leave empty for default template ID]]></comment>
+            </field>
         </group>
     </section>
 </include>
