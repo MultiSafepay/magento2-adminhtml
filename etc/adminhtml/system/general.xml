@@ -91,6 +91,12 @@
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Methods</source_model>
                 <comment><![CDATA[Choose which payment method will be automatically selected in the checkout.]]></comment>
             </field>
+            <field id="icon_type" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Payment icon type]]></label>
+                <config_path>multisafepay/general/icon_type</config_path>
+                <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\IconTypes</source_model>
+                <comment><![CDATA[Choose the payment icon type.]]></comment>
+            </field>
 <!--            <field id="use_manual_capture" translate="label" type="select" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">-->
 <!--                <label><![CDATA[Enable Manual Capture]]></label>-->
 <!--                <config_path>multisafepay/general/use_manual_capture</config_path>-->
