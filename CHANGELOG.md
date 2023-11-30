@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.25.0] - 2023-11-30
+### Added
+- DAVAMS-531: Added an advanced setting for adding a template ID to be used for payment components
+- DAVAMS-596: Added a setting to choose SVG icons instead PNG.
+
 ## [1.24.0] - 2023-10-11
 ### Added
 - PLGMAG2V2-700: Added Edenred Consumption Voucher (EDENCONSUM)
