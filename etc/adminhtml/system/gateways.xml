@@ -29,7 +29,6 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_alipay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_directbanktransfer.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_banktransfer.xml"/>
-        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_santander.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_cbc.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_directdebit.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_einvoicing.xml"/>
