@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.25.1] - 2023-12-28
+### Removed
+- DAVAMS-708: Removed Santander Betaal Per Maand
+
 ## [1.25.0] - 2023-11-30
 ### Added
 - DAVAMS-531: Added an advanced setting for adding a template ID to be used for payment components
