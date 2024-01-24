@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.25.2] - 2024-01-24
+### Changed
+- PLGMAG2V2-718: Remove gateway codes from Edenred title
+
 ## [1.25.1] - 2023-12-28
 ### Removed
 - DAVAMS-708: Removed Santander Betaal Per Maand
