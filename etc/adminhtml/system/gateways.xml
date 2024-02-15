@@ -42,5 +42,6 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_amazonpay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mybank.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_zinia.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mbway.xml"/>
     </section>
 </include>
