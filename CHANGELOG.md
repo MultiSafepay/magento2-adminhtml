@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.26.0] - 2024-02-16
+### Added
+-DAVAMS-716: Add Multibanco
+-DAVAMS-724: Add MB WAY
+
 ## [1.25.2] - 2024-01-24
 ### Changed
 - PLGMAG2V2-718: Remove gateway codes from Edenred title
