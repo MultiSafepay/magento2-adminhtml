@@ -19,6 +19,7 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_parfumcadeaukaart.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_podiumcadeaukaart.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_sportenfit.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_vvvcadeaubon.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_vvvcadeaukaart.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_webshopgiftcard.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/giftcards/multisafepay_wellnessgiftcard.xml"/>
