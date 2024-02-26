@@ -8,6 +8,7 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_ideal.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_payafter.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_bnplinstm.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_bnplmf.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_klarna.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_afterpay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_bancontact.xml"/>
