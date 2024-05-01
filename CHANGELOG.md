@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.27.1] - 2024-05-01
+### Changed
+- PLGMAG2V2-739: PayPal, AliPay, AliPay Plus, CBC, KBC and Trustly now have the option to redirect to the MultiSafepay payment page when placing the order
+
 ## [1.27.0] - 2024-04-02
 ### Added
 - PLGMAG2V2-731: Added VVV Cadeaubon gateway
