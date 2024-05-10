@@ -1,0 +1,182 @@
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="multisafepay_in3b2b" translate="label" type="text" sortOrder="87" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label><![CDATA[in3: Betaal in 3 delen (0% rente)]]></label>
+        <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Config\Fieldset\Payment</frontend_model>
+        <fieldset_css>complex multisafepay-payment multisafepay-section</fieldset_css>
+        <comment><![CDATA[Betaal vandaag 1/3 via iDEAL. De tweede en derde termijn betaal je binnen 30 en 60 dagen. Zonder rente.]]></comment>
+        <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Enabled]]></label>
+            <config_path>payment/multisafepay_in3b2b/active</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Title]]></label>
+            <config_path>payment/multisafepay_in3b2b/title</config_path>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="payment_type" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Payment Type]]></label>
+            <config_path>payment/multisafepay_in3b2b/payment_type</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\PaymentTypes</source_model>
+            <comment><![CDATA[<br>
+                         <strong>Redirect</strong> - Redirect the customer to a payment page to finish the payment.
+                         <br /><br /><strong>Payment Component</strong> - <a href="https://docs.multisafepay.com/docs/payment-components" target="blank">Payment components</a> let you embed payment methods directly into your checkout.
+                ]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="override_order_confirmation_email" translate="label" type="select" sortOrder="27" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Override when to send the order confirmation email]]></label>
+            <config_path>payment/multisafepay_in3b2b/override_order_confirmation_email</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+            <comment><![CDATA[Override the moment when the order confirmation email is sent to the customer.]]></comment>
+        </field>
+        <field id="order_confirmation_email" translate="label" type="select" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Send the order confirmation email]]></label>
+            <config_path>payment/multisafepay_in3b2b/order_confirmation_email</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\Email</source_model>
+            <depends>
+                <field id="override_order_confirmation_email">1</field>
+                <field id="active">1</field>
+            </depends>
+            <comment><![CDATA[The moment the order confirmation email is sent to the customer. Overrides the general setting for this specific payment method.]]></comment>
+        </field>
+        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Countries]]></label>
+            <config_path>payment/multisafepay_in3b2b/allowspecific</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="specificcountry" translate="label" type="multiselect" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Countries]]></label>
+            <config_path>payment/multisafepay_in3b2b/specificcountry</config_path>
+            <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="active">1</field>
+                <field id="allowspecific">1</field>
+            </depends>
+        </field>
+        <field id="allow_specific_currency" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Currencies]]></label>
+            <config_path>payment/multisafepay_in3b2b/allow_specific_currency</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowed_currency" translate="label" type="multiselect" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Currencies]]></label>
+            <config_path>payment/multisafepay_in3b2b/allowed_currency</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="active">1</field>
+                <field id="allow_specific_currency">1</field>
+            </depends>
+        </field>
+        <field id="allow_specific_shipping_method" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Shipping Methods]]></label>
+            <config_path>payment/multisafepay_in3b2b/allow_specific_shipping_method</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowed_shipping_method" translate="label" type="multiselect" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Shipping Methods]]></label>
+            <config_path>payment/multisafepay_in3b2b/allowed_shipping_method</config_path>
+            <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="active">1</field>
+                <field id="allow_specific_shipping_method">1</field>
+            </depends>
+        </field>
+        <field id="allow_specific_customer_group" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Customer Groups]]></label>
+            <config_path>payment/multisafepay_in3b2b/allow_specific_customer_group</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="allowed_customer_group" translate="label" type="multiselect" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Specific Customer Groups]]></label>
+            <config_path>payment/multisafepay_in3b2b/allowed_customer_group</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CustomerGroups</source_model>
+            <can_be_empty>1</can_be_empty>
+            <depends>
+                <field id="active">1</field>
+                <field id="allow_specific_customer_group">1</field>
+            </depends>
+        </field>
+        <field id="allow_amount" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Applicable Order Total Amount]]></label>
+            <config_path>payment/multisafepay_in3b2b/allow_amount</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="min_amount" translate="label" type="text" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Minimum Order Total]]></label>
+            <config_path>payment/multisafepay_in3b2b/min_amount</config_path>
+            <depends>
+                <field id="active">1</field>
+                <field id="allow_amount">1</field>
+            </depends>
+        </field>
+        <field id="max_amount" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Maximum Order Total]]></label>
+            <config_path>payment/multisafepay_in3b2b/max_amount</config_path>
+            <depends>
+                <field id="active">1</field>
+                <field id="allow_amount">1</field>
+            </depends>
+        </field>
+        <field id="custom_payment_link_lifetime" translate="label" type="select" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Custom Payment Link Lifetime]]></label>
+            <config_path>payment/multisafepay_in3b2b/custom_payment_link_lifetime</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment><![CDATA[<a href="https://docs.multisafepay.com/docs/payment-links#link-lifetimes" target="blank">What is the lifetime of a payment link?</a>]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="custom_payment_link_lifetime_unit" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Payment Link Lifetime Unit]]></label>
+            <config_path>payment/multisafepay_in3b2b/custom_payment_link_lifetime_unit</config_path>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TimeUnits</source_model>
+            <depends>
+                <field id="active">1</field>
+                <field id="custom_payment_link_lifetime">1</field>
+            </depends>
+        </field>
+        <field id="custom_payment_link_lifetime_value" translate="label" type="text" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Payment Link Lifetime Value]]></label>
+            <config_path>payment/multisafepay_in3b2b/custom_payment_link_lifetime_value</config_path>
+            <depends>
+                <field id="active">1</field>
+                <field id="custom_payment_link_lifetime">1</field>
+            </depends>
+        </field>
+        <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+               showInStore="1">
+            <label><![CDATA[Sort Order]]></label>
+            <config_path>payment/multisafepay_in3b2b/sort_order</config_path>
+            <frontend_class>validate-number</frontend_class>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+    </group>
+</include>
