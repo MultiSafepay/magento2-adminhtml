@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.28.0] - 2024-05-15
+### Added
+- DAVAMS-764: Add in3 B2B
+
 ## [1.27.1] - 2024-05-01
 ### Changed
 - PLGMAG2V2-739: PayPal, AliPay, AliPay Plus, CBC, KBC and Trustly now have the option to redirect to the MultiSafepay payment page when placing the order
