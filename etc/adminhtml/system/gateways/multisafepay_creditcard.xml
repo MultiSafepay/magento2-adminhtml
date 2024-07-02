@@ -26,18 +26,18 @@
                 <field id="active">1</field>
             </depends>
         </field>
-<!--        <field id="payment_action" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">-->
-<!--            <label>Payment Action</label>-->
-<!--            <config_path>payment/multisafepay_creditcard/payment_action</config_path>-->
-<!--            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\PaymentAction</source_model>-->
-<!--            <comment><![CDATA[If selected "Authorize Only" method, then capture amount will be manually after successful shipment.-->
-<!--             <a href="https://docs.multisafepay.com/tools/manual-capture/" target="blank">What is the manual capture?</a>-->
-<!--                 <br><strong>Note:</strong> Partial captures feature works for this payment method only for Visa, Mastercard, Maestro credit cards and Payment Component enabled. Otherwise, Authorize and Capture method will be used by default.  ]]>-->
-<!--            </comment>-->
-<!--            <depends>-->
-<!--                <field id="active">1</field>-->
-<!--            </depends>-->
-<!--        </field>-->
+        <field id="manual_capture" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable Manual Capture</label>
+            <config_path>payment/multisafepay_creditcard/manual_capture</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\ManualCapture</backend_model>
+            <comment><![CDATA[Manual Capture is a MultiSafepay solution that reduces your risk by letting you capture card payments either partially or in full when you ship the order.
+                 <br/><a href="https://docs.multisafepay.com/docs/manual-capture" target="blank">More information</a>]]>
+            </comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="payment_type" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Payment Type]]></label>
             <config_path>payment/multisafepay_creditcard/payment_type</config_path>

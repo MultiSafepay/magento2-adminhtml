@@ -97,12 +97,6 @@
                 <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\IconTypes</source_model>
                 <comment><![CDATA[Choose the payment icon type.]]></comment>
             </field>
-<!--            <field id="use_manual_capture" translate="label" type="select" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">-->
-<!--                <label><![CDATA[Enable Manual Capture]]></label>-->
-<!--                <config_path>multisafepay/general/use_manual_capture</config_path>-->
-<!--                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
-<!--                <comment><![CDATA[Enables Manual Capture for Maestro, Mastercard, Visa, and Creditcard gateways. Please make sure <a href="https://docs.multisafepay.com/features/manual-capture/" target="blank">Manual capture</a> is enabled in your MultiSafepay account.]]></comment>-->
-<!--            </field>-->
             <field id="debug" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Enable Debug mode]]></label>
                 <config_path>multisafepay/general/debug</config_path>

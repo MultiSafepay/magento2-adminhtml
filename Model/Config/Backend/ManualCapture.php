@@ -23,15 +23,14 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
-use MultiSafepay\ConnectCore\Model\Vault as VaultModel;
 
-class Vault extends Value
+class ManualCapture extends Value
 {
-    public const FIELD_VAULT_ENABLED = 'vault_enabled';
-
     private const PAYMENT = 'payment';
-    private const ACTIVE = 'active';
-    private const TOKENIZATION = 'tokenization';
+    private const PAYMENT_ACTION = 'payment_action';
+    private const MANUAL_CAPTURE = 'manual_capture';
+    private const AUTHORIZE_PAYMENT_ACTION = 'authorize';
+    private const INITIALIZE_PAYMENT_ACTION = 'initialize';
 
     /**
      * @var WriterInterface
@@ -39,7 +38,7 @@ class Vault extends Value
     private $writer;
 
     /**
-     * Vault constructor.
+     * ManualCapture constructor.
      *
      * @param Context $context
      * @param Registry $registry
@@ -66,34 +65,46 @@ class Vault extends Value
     }
 
     /**
-     * Turn on the recurring method for this specific Vault method and turn off Tokenization if it was turned on
+     * Change the payment action to authorize or initialize based on the manual capture value
      *
-     * @return Vault
+     * @return ManualCapture
      */
-    public function afterSave(): Vault
+    public function afterSave(): ManualCapture
     {
-        foreach (VaultModel::VAULT_GATEWAYS as $method => $recurringMethod) {
-            if ($this->getGroupId() !== $method) {
-                continue;
+        if ($this->getValue() === '1') {
+            $this->saveValue($this->getGroupId(), self::PAYMENT_ACTION, self::AUTHORIZE_PAYMENT_ACTION);
+            $this->saveValue($this->getGroupId() . '_recurring', self::MANUAL_CAPTURE, '1');
+
+            if ($this->getFieldsetDataValue(Vault::FIELD_VAULT_ENABLED) === '1') {
+                $this->saveValue($this->getGroupId() . '_vault', self::MANUAL_CAPTURE, '1');
             }
 
-            // Set the recurring method to active to make sure payments can be made with it
-            $this->writer->save(
-                self::PAYMENT . DIRECTORY_SEPARATOR . $recurringMethod . DIRECTORY_SEPARATOR . self::ACTIVE,
-                $this->getValue(),
-                $this->getScope(),
-                $this->getScopeId()
-            );
+            return parent::afterSave();
+        }
 
-            $tokenizationPath = self::PAYMENT . DIRECTORY_SEPARATOR . $this->getGroupId() . DIRECTORY_SEPARATOR .
-                                self::TOKENIZATION;
+        $this->saveValue($this->getGroupId(), self::PAYMENT_ACTION, self::INITIALIZE_PAYMENT_ACTION);
+        $this->saveValue($this->getGroupId() . '_recurring', self::MANUAL_CAPTURE, '0');
 
-            // Check to disable Tokenization if it was enabled to make sure that both are not enabled at the same time
-            if ($this->_config->getValue($tokenizationPath) && $this->getValue() === '1') {
-                $this->writer->save($tokenizationPath, 0, $this->getScope(), $this->getScopeId());
-            }
+        if ($this->getFieldsetDataValue(Vault::FIELD_VAULT_ENABLED) === '1') {
+            $this->saveValue($this->getGroupId() . '_vault', self::MANUAL_CAPTURE, '0');
         }
 
         return parent::afterSave();
+    }
+
+    /**
+     * Save the value in the configuration
+     *
+     * @param string $gateway
+     * @param string $fieldKey
+     * @param string $fieldValue
+     * @return void
+     */
+    private function saveValue(string $gateway, string $fieldKey, string $fieldValue)
+    {
+        $this->writer->save(
+            self::PAYMENT . DIRECTORY_SEPARATOR . $gateway . DIRECTORY_SEPARATOR . $fieldKey,
+            $fieldValue
+        );
     }
 }
