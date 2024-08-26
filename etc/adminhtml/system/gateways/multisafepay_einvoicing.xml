@@ -17,13 +17,21 @@
             </depends>
         </field>
         <field id="transaction_type" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label><![CDATA[Additional checkout fields]]></label>
+            <label><![CDATA[Payment Type]]></label>
             <config_path>payment/multisafepay_einvoicing/transaction_type</config_path>
-            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TransactionType</source_model>
+            <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\TransactionTypeWithComponent</source_model>
+            <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\PaymentType</backend_model>
             <depends>
                 <field id="active">1</field>
             </depends>
-            <comment><![CDATA[If this is turned on, the customer fills in additional information needed for the payment method directly in the checkout, instead of on the MultiSafepay payment page.]]></comment>
+            <comment><![CDATA[<br>
+                         <strong>Redirect</strong> - Redirect the customer to a payment page to finish the payment.
+                         <br /><br />
+                         <strong>Direct (deprecated)</strong> - Integrated HTML checkout fields (deprecated, will be removed in the future).
+                         <br /><br />
+                         <strong>Payment Component</strong> - <a href="https://docs.multisafepay.com/docs/payment-components" target="blank">Payment components</a> let you embed payment methods directly into your checkout.
+                ]]>
+            </comment>
         </field>
         <field id="checkout_fields" translate="label" type="multiselect" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Select checkout fields]]></label>
