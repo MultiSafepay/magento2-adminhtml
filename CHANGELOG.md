@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.30.0] - 2024-08-30
+### Added
+- PLGMAG2V2-779: Added payment component for BNPL methods
+
 ## [1.29.0] - 2024-07-05
 ### Added
 - PLGMAG2V2-741: Added Manual Capture support for the Card payment, Visa, Mastercard and Maestro gateways. For more information about this feature, please check the [MultiSafepay Manual Capture documentation](https://docs.multisafepay.com/docs/manual-capture).
