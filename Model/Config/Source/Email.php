@@ -18,6 +18,9 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class Email implements OptionSourceInterface
 {
+    public const BEFORE_TRANSACTION = 'before_transaction';
+    public const AFTER_TRANSACTION = 'after_transaction';
+    public const AFTER_PAID_TRANSACTION = 'after_paid_transaction';
 
     /**
      * @return array
@@ -25,18 +28,9 @@ class Email implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            [
-                'value' => 'before_transaction',
-                'label' => __('Immediately after placing the order')
-            ],
-            [
-                'value' => 'after_transaction',
-                'label' => __('On transaction initialized status')
-            ],
-            [
-                'value' => 'after_paid_transaction',
-                'label' => __('On transaction completed status')
-            ],
+            ['value' => self::BEFORE_TRANSACTION, 'label' => __('Immediately after placing the order')],
+            ['value' => self::AFTER_TRANSACTION, 'label' => __('On transaction initialized status')],
+            ['value' => self::AFTER_PAID_TRANSACTION, 'label' => __('On transaction completed status')],
         ];
     }
 }

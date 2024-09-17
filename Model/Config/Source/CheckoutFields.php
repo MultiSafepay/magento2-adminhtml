@@ -18,6 +18,10 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class CheckoutFields implements OptionSourceInterface
 {
+    public const DATE_OF_BIRTH = 'date_of_birth';
+    public const ACCOUNT_NUMBER = 'account_number';
+    public const EMAIL_ADDRESS = 'email_address';
+
     /**
      * Return possible checkout fields which the merchant can use
      *
@@ -26,9 +30,9 @@ class CheckoutFields implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => 'date_of_birth', 'label' => __('Date Of Birth')],
-            ['value' => 'account_number', 'label' => __('Bank Account')],
-            ['value' => 'email_address', 'label' => __('E-mail Address')],
+            ['value' => self::DATE_OF_BIRTH, 'label' => __('Date Of Birth')],
+            ['value' => self::ACCOUNT_NUMBER, 'label' => __('Bank Account')],
+            ['value' => self::EMAIL_ADDRESS, 'label' => __('E-mail Address')],
         ];
     }
 }

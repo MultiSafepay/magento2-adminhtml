@@ -19,7 +19,6 @@ use MultiSafepay\ConnectCore\Service\Order\CancelMultisafepayOrderPaymentLink;
 
 class SecondChancePaymentLink implements OptionSourceInterface
 {
-
     /**
      * {@inheritdoc}
      */

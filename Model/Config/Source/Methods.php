@@ -45,17 +45,11 @@ class Methods implements OptionSourceInterface
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function toOptionArray(): array
-    {
-        return $this->getAllMethods();
-    }
-
-    /**
+     * Retrieve the list of payment methods
+     *
      * @return array
      */
-    public function getAllMethods(): array
+    public function toOptionArray(): array
     {
         $methodList = $this->scopeConfig->getValue('payment');
 
@@ -86,6 +80,8 @@ class Methods implements OptionSourceInterface
     }
 
     /**
+     * Check if the method is allowed to be preselected
+     *
      * @param array $methodData
      * @param string $methodCode
      * @return bool
