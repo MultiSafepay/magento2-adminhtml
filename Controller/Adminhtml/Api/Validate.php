@@ -17,6 +17,7 @@ namespace MultiSafepay\ConnectAdminhtml\Controller\Adminhtml\Api;
 use Exception;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
+use Magento\Framework\App\Response\Http;
 use Magento\Framework\App\ResponseInterface;
 use MultiSafepay\ConnectCore\Config\Config;
 use MultiSafepay\ConnectCore\Factory\SdkFactory;
@@ -105,8 +106,9 @@ class Validate extends Action
             ];
         }
 
-        return $this->getResponse()->representJson(
-            $this->jsonHandler->convertToJSON($result)
-        );
+        /** @var Http $response */
+        $response = $this->getResponse();
+
+        return $response->representJson($this->jsonHandler->convertToJSON($result));
     }
 }

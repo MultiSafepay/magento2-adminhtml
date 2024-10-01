@@ -57,10 +57,13 @@ class CollectionFlowCustomerGroupField extends AbstractFieldArray
      */
     protected function _prepareArrayRow(DataObject $row): void
     {
+        /** @var CustomerGroupColumn $block */
+        $block = $this->getDropdownRenderer();
+
         $options = [];
         $dropdownField = $row->getCollectionFlowId();
         if ($dropdownField !== null) {
-            $options['option_' . $this->getDropdownRenderer()->calcOptionHash($dropdownField)] = 'selected="selected"';
+            $options['option_' . $block->calcOptionHash($dropdownField)] = 'selected="selected"';
         }
         $row->setData('option_extra_attrs', $options);
     }

@@ -59,12 +59,10 @@ class Button extends Field
      */
     public function getLogButtonHtml(): string
     {
-        $button = $this->getLayout()->createBlock(ButtonTemplate::class)->setData(
-            [
-                'id' => 'download_multisafepay_log',
-                'label' => __('Download'),
-            ]
-        );
+        /** @var ButtonTemplate $button */
+        $button = $this->getLayout()->createBlock(ButtonTemplate::class);
+
+        $button->setData(['id' => 'download_multisafepay_log', 'label' => __('Download'),]);
 
         return $button->toHtml();
     }

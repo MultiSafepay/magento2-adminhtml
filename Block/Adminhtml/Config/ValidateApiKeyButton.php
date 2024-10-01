@@ -19,6 +19,7 @@ use Magento\Backend\Block\Widget\Button;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Exception\LocalizedException;
+use Magento\Store\Model\Website;
 
 class ValidateApiKeyButton extends Field
 {
@@ -36,12 +37,17 @@ class ValidateApiKeyButton extends Field
     {
         /** @var Template $block */
         $block = $this->_layout->createBlock(Template::class);
-        $button = $this->getLayout()->createBlock(Button::class)
-            ->setData([
+
+        /** @var Button $button */
+        $button = $this->getLayout()->createBlock(Button::class);
+
+        $button->setData([
                 'id' => self::CHECK_BUTTON_ID,
                 'label' => __('Validate API Key'),
                 'class' => 'primary',
             ]);
+
+        // @phpstan-ignore-next-line
         $block->setTemplate(self::TEMPLATE_PATH)
             ->setData('send_button', $button->toHtml())
             ->setData('ajax_url', $this->getAjaxUrl())
@@ -79,9 +85,13 @@ class ValidateApiKeyButton extends Field
     public function getStoreId(): int
     {
         $storeId = null;
+        $websiteId = $this->getRequest()->getParam('website');
 
-        if ($website = $this->getRequest()->getParam('website')) {
-            $storeIds = $this->_storeManager->getWebsite((int)$website)->getStoreIds();
+        if ($websiteId) {
+            /** @var Website $storeManagerWebsite */
+            $storeManagerWebsite = $this->_storeManager->getWebsite((int)$websiteId);
+
+            $storeIds = $storeManagerWebsite->getStoreIds();
             $storeId = array_pop($storeIds);
         }
 

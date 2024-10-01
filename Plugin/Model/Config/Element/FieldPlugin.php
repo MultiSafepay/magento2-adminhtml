@@ -41,7 +41,7 @@ class FieldPlugin
         $configPath = $field->getData()['config_path'] ?? null;
 
         foreach ($elementPathArray as $path) {
-            if (strpos($path ?? '', GenericGatewayConfigProvider::CODE) !== false) {
+            if (strpos($path, GenericGatewayConfigProvider::CODE) !== false) {
                 return $configPath ? str_replace(GenericGatewayConfigProvider::CODE, $path, $configPath)
                     : 'payment' . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $field->getId();
             }
