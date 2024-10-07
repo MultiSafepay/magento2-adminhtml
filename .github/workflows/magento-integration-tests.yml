@@ -1,13 +1,9 @@
 name: ExtDN Actions
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - 'master'
       - 'release/**'
-
 jobs:
   integration-tests:
     strategy:
