@@ -247,6 +247,12 @@
                 <config_path>multisafepay/advanced/payment_component_template_id</config_path>
                 <comment><![CDATA[Leave empty for default template ID]]></comment>
             </field>
+            <field id="add_coupon_to_item_names" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Add applied coupons to item names]]></label>
+                <config_path>multisafepay/advanced/add_coupon_to_item_names</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[Select "Yes" to show used coupons and cart price rules next to the item names in the MultiSafepay environment.]]></comment>
+            </field>
         </group>
     </section>
 </include>
