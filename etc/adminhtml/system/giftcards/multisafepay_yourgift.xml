@@ -138,6 +138,14 @@
                 <field id="custom_payment_link_lifetime">1</field>
             </depends>
         </field>
+        <field id="instructions" translate="label" type="text" sortOrder="97" showInDefault="1" showInWebsite="1"
+               showInStore="1">
+            <label><![CDATA[Instructions]]></label>
+            <config_path>payment/multisafepay_yourgift/instructions</config_path>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
                showInStore="1">
             <label><![CDATA[Sort Order]]></label>
