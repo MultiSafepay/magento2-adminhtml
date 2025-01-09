@@ -43,5 +43,6 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mbway.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_multibanco.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_bizum.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_billink.xml"/>
     </section>
 </include>
