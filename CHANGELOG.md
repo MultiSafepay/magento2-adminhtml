@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.31.0] - 2025-01-09
+### Added
+- DAVAMS-852: Added the Billink payment method
+- DAVAMS-817: Added the Bizum payment method
+- PLGMAG2V2-788: Added a setting for adding coupon names to item names
+- PLGMAG2V2-814: Added a instructions configuration field to all the payment methods
+
+### Removed
+- PLGMAG2V2-810: Removed configurations for the following deprecated methods: Santander, Giropay, Sofort, Request to pay and Dotpay
+
 ## [1.30.0] - 2024-08-30
 ### Added
 - PLGMAG2V2-779: Added payment component for BNPL methods
