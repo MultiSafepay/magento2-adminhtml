@@ -16,12 +16,14 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_amex.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_applepay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_creditcard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_dotpay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_eps.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_googlepay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_idealqr.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_maestro.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mastercard.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_paysafecard.xml"/>
+        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_sofort.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_trustpay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_visa.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_alipay.xml"/>
