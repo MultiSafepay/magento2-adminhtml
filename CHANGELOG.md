@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.31.1] - 2025-02-24
+### Changed
+- PLGMAG2V2-829: Enable Sofort and Dotpay payment methods
+
 ## [1.31.0] - 2025-01-09
 ### Added
 - DAVAMS-852: Added the Billink payment method
