@@ -82,7 +82,30 @@
             </depends>
             <comment><![CDATA[The moment the order confirmation email is sent to the customer. Overrides the general setting for this specific payment method.]]></comment>
         </field>
-        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="use_custom_invoice_url" translate="label" type="select" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Use custom invoice URL]]></label>
+            <config_path>payment/multisafepay_einvoicing/use_custom_invoice_url</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
+        <field id="custom_invoice_url" translate="label" type="text" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Custom invoice URL.]]></label>
+            <config_path>payment/multisafepay_einvoicing/custom_invoice_url</config_path>
+            <depends>
+                <field id="active">1</field>
+                <field id="use_custom_invoice_url">1</field>
+            </depends>
+            <comment><![CDATA[Add a custom invoice URL<br/>
+               <br />Available URL variables:<br />
+                         {{store.unsecure_base_url}}, {{store.secure_base_url}} - the store unsecure or secure base URL;<br />
+                         {{invoice.increment_id}}, {{invoice.invoice_id}} - the entity or increment invoice ID;<br />
+                         {{order.increment_id}}, {{order.order_id}} - the entity or increment order ID;<br />
+                         {{store.code}}, {{store.store_id}} - the store code or entity store ID;<br />
+               <br>]]></comment>
+        </field>
+        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_einvoicing/allowspecific</config_path>
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\AllowSpecific</source_model>
