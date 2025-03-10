@@ -26,6 +26,15 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="show_payment_page" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Show MultiSafepay payment page]]></label>
+            <config_path>payment/multisafepay_ideal/show_payment_page</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <comment><![CDATA[Show the MultiSafepay payment page when placing the order, where users need to confirm first before being redirected to iDEAL]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_ideal/allowspecific</config_path>
