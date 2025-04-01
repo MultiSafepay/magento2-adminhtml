@@ -28,7 +28,7 @@
             <base_url type="media" scope_info="1">multisafepay/genericgateway</base_url>
             <upload_dir config="system" scope_info="1">multisafepay/genericgateway</upload_dir>
             <!-- Comment about allowed extensions of uploaded files which are defined in the backend model -->
-            <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+            <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png]]></comment>
             <depends>
                 <field id="active">1</field>
             </depends>
