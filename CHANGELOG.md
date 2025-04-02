@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.32.0] - 2025-04-02
+### Added
+- PLGMAG2V2-831: Added invoice_url to invoice update request for E-invoicing
+- PLGMAG2V2-832: Added setting for adding iDEAL payment page step
+
+### Removed
+- PLGMAG2V2-838: Removed .svg as allowed file type for generic gateway image upload
+
 ## [1.31.1] - 2025-02-24
 ### Changed
 - PLGMAG2V2-829: Enable Sofort and Dotpay payment methods
