@@ -18,7 +18,7 @@ use Magento\Config\Model\Config\Backend\File;
 use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\File\Uploader;
-use MultiSafepay\ConnectCore\Model\Ui\Gateway\GenericGatewayConfigProvider;
+use MultiSafepay\ConnectCore\Util\GenericGatewayUtil;
 
 class Logo extends File
 {
@@ -30,7 +30,7 @@ class Logo extends File
      */
     protected function _getUploadDir(): string
     {
-        return $this->_mediaDirectory->getAbsolutePath(GenericGatewayConfigProvider::UPLOAD_DIR);
+        return $this->_mediaDirectory->getAbsolutePath(GenericGatewayUtil::UPLOAD_DIR);
     }
 
     /**
@@ -113,6 +113,6 @@ class Logo extends File
      */
     private function deleteImageByFilename(string $filename): void
     {
-        $this->_mediaDirectory->delete(GenericGatewayConfigProvider::UPLOAD_DIR . DIRECTORY_SEPARATOR . $filename);
+        $this->_mediaDirectory->delete(GenericGatewayUtil::UPLOAD_DIR . DIRECTORY_SEPARATOR . $filename);
     }
 }
