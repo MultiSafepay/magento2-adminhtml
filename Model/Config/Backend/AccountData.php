@@ -74,8 +74,8 @@ class AccountData extends Value
         SdkFactory $sdkFactory,
         Logger $logger,
         JsonHandler $jsonHandler,
-        AbstractResource $resource = null,
-        AbstractDb $resourceCollection = null,
+        ?AbstractResource $resource = null,
+        ?AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         $this->sdkFactory = $sdkFactory;

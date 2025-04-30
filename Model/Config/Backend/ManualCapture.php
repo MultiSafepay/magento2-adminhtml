@@ -56,8 +56,8 @@ class ManualCapture extends Value
         ScopeConfigInterface $config,
         TypeListInterface $cacheTypeList,
         WriterInterface $writer,
-        AbstractResource $resource = null,
-        AbstractDb $resourceCollection = null,
+        ?AbstractResource $resource = null,
+        ?AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
