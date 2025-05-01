@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.32.1] - 2025-05-01
+### Fixed
+- PLGMAG2V2-842: Fix PHP 8.4 deprecations
+
+### Changed
+- MAGWIRE-32: Use GenericGatewayUtil instead of GenericGatewayConfigProvider
+
 ## [1.32.0] - 2025-04-02
 ### Added
 - PLGMAG2V2-831: Added invoice_url to invoice update request for E-invoicing
