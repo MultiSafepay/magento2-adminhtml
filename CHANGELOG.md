@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.33.0] - 2025-05-20
+### Removed
+- DAVAMS-901: Removed configurations for the deprecated payment method 'Alipay'
+
 ## [1.32.1] - 2025-05-01
 ### Fixed
 - PLGMAG2V2-842: Fix PHP 8.4 deprecations
