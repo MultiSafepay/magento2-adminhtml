@@ -109,7 +109,7 @@ class VaultTest extends AbstractTestCase
 
     public function testAfterSaveWithDifferentMethod()
     {
-        $this->vault->setGroupId('multisafepay_bancontact');
+        $this->vault->setGroupId('multisafepay_afterpay');
         $this->vault->setValue('1');
 
         $this->writer->expects($this->never())

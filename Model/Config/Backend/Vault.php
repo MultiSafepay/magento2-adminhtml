@@ -28,7 +28,6 @@ use MultiSafepay\ConnectCore\Model\Vault as VaultModel;
 class Vault extends Value
 {
     public const FIELD_VAULT_ENABLED = 'vault_enabled';
-
     private const PAYMENT = 'payment';
     private const ACTIVE = 'active';
     private const TOKENIZATION = 'tokenization';

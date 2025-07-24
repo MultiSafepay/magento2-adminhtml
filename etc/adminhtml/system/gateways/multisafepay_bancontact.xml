@@ -16,6 +16,16 @@
                 <field id="active">1</field>
             </depends>
         </field>
+        <field id="vault_enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Enable Vault]]></label>
+            <config_path>payment/multisafepay_bancontact_vault/active</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <backend_model>MultiSafepay\ConnectAdminhtml\Model\Config\Backend\Vault</backend_model>
+            <comment><![CDATA[Please make sure <a href="https://docs.multisafepay.com/docs/recurring-payments" target="blank">Recurring payments</a> is enabled in your MultiSafepay account.]]></comment>
+            <depends>
+                <field id="active">1</field>
+            </depends>
+        </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Applicable Countries]]></label>
             <config_path>payment/multisafepay_bancontact/allowspecific</config_path>
