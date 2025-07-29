@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.34.0] - 2025-07-29
+### Added
+- PLGMAG2V2-852: Added support for Bancontact WIP in Magento Vault
+- PLGMAG2V2-859: Added CODE_OF_CONDUCT.md
+
 ## [1.33.0] - 2025-05-20
 ### Removed
 - DAVAMS-901: Removed configurations for the deprecated payment method 'Alipay'
