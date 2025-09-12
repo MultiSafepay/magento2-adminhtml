@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.35.0] - 2025-09-12
+### Removed
+- DAVAMS-918: Removed configurations for the deprecated payment method 'Zinia'
+
 ## [1.34.0] - 2025-07-29
 ### Added
 - PLGMAG2V2-852: Added support for Bancontact WIP in Magento Vault
