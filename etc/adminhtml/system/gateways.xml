@@ -23,7 +23,6 @@
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_maestro.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_mastercard.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_paysafecard.xml"/>
-        <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_sofort.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_trustpay.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_visa.xml"/>
         <include path="MultiSafepay_ConnectAdminhtml::system/gateways/multisafepay_banktransfer.xml"/>
