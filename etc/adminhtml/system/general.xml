@@ -253,6 +253,12 @@
                 <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 <comment><![CDATA[Select "Yes" to show used coupons and cart price rules next to the item names in the MultiSafepay environment.]]></comment>
             </field>
+            <field id="add_google_analytics_client_id_to_urls" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Add Google Analytics Client ID to urls]]></label>
+                <config_path>multisafepay/advanced/add_google_analytics_client_id_to_urls</config_path>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                <comment><![CDATA[The Google Analytics Client ID is normally not carried over when switching domains, with this feature enabled it will be passed along through the MultiSafepay requests.]]></comment>
+            </field>
         </group>
     </section>
 </include>
