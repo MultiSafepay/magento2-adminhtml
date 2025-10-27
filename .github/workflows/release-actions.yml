@@ -113,7 +113,7 @@ jobs:
         run: docker exec magento-project-community-edition composer require multisafepay/magento2-adminhtml
 
       - name: Run tests
-        run: docker exec magento-project-community-edition bash -c "php bin/magento deploy:mode:set developer && cd /data/dev/tests/integration/ && ../../../vendor/bin/phpunit"
+        run: docker exec magento-project-community-edition bash -c "php bin/magento deploy:mode:set developer && cd /data/dev/tests/integration/ && ../../../vendor/bin/phpunit ../../../vendor/multisafepay/magento2-adminhtml/Test/Integration"
 
   release:
     name: Create GitHub Release
