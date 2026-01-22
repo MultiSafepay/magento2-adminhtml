@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.36.0] - 2026-01-21
+### Added
+- PLGMAG2V2-871: Added configurations for Google Analytics Client ID cross device tracking
+
+### Removed
+- PLGMAG2V2-810: Removed configurations for the deprecated payment method 'Sofort'
+
 ## [1.35.0] - 2025-09-12
 ### Removed
 - DAVAMS-918: Removed configurations for the deprecated payment method 'Zinia'
