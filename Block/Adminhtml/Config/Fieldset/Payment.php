@@ -81,30 +81,36 @@ class Payment extends Fieldset
      *
      * @param AbstractElement $element
      * @return string
-     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     protected function _getHeaderTitleHtml($element): string
     {
         $html = '<div class="config-heading" >';
 
         $htmlId = $element->getHtmlId();
+        $isEnabled = $this->isPaymentEnabled($element);
+        $statusText = $isEnabled ? __(' - Enabled') : __(' - Disabled');
+        $legendText = $element->getLegend() . $statusText;
+
+        $buttonLabelClosed = __('Configure');
+        $buttonLabelOpened = __('Close');
+
+        $ariaLabelClosed = $buttonLabelClosed->render() . ' — ' . $statusText->render();
+
         $html .= '<div class="button-container"><button type="button"' .
-                 ' class="button action-configure' .
-                 '" id="' .
-                 $htmlId .
-                 '-head" onclick="multisafepayToggle.call(this, \'' .
-                 $htmlId .
-                 "', '" .
-                 $this->getUrl(
-                     'adminhtml/*/state'
-                 ) . '\'); return false;"><span class="state-closed">' . __(
-                     'Configure'
-                 ) . '</span><span class="state-opened">' . __(
-                     'Close'
-                 ) . '</span></button>';
+            ' class="button action-configure' .
+            '" id="' . $htmlId . '-head"' .
+            ' aria-label="' . $ariaLabelClosed . '"' .
+            ' aria-expanded="false"' .
+            ' aria-pressed="false"' .
+            ' data-status="' . $statusText . '"' .
+            ' onclick="multisafepayToggle.call(this, \'' . $htmlId . "', '" . $this->getUrl('adminhtml/*/state') .
+            '\'); return false;"><span class="state-closed">' . $buttonLabelClosed .
+            '</span><span class="state-opened" aria-hidden="true">'
+            . $buttonLabelOpened . '</span></button>';
 
         $html .= '</div>';
-        $html .= '<div class="heading multisafepay-heading"><strong>' . $element->getLegend() . '</strong>';
+
+        $html .= '<div class="heading multisafepay-heading"><strong>' . $legendText . '</strong>';
 
         if ($element->getComment()) {
             $html .= '<span class="heading-intro multisafepay-heading-intro">' . $element->getComment() . '</span>';

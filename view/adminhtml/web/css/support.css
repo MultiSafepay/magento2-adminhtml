@@ -262,3 +262,7 @@
 .admin__scope-old a.multisafepay-support-bug-report {
     display: inline-block;
 }
+
+.version-value {
+    display: inline-block;
+}
