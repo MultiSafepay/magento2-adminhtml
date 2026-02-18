@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.37.0] - 2026-02-18
+### Added
+- DAVAMS-913: Added several EAA improvements
+
+### Changed
+- DAVAMS-954: Rebranded iDEAL - Wero
+
 ## [1.36.0] - 2026-01-21
 ### Added
 - PLGMAG2V2-871: Added configurations for Google Analytics Client ID cross device tracking
