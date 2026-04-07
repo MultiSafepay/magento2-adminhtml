@@ -20,7 +20,10 @@
             <label><![CDATA[Use Google Pay Direct Button]]></label>
             <config_path>payment/multisafepay_googlepay/direct_button</config_path>
             <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-            <comment><![CDATA[With a direct integration, the Google Pay button appears in your checkout page. Customers complete payment without being redirected to a MultiSafepay payment page.]]></comment>
+            <frontend_model>MultiSafepay\ConnectAdminhtml\Block\Adminhtml\Form\Field\DirectButton</frontend_model>
+            <comment><![CDATA[Only enable this option after all Google Pay Direct prerequisites have been completed.
+            For more information see <a href="https://docs.multisafepay.com/docs/google-pay-direct" target="_blank" rel="noopener noreferrer">Google Pay Direct Button documentation</a>.]]>
+            </comment>
             <depends>
                 <field id="active">1</field>
             </depends>
