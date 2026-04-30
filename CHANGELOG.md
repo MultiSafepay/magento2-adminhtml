@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.38.0] - 2026-04-29
+### Added
+- PLGMAG2V2-890: Added prerequisite acknowledgement validation for Apple Pay and Google Pay direct buttons configuration activation
+- DAVAMS-990: Added card info to Apple Pay and Google Pay payment methods
+
 ## [1.37.0] - 2026-02-18
 ### Added
 - DAVAMS-913: Added several EAA improvements
