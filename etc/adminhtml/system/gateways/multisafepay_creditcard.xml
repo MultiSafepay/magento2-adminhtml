@@ -74,6 +74,7 @@
             <source_model>MultiSafepay\ConnectAdminhtml\Model\Config\Source\CardIconTypes</source_model>
             <depends>
                 <field id="active">1</field>
+                <field id="show_payment_icons">1</field>
             </depends>
         </field>
         <field id="allowspecific" translate="label" type="allowspecific" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
