@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.39.0] - 2026-07-21
+### Added
+- PLGMAG2V2-912: Added a new configuration to show/hide payment method icons in the checkout
+
 ## [1.38.0] - 2026-04-29
 ### Added
 - PLGMAG2V2-890: Added prerequisite acknowledgement validation for Apple Pay and Google Pay direct buttons configuration activation
