@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.40.0] - 2026-09-01
+### Changed
+- PLGMAG2V2-912: Bumped minimum required version of `multisafepay/magento2-core` to `^3.21` to fix the show/hide payment method icons configuration in the checkout
+
 ## [1.39.0] - 2026-07-21
 ### Added
 - PLGMAG2V2-912: Added a new configuration to show/hide payment method icons in the checkout
