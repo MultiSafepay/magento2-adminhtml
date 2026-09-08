@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- PLGMAG2V2-919: Add Mage-OS to the CI matrix, thanks to @michielgerritsen
+- PLGMAG2V2-918: Update docker images in CI - Testing, thanks to @michielgerritsen
 
 ## [1.40.0] - 2026-09-01
 ### Changed
