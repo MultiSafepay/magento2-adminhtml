@@ -127,4 +127,101 @@ class ManualCaptureTest extends AbstractTestCase
         //phpcs:ignore
         @$this->manualCapture->afterSave();
     }
+
+    /**
+     * Test if every value is written to the scope the Manual Capture field was saved in
+     *
+     * @return void
+     */
+    public function testAfterSaveWritesAtTheScopeOfTheField()
+    {
+        $this->manualCapture->addData(['fieldset_data' => [Vault::FIELD_VAULT_ENABLED => '1']]);
+        $this->manualCapture->setGroupId('multisafepay_creditcard');
+        $this->manualCapture->setValue('1');
+        $this->manualCapture->setScope('websites');
+        $this->manualCapture->setScopeId(2);
+
+        $this->writer->expects($this->exactly(3))
+            ->method('save')
+            ->with(
+                $this->isString(),
+                $this->isString(),
+                'websites',
+                2
+            );
+
+        //phpcs:ignore
+        @$this->manualCapture->afterSave();
+    }
+
+    /**
+     * Test if the default scope is used when the Manual Capture field was saved in the default scope
+     *
+     * @return void
+     */
+    public function testAfterSaveWritesAtTheDefaultScope()
+    {
+        $this->manualCapture->setGroupId('multisafepay_creditcard');
+        $this->manualCapture->setValue('0');
+        $this->manualCapture->setScope('default');
+        $this->manualCapture->setScopeId(0);
+
+        $this->writer->expects($this->exactly(2))
+            ->method('save')
+            ->with(
+                $this->isString(),
+                $this->isString(),
+                'default',
+                0
+            );
+
+        //phpcs:ignore
+        @$this->manualCapture->afterSave();
+    }
+
+    /**
+     * Test if the dependent values are removed from the scope when the field is reset to the inherited value
+     *
+     * @return void
+     */
+    public function testAfterDeleteRemovesDependentValuesFromTheScope()
+    {
+        $this->manualCapture->setGroupId('multisafepay_creditcard');
+        $this->manualCapture->setScope('websites');
+        $this->manualCapture->setScopeId(2);
+
+        $deleted = [];
+        $this->writer->expects($this->exactly(3))
+            ->method('delete')
+            ->willReturnCallback(function ($path, $scope, $scopeId) use (&$deleted) {
+                $deleted[] = [$path, $scope, $scopeId];
+            });
+
+        //phpcs:ignore
+        @$this->manualCapture->afterDelete();
+
+        $this->assertSame(
+            [
+                ['payment/multisafepay_creditcard/payment_action', 'websites', 2],
+                ['payment/multisafepay_creditcard_recurring/manual_capture', 'websites', 2],
+                ['payment/multisafepay_creditcard_vault/manual_capture', 'websites', 2],
+            ],
+            $deleted
+        );
+    }
+
+    /**
+     * Test if nothing is removed when the field is deleted in the default scope
+     *
+     * @return void
+     */
+    public function testAfterDeleteKeepsDefaultScopeValues()
+    {
+        $this->manualCapture->setGroupId('multisafepay_creditcard');
+
+        $this->writer->expects($this->never())->method('delete');
+
+        //phpcs:ignore
+        @$this->manualCapture->afterDelete();
+    }
 }

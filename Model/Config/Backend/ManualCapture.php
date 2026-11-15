@@ -104,7 +104,37 @@ class ManualCapture extends Value
     {
         $this->writer->save(
             self::PAYMENT . DIRECTORY_SEPARATOR . $gateway . DIRECTORY_SEPARATOR . $fieldKey,
-            $fieldValue
+            $fieldValue,
+            $this->getScope() ?: ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
+            (int)$this->getScopeId()
         );
+    }
+
+    /**
+     * Remove the dependent values from the scope when the field falls back to the inherited value
+     *
+     * @return ManualCapture
+     */
+    public function afterDelete(): ManualCapture
+    {
+        $scope = $this->getScope() ?: ScopeConfigInterface::SCOPE_TYPE_DEFAULT;
+
+        if ($scope !== ScopeConfigInterface::SCOPE_TYPE_DEFAULT) {
+            $gateway = $this->getGroupId();
+
+            foreach ([
+                [$gateway, self::PAYMENT_ACTION],
+                [$gateway . '_recurring', self::MANUAL_CAPTURE],
+                [$gateway . '_vault', self::MANUAL_CAPTURE]
+            ] as [$group, $field]) {
+                $this->writer->delete(
+                    self::PAYMENT . DIRECTORY_SEPARATOR . $group . DIRECTORY_SEPARATOR . $field,
+                    $scope,
+                    (int)$this->getScopeId()
+                );
+            }
+        }
+
+        return parent::afterDelete();
     }
 }
